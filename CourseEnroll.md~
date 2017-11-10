@@ -78,10 +78,15 @@
 	exportControl 	"Public"
 	global     	TRUE
 	logical_models 	(list unit_reference_list
-	    (object Class "Student"
+	    (object Class "学生"
 		quid       	"5A0567B10262"
-		stereotype 	"Actor")
-	    (object Class "Teacher"
+		stereotype 	"Actor"
+		superclasses 	(list inheritance_relationship_list
+		    (object Inheritance_Relationship
+			quid       	"5A0599CC0073"
+			supplier   	"Logical View::Person"
+			quidu      	"5A0598D101E1")))
+	    (object Class "教授"
 		quid       	"5A0567C20331"
 		stereotype 	"Actor"
 		visible_modules 	(list dependency_list
@@ -112,12 +117,12 @@
 		roles      	(list role_list
 		    (object Role "$UNNAMED$1"
 			quid       	"5A05683002C8"
-			supplier   	"Use Case View::Student"
+			supplier   	"Use Case View::学生"
 			quidu      	"5A0567B10262"
 			is_navigable 	TRUE)
 		    (object Role "$UNNAMED$2"
 			quid       	"5A05683002CA"
-			supplier   	"Use Case View::Student"
+			supplier   	"Use Case View::学生"
 			quidu      	"5A0567B10262")))
 	    (object Association "$UNNAMED$3"
 		quid       	"5A05683D01DC"
@@ -129,7 +134,7 @@
 			is_navigable 	TRUE)
 		    (object Role "$UNNAMED$5"
 			quid       	"5A056841006F"
-			supplier   	"Use Case View::Student"
+			supplier   	"Use Case View::学生"
 			quidu      	"5A0567B10262")))
 	    (object Association "$UNNAMED$6"
 		quid       	"5A0568590222"
@@ -141,7 +146,7 @@
 			is_navigable 	TRUE)
 		    (object Role "$UNNAMED$8"
 			quid       	"5A05685A034D"
-			supplier   	"Use Case View::Teacher"
+			supplier   	"Use Case View::教授"
 			quidu      	"5A0567C20331")))
 	    (object Association "$UNNAMED$9"
 		quid       	"5A05686702B4"
@@ -153,7 +158,7 @@
 			is_navigable 	TRUE)
 		    (object Role "$UNNAMED$11"
 			quid       	"5A05686D02B5"
-			supplier   	"Use Case View::Student"
+			supplier   	"Use Case View::学生"
 			quidu      	"5A0567B10262")))
 	    (object Association "$UNNAMED$12"
 		quid       	"5A05697E01F2"
@@ -165,7 +170,7 @@
 			is_navigable 	TRUE)
 		    (object Role "$UNNAMED$14"
 			quid       	"5A05698002EF"
-			supplier   	"Use Case View::Student"
+			supplier   	"Use Case View::学生"
 			quidu      	"5A0567B10262")))
 	    (object Association "$UNNAMED$15"
 		quid       	"5A056A0003B9"
@@ -177,7 +182,7 @@
 			is_navigable 	TRUE)
 		    (object Role "$UNNAMED$17"
 			quid       	"5A056A02010B"
-			supplier   	"Use Case View::Student"
+			supplier   	"Use Case View::学生"
 			quidu      	"5A0567B10262")))
 	    (object Association "$UNNAMED$18"
 		quid       	"5A056A050282"
@@ -189,7 +194,7 @@
 			is_navigable 	TRUE)
 		    (object Role "$UNNAMED$20"
 			quid       	"5A056A06017B"
-			supplier   	"Use Case View::Student"
+			supplier   	"Use Case View::学生"
 			quidu      	"5A0567B10262")))
 	    (object Association "$UNNAMED$21"
 		quid       	"5A056A090221"
@@ -201,7 +206,7 @@
 			is_navigable 	TRUE)
 		    (object Role "$UNNAMED$23"
 			quid       	"5A056A0A02FC"
-			supplier   	"Use Case View::Student"
+			supplier   	"Use Case View::学生"
 			quidu      	"5A0567B10262")))
 	    (object Association "$UNNAMED$24"
 		quid       	"5A056A990148"
@@ -213,7 +218,7 @@
 			is_navigable 	TRUE)
 		    (object Role "$UNNAMED$26"
 			quid       	"5A056A9A0169"
-			supplier   	"Use Case View::Student"
+			supplier   	"Use Case View::学生"
 			quidu      	"5A0567B10262")))
 	    (object Association "$UNNAMED$27"
 		quid       	"5A056AEC034F"
@@ -225,7 +230,7 @@
 			is_navigable 	TRUE)
 		    (object Role "$UNNAMED$29"
 			quid       	"5A056AEE0015"
-			supplier   	"Use Case View::Teacher"
+			supplier   	"Use Case View::教授"
 			quidu      	"5A0567C20331")))
 	    (object Association "$UNNAMED$30"
 		quid       	"5A056B250148"
@@ -237,7 +242,7 @@
 			is_navigable 	TRUE)
 		    (object Role "$UNNAMED$32"
 			quid       	"5A056B2602FE"
-			supplier   	"Use Case View::Teacher"
+			supplier   	"Use Case View::教授"
 			quidu      	"5A0567C20331")))
 	    (object Association "$UNNAMED$33"
 		quid       	"5A056B2A0355"
@@ -249,7 +254,7 @@
 			is_navigable 	TRUE)
 		    (object Role "$UNNAMED$35"
 			quid       	"5A056B2B03C7"
-			supplier   	"Use Case View::Teacher"
+			supplier   	"Use Case View::教授"
 			quidu      	"5A0567C20331"))))
 	statemachine 	(object State_Machine "State/Activity Model"
 	    quid       	"5A056F7701A2"
@@ -341,7 +346,21 @@
 		    quid       	"5A057A6E036B"
 		    type       	"EndState")
 		(object SynchronizationState "$UNNAMED$48"
-		    quid       	"5A057B0D0285"))
+		    quid       	"5A057B0D0285")
+		(object SynchronizationState "$UNNAMED$49"
+		    quid       	"5A057BE901C1")
+		(object Decision "$UNNAMED$50"
+		    quid       	"5A057CFB02C5")
+		(object Decision "$UNNAMED$51"
+		    quid       	"5A057E7D03E0")
+		(object State "Display error message"
+		    quid       	"5A057EF30228"
+		    type       	"Normal")
+		(object State "Compare current time with deadline"
+		    quid       	"5A0580BC00D6"
+		    type       	"Normal")
+		(object Decision "$UNNAMED$52"
+		    quid       	"5A0580F30292"))
 	    partitions 	(list Partitions)
 	    objects    	(list Objects)
 	    transitions 	(list transition_list
@@ -419,7 +438,7 @@
 		    quid       	"5A0572C803CF"
 		    supplier   	"Use Case View::State/Activity Model::Select courses to enroll"
 		    supplier_quidu 	"5A057210019F"
-		    client     	"Use Case View::State/Activity Model::"
+		    client     	"$UNNAMED$39"
 		    client_quidu 	"5A0571F000FB"
 		    sendEvent  	(object sendEvent
 			quid       	"5A0572C803D2"))
@@ -691,7 +710,183 @@
 		    client     	"$UNNAMED$48"
 		    client_quidu 	"5A057B0D0285"
 		    sendEvent  	(object sendEvent
-			quid       	"5A057B250382")))
+			quid       	"5A057B250382"))
+		(object State_Transition
+		    quid       	"5A057B9300B1"
+		    supplier   	"Use Case View::State/Activity Model::Change selected courses condition"
+		    supplier_quidu 	"5A057A5503DE"
+		    client     	"$UNNAMED$45"
+		    client_quidu 	"5A0577890027"
+		    sendEvent  	(object sendEvent
+			quid       	"5A057B9300B4"))
+		(object State_Transition
+		    quid       	"5A057BC80313"
+		    label      	""
+		    supplier   	"$UNNAMED$46"
+		    supplier_quidu 	"5A05780400B6"
+		    client     	"$UNNAMED$45"
+		    client_quidu 	"5A0577890027"
+		    Event      	(object Event "[Succeed]"
+			quid       	"5A057BC80314")
+		    sendEvent  	(object sendEvent
+			quid       	"5A057BC80316"))
+		(object State_Transition
+		    quid       	"5A057BF103B8"
+		    label      	""
+		    supplier   	"$UNNAMED$49"
+		    supplier_quidu 	"5A057BE901C1"
+		    client     	"$UNNAMED$45"
+		    client_quidu 	"5A0577890027"
+		    Event      	(object Event "[Fail]"
+			quid       	"5A057BF103B9")
+		    sendEvent  	(object sendEvent
+			quid       	"5A057BF103BB"))
+		(object State_Transition
+		    quid       	"5A057C120203"
+		    supplier   	"Use Case View::State/Activity Model::Change selected courses condition"
+		    supplier_quidu 	"5A057A5503DE"
+		    client     	"$UNNAMED$49"
+		    client_quidu 	"5A057BE901C1"
+		    sendEvent  	(object sendEvent
+			quid       	"5A057C120206"))
+		(object State_Transition
+		    quid       	"5A057C38015E"
+		    supplier   	"Use Case View::State/Activity Model::Display Main Frame"
+		    supplier_quidu 	"5A05763200D8"
+		    client     	"$UNNAMED$49"
+		    client_quidu 	"5A057BE901C1"
+		    sendEvent  	(object sendEvent
+			quid       	"5A057C380161"))
+		(object State_Transition
+		    quid       	"5A057D0702DC"
+		    supplier   	"$UNNAMED$50"
+		    supplier_quidu 	"5A057CFB02C5"
+		    client     	"Use Case View::State/Activity Model::Display current schedule"
+		    client_quidu 	"5A0573100233"
+		    sendEvent  	(object sendEvent
+			quid       	"5A057D0702DF"))
+		(object State_Transition
+		    quid       	"5A057D0E0230"
+		    label      	""
+		    supplier   	"Use Case View::State/Activity Model::Display available course list"
+		    supplier_quidu 	"5A05737C03D0"
+		    client     	"$UNNAMED$50"
+		    client_quidu 	"5A057CFB02C5"
+		    condition  	"Succeed"
+		    sendEvent  	(object sendEvent
+			quid       	"5A057D0E0233"))
+		(object State_Transition
+		    quid       	"5A057DA102C1"
+		    label      	""
+		    supplier   	"Use Case View::State/Activity Model::Display Main Frame"
+		    supplier_quidu 	"5A05763200D8"
+		    client     	"$UNNAMED$50"
+		    client_quidu 	"5A057CFB02C5"
+		    Event      	(object Event "[Fail]"
+			quid       	"5A057DA102C2")
+		    sendEvent  	(object sendEvent
+			quid       	"5A057DA102C4"))
+		(object State_Transition
+		    quid       	"5A057E850149"
+		    supplier   	"$UNNAMED$51"
+		    supplier_quidu 	"5A057E7D03E0"
+		    client     	"Use Case View::State/Activity Model::Display current available course list"
+		    client_quidu 	"5A05742C0382"
+		    sendEvent  	(object sendEvent
+			quid       	"5A057E85014C"))
+		(object State_Transition
+		    quid       	"5A057E8B0166"
+		    label      	""
+		    supplier   	"Use Case View::State/Activity Model::Confirm delete"
+		    supplier_quidu 	"5A057455005D"
+		    client     	"$UNNAMED$51"
+		    client_quidu 	"5A057E7D03E0"
+		    Event      	(object Event "[Succeed]"
+			quid       	"5A057E8B0167")
+		    sendEvent  	(object sendEvent
+			quid       	"5A057E8B0169"))
+		(object State_Transition
+		    quid       	"5A057E9D01D6"
+		    label      	""
+		    supplier   	"Use Case View::State/Activity Model::Display Main Frame"
+		    supplier_quidu 	"5A05763200D8"
+		    client     	"$UNNAMED$51"
+		    client_quidu 	"5A057E7D03E0"
+		    Event      	(object Event "[Fail]"
+			quid       	"5A057E9D01D7")
+		    sendEvent  	(object sendEvent
+			quid       	"5A057E9D01D9"))
+		(object State_Transition
+		    quid       	"5A057F0A0015"
+		    label      	""
+		    supplier   	"Use Case View::State/Activity Model::Display error message"
+		    supplier_quidu 	"5A057EF30228"
+		    client     	"$UNNAMED$37"
+		    client_quidu 	"5A056FB80169"
+		    Event      	(object Event "[Fail]"
+			quid       	"5A057F0A0016")
+		    sendEvent  	(object sendEvent
+			quid       	"5A057F0A0018"))
+		(object State_Transition
+		    quid       	"5A057F1301BA"
+		    supplier   	"Use Case View::State/Activity Model::Log in system"
+		    supplier_quidu 	"5A056FAB0353"
+		    client     	"Use Case View::State/Activity Model::Display error message"
+		    client_quidu 	"5A057EF30228"
+		    sendEvent  	(object sendEvent
+			quid       	"5A057F1301BD"))
+		(object State_Transition
+		    quid       	"5A05800E0330"
+		    label      	""
+		    supplier   	"Use Case View::State/Activity Model::Display Main Frame"
+		    supplier_quidu 	"5A05763200D8"
+		    client     	"$UNNAMED$41"
+		    client_quidu 	"5A057476023F"
+		    Event      	(object Event "[No]"
+			quid       	"5A05800E0331")
+		    sendEvent  	(object sendEvent
+			quid       	"5A05800E0333"))
+		(object State_Transition
+		    quid       	"5A0580FF024A"
+		    label      	""
+		    supplier   	"Use Case View::State/Activity Model::Compare current time with deadline"
+		    supplier_quidu 	"5A0580BC00D6"
+		    client     	"$UNNAMED$37"
+		    client_quidu 	"5A056FB80169"
+		    Event      	(object Event "[Succeed]"
+			quid       	"5A0580FF024B")
+		    sendEvent  	(object sendEvent
+			quid       	"5A0580FF024D"))
+		(object State_Transition
+		    quid       	"5A0581030266"
+		    supplier   	"$UNNAMED$52"
+		    supplier_quidu 	"5A0580F30292"
+		    client     	"Use Case View::State/Activity Model::Compare current time with deadline"
+		    client_quidu 	"5A0580BC00D6"
+		    sendEvent  	(object sendEvent
+			quid       	"5A0581030269"))
+		(object State_Transition
+		    quid       	"5A05810803B2"
+		    label      	""
+		    supplier   	"Use Case View::State/Activity Model::Display Main Frame"
+		    supplier_quidu 	"5A05763200D8"
+		    client     	"$UNNAMED$52"
+		    client_quidu 	"5A0580F30292"
+		    Event      	(object Event "[Within]"
+			quid       	"5A05810803B3")
+		    sendEvent  	(object sendEvent
+			quid       	"5A05810803B5"))
+		(object State_Transition
+		    quid       	"5A0581120015"
+		    label      	""
+		    supplier   	"Use Case View::State/Activity Model::Display error message"
+		    supplier_quidu 	"5A057EF30228"
+		    client     	"$UNNAMED$52"
+		    client_quidu 	"5A0580F30292"
+		    Event      	(object Event "[Over]"
+			quid       	"5A0581120016")
+		    sendEvent  	(object sendEvent
+			quid       	"5A0581120018")))
 	    objectflows 	(list objectflow_list)
 	    statediagrams 	(list StateDiagrams
 		(object ActivityDiagram "CorseEnrollAD"
@@ -700,22 +895,22 @@
 		    zoom       	100
 		    max_height 	28350
 		    max_width  	21600
-		    origin_x   	212
-		    origin_y   	1740
+		    origin_x   	0
+		    origin_y   	0
 		    items      	(list diagram_item_list
 			(object Swimlane "" @1
 			    line_color 	3342489
 			    width      	450)
 			(object StateView "StartState" "$UNNAMED$36" @2
 			    Parent_View 	@1
-			    location   	(723, 174)
+			    location   	(773, 242)
 			    icon_style 	"Icon"
 			    line_color 	3342489
 			    quidu      	"5A056FA6007E"
 			    autoResize 	TRUE)
 			(object StateView "Normal" "Log in system" @3
 			    Parent_View 	@1
-			    location   	(1170, 172)
+			    location   	(1170, 242)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -727,7 +922,7 @@
 				default_color 	TRUE)
 			    label      	(object ItemLabel
 				Parent_View 	@3
-				location   	(1170, 161)
+				location   	(1170, 231)
 				fill_color 	13434879
 				anchor_loc 	1
 				nlines     	2
@@ -747,13 +942,13 @@
 			    client     	@2
 			    supplier   	@3
 			    vertices   	(list Points
-				(753, 173)
-				(1020, 172))
+				(803, 242)
+				(1020, 242))
 			    line_style 	0
 			    x_offset   	FALSE)
 			(object DecisionView "$UNNAMED$37" @5
 			    Parent_View 	@1
-			    location   	(1170, 406)
+			    location   	(1170, 476)
 			    icon_style 	"Icon"
 			    line_color 	3342489
 			    fill_color 	13434879
@@ -766,55 +961,13 @@
 			    client     	@3
 			    supplier   	@5
 			    vertices   	(list Points
-				(1170, 239)
-				(1170, 369))
+				(1170, 309)
+				(1170, 439))
 			    line_style 	0
 			    x_offset   	FALSE)
-			(object TransView "" @7
-			    font       	(object Font
-				size       	10
-				face       	"Arial"
-				bold       	FALSE
-				italics    	FALSE
-				underline  	FALSE
-				strike     	FALSE
-				color      	0
-				default_color 	TRUE)
-			    label      	(object SegLabel @8
-				Parent_View 	@7
-				location   	(1397, 371)
-				font       	(object Font
-				    size       	10
-				    face       	"Arial"
-				    bold       	FALSE
-				    italics    	FALSE
-				    underline  	FALSE
-				    strike     	FALSE
-				    color      	0
-				    default_color 	TRUE)
-				anchor_loc 	1
-				nlines     	1
-				max_width  	450
-				justify    	0
-				label      	"[Fail]"
-				pctDist    	0.188143
-				height     	37
-				orientation 	0)
-			    stereotype 	TRUE
-			    line_color 	3342489
-			    quidu      	"5A056FD500A4"
-			    client     	@5
-			    supplier   	@3
-			    vertices   	(list Points
-				(1245, 406)
-				(1569, 408)
-				(1569, 170)
-				(1320, 171))
-			    line_style 	0
-			    x_offset   	FALSE)
-			(object StateView "Normal" "Create a schedule" @9
+			(object StateView "Normal" "Create a schedule" @7
 			    Parent_View 	@1
-			    location   	(834, 1024)
+			    location   	(834, 1544)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -825,8 +978,8 @@
 				color      	0
 				default_color 	TRUE)
 			    label      	(object ItemLabel
-				Parent_View 	@9
-				location   	(834, 1009)
+				Parent_View 	@7
+				location   	(834, 1529)
 				fill_color 	13434879
 				anchor_loc 	1
 				nlines     	2
@@ -840,9 +993,9 @@
 			    width      	382
 			    height     	142
 			    autoResize 	TRUE)
-			(object StateView "Normal" "Update a schedule" @10
+			(object StateView "Normal" "Update a schedule" @8
 			    Parent_View 	@1
-			    location   	(1498, 1018)
+			    location   	(1498, 1538)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -853,8 +1006,8 @@
 				color      	0
 				default_color 	TRUE)
 			    label      	(object ItemLabel
-				Parent_View 	@10
-				location   	(1498, 999)
+				Parent_View 	@8
+				location   	(1498, 1519)
 				fill_color 	13434879
 				anchor_loc 	1
 				nlines     	2
@@ -868,9 +1021,9 @@
 			    width      	400
 			    height     	150
 			    autoResize 	TRUE)
-			(object StateView "Normal" "Delete a schedule" @11
+			(object StateView "Normal" "Delete a schedule" @9
 			    Parent_View 	@1
-			    location   	(2182, 1002)
+			    location   	(2182, 1522)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -881,8 +1034,8 @@
 				color      	0
 				default_color 	TRUE)
 			    label      	(object ItemLabel
-				Parent_View 	@11
-				location   	(2182, 990)
+				Parent_View 	@9
+				location   	(2182, 1510)
 				fill_color 	13434879
 				anchor_loc 	1
 				nlines     	2
@@ -896,9 +1049,9 @@
 			    width      	386
 			    height     	136
 			    autoResize 	TRUE)
-			(object StateView "Normal" "Select courses to enroll" @12
+			(object StateView "Normal" "Select courses to enroll" @10
 			    Parent_View 	@1
-			    location   	(832, 1608)
+			    location   	(832, 2128)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -909,8 +1062,8 @@
 				color      	0
 				default_color 	TRUE)
 			    label      	(object ItemLabel
-				Parent_View 	@12
-				location   	(832, 1597)
+				Parent_View 	@10
+				location   	(832, 2117)
 				fill_color 	13434879
 				anchor_loc 	1
 				nlines     	2
@@ -924,9 +1077,9 @@
 			    width      	394
 			    height     	134
 			    autoResize 	TRUE)
-			(object StateView "Normal" "finish creating a schedule" @13
+			(object StateView "Normal" "finish creating a schedule" @11
 			    Parent_View 	@1
-			    location   	(828, 1876)
+			    location   	(828, 2396)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -937,8 +1090,8 @@
 				color      	0
 				default_color 	TRUE)
 			    label      	(object ItemLabel
-				Parent_View 	@13
-				location   	(828, 1865)
+				Parent_View 	@11
+				location   	(828, 2385)
 				fill_color 	13434879
 				anchor_loc 	1
 				nlines     	2
@@ -952,20 +1105,20 @@
 			    width      	352
 			    height     	134
 			    autoResize 	TRUE)
-			(object TransView "" @14
+			(object TransView "" @12
 			    stereotype 	TRUE
 			    line_color 	3342489
 			    quidu      	"5A0572CC00C7"
-			    client     	@12
-			    supplier   	@13
+			    client     	@10
+			    supplier   	@11
 			    vertices   	(list Points
-				(831, 1675)
-				(829, 1809))
+				(831, 2195)
+				(829, 2329))
 			    line_style 	0
 			    x_offset   	FALSE)
-			(object StateView "Normal" "Submit the schedule" @15
+			(object StateView "Normal" "Submit the schedule" @13
 			    Parent_View 	@1
-			    location   	(1162, 2282)
+			    location   	(1162, 2802)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -976,8 +1129,8 @@
 				color      	0
 				default_color 	TRUE)
 			    label      	(object ItemLabel
-				Parent_View 	@15
-				location   	(1162, 2269)
+				Parent_View 	@13
+				location   	(1162, 2789)
 				fill_color 	13434879
 				anchor_loc 	1
 				nlines     	2
@@ -991,9 +1144,9 @@
 			    width      	450
 			    height     	138
 			    autoResize 	TRUE)
-			(object StateView "Normal" "Display current schedule" @16
+			(object StateView "Normal" "Display current schedule" @14
 			    Parent_View 	@1
-			    location   	(1496, 1234)
+			    location   	(1496, 1739)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -1004,8 +1157,8 @@
 				color      	0
 				default_color 	TRUE)
 			    label      	(object ItemLabel
-				Parent_View 	@16
-				location   	(1496, 1223)
+				Parent_View 	@14
+				location   	(1496, 1728)
 				fill_color 	13434879
 				anchor_loc 	1
 				nlines     	2
@@ -1019,20 +1172,20 @@
 			    width      	370
 			    height     	134
 			    autoResize 	TRUE)
-			(object TransView "" @17
+			(object TransView "" @15
 			    stereotype 	TRUE
 			    line_color 	3342489
 			    quidu      	"5A0573AB00A8"
-			    client     	@10
-			    supplier   	@16
+			    client     	@8
+			    supplier   	@14
 			    vertices   	(list Points
-				(1497, 1093)
-				(1496, 1167))
+				(1497, 1612)
+				(1496, 1672))
 			    line_style 	0
 			    x_offset   	FALSE)
-			(object StateView "Normal" "Display course list" @18
+			(object StateView "Normal" "Display course list" @16
 			    Parent_View 	@1
-			    location   	(835, 1317)
+			    location   	(835, 1837)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -1043,8 +1196,8 @@
 				color      	0
 				default_color 	TRUE)
 			    label      	(object ItemLabel
-				Parent_View 	@18
-				location   	(835, 1306)
+				Parent_View 	@16
+				location   	(835, 1826)
 				fill_color 	13434879
 				anchor_loc 	1
 				nlines     	2
@@ -1057,31 +1210,31 @@
 			    quidu      	"5A05736E0103"
 			    height     	134
 			    autoResize 	TRUE)
-			(object TransView "" @19
+			(object TransView "" @17
 			    stereotype 	TRUE
 			    line_color 	3342489
 			    quidu      	"5A0573A40008"
-			    client     	@9
-			    supplier   	@18
+			    client     	@7
+			    supplier   	@16
 			    vertices   	(list Points
-				(834, 1094)
-				(834, 1249))
+				(834, 1614)
+				(834, 1769))
 			    line_style 	0
 			    x_offset   	FALSE)
-			(object TransView "" @20
+			(object TransView "" @18
 			    stereotype 	TRUE
 			    line_color 	3342489
 			    quidu      	"5A0573A7035B"
-			    client     	@18
-			    supplier   	@12
+			    client     	@16
+			    supplier   	@10
 			    vertices   	(list Points
-				(834, 1384)
-				(832, 1540))
+				(834, 1904)
+				(832, 2060))
 			    line_style 	0
 			    x_offset   	FALSE)
-			(object StateView "Normal" "Display available course list" @21
+			(object StateView "Normal" "Display available course list" @19
 			    Parent_View 	@1
-			    location   	(1498, 1462)
+			    location   	(1498, 2084)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -1092,8 +1245,8 @@
 				color      	0
 				default_color 	TRUE)
 			    label      	(object ItemLabel
-				Parent_View 	@21
-				location   	(1498, 1451)
+				Parent_View 	@19
+				location   	(1498, 2073)
 				fill_color 	13434879
 				anchor_loc 	1
 				nlines     	2
@@ -1107,20 +1260,9 @@
 			    width      	456
 			    height     	134
 			    autoResize 	TRUE)
-			(object TransView "" @22
-			    stereotype 	TRUE
-			    line_color 	3342489
-			    quidu      	"5A0573AF011C"
-			    client     	@16
-			    supplier   	@21
-			    vertices   	(list Points
-				(1496, 1301)
-				(1497, 1394))
-			    line_style 	0
-			    x_offset   	FALSE)
-			(object StateView "Normal" "change schedule" @23
+			(object StateView "Normal" "change schedule" @20
 			    Parent_View 	@1
-			    location   	(1502, 1681)
+			    location   	(1502, 2280)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -1131,8 +1273,8 @@
 				color      	0
 				default_color 	TRUE)
 			    label      	(object ItemLabel
-				Parent_View 	@23
-				location   	(1502, 1670)
+				Parent_View 	@20
+				location   	(1502, 2269)
 				fill_color 	13434879
 				anchor_loc 	1
 				nlines     	2
@@ -1145,20 +1287,20 @@
 			    quidu      	"5A0573B9038F"
 			    height     	134
 			    autoResize 	TRUE)
-			(object TransView "" @24
+			(object TransView "" @21
 			    stereotype 	TRUE
 			    line_color 	3342489
 			    quidu      	"5A0573DB02D5"
-			    client     	@21
-			    supplier   	@23
+			    client     	@19
+			    supplier   	@20
 			    vertices   	(list Points
-				(1499, 1529)
-				(1500, 1613))
+				(1499, 2150)
+				(1500, 2213))
 			    line_style 	0
 			    x_offset   	FALSE)
-			(object StateView "Normal" "modify schedule" @25
+			(object StateView "Normal" "modify schedule" @22
 			    Parent_View 	@1
-			    location   	(1504, 1934)
+			    location   	(1504, 2476)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -1169,8 +1311,8 @@
 				color      	0
 				default_color 	TRUE)
 			    label      	(object ItemLabel
-				Parent_View 	@25
-				location   	(1504, 1923)
+				Parent_View 	@22
+				location   	(1504, 2465)
 				fill_color 	13434879
 				anchor_loc 	1
 				nlines     	2
@@ -1183,20 +1325,20 @@
 			    quidu      	"5A0573C90093"
 			    height     	134
 			    autoResize 	TRUE)
-			(object TransView "" @26
+			(object TransView "" @23
 			    stereotype 	TRUE
 			    line_color 	3342489
 			    quidu      	"5A0573DF007B"
-			    client     	@23
-			    supplier   	@25
+			    client     	@20
+			    supplier   	@22
 			    vertices   	(list Points
-				(1502, 1748)
-				(1503, 1866))
+				(1502, 2347)
+				(1503, 2408))
 			    line_style 	0
 			    x_offset   	FALSE)
-			(object StateView "Normal" "Display current available course list" @27
+			(object StateView "Normal" "Display current available course list" @24
 			    Parent_View 	@1
-			    location   	(2183, 1279)
+			    location   	(2183, 1718)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -1207,8 +1349,8 @@
 				color      	0
 				default_color 	TRUE)
 			    label      	(object ItemLabel
-				Parent_View 	@27
-				location   	(2183, 1268)
+				Parent_View 	@24
+				location   	(2183, 1707)
 				fill_color 	13434879
 				anchor_loc 	1
 				nlines     	2
@@ -1222,20 +1364,20 @@
 			    width      	452
 			    height     	134
 			    autoResize 	TRUE)
-			(object TransView "" @28
+			(object TransView "" @25
 			    stereotype 	TRUE
 			    line_color 	3342489
 			    quidu      	"5A0574880353"
-			    client     	@11
-			    supplier   	@27
+			    client     	@9
+			    supplier   	@24
 			    vertices   	(list Points
-				(2182, 1070)
-				(2182, 1211))
+				(2182, 1589)
+				(2182, 1651))
 			    line_style 	0
 			    x_offset   	FALSE)
-			(object StateView "Normal" "Confirm delete" @29
+			(object StateView "Normal" "Confirm delete" @26
 			    Parent_View 	@1
-			    location   	(2178, 1498)
+			    location   	(2179, 2071)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -1246,8 +1388,8 @@
 				color      	0
 				default_color 	TRUE)
 			    label      	(object ItemLabel
-				Parent_View 	@29
-				location   	(2178, 1487)
+				Parent_View 	@26
+				location   	(2179, 2060)
 				fill_color 	13434879
 				anchor_loc 	1
 				nlines     	2
@@ -1260,26 +1402,15 @@
 			    quidu      	"5A057455005D"
 			    height     	134
 			    autoResize 	TRUE)
-			(object TransView "" @30
-			    stereotype 	TRUE
-			    line_color 	3342489
-			    quidu      	"5A05748D0139"
-			    client     	@27
-			    supplier   	@29
-			    vertices   	(list Points
-				(2181, 1346)
-				(2179, 1430))
-			    line_style 	0
-			    x_offset   	FALSE)
-			(object DecisionView "$UNNAMED$41" @31
+			(object DecisionView "$UNNAMED$41" @27
 			    Parent_View 	@1
-			    location   	(2176, 1683)
+			    location   	(2176, 2250)
 			    icon_style 	"Icon"
 			    line_color 	3342489
 			    fill_color 	13434879
 			    quidu      	"5A057476023F"
 			    autoResize 	TRUE)
-			(object TransView "" @32
+			(object TransView "" @28
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -1289,9 +1420,9 @@
 				strike     	FALSE
 				color      	0
 				default_color 	TRUE)
-			    label      	(object SegLabel @33
-				Parent_View 	@32
-				location   	(2246, 1602)
+			    label      	(object SegLabel @29
+				Parent_View 	@28
+				location   	(2246, 2173)
 				font       	(object Font
 				    size       	10
 				    face       	"Arial"
@@ -1312,58 +1443,16 @@
 			    stereotype 	TRUE
 			    line_color 	3342489
 			    quidu      	"5A057491026F"
-			    client     	@29
-			    supplier   	@31
-			    vertices   	(list Points
-				(2177, 1565)
-				(2176, 1646))
-			    line_style 	0
-			    x_offset   	FALSE)
-			(object TransView "" @34
-			    font       	(object Font
-				size       	10
-				face       	"Arial"
-				bold       	FALSE
-				italics    	FALSE
-				underline  	FALSE
-				strike     	FALSE
-				color      	0
-				default_color 	TRUE)
-			    label      	(object SegLabel @35
-				Parent_View 	@34
-				location   	(2431, 1640)
-				font       	(object Font
-				    size       	10
-				    face       	"Arial"
-				    bold       	FALSE
-				    italics    	FALSE
-				    underline  	FALSE
-				    strike     	FALSE
-				    color      	0
-				    default_color 	TRUE)
-				anchor_loc 	1
-				nlines     	1
-				max_width  	108
-				justify    	0
-				label      	"[ No ]"
-				pctDist    	0.186720
-				height     	44
-				orientation 	0)
-			    stereotype 	TRUE
-			    line_color 	3342489
-			    quidu      	"5A0574A5033D"
-			    client     	@31
+			    client     	@26
 			    supplier   	@27
 			    vertices   	(list Points
-				(2251, 1683)
-				(2617, 1682)
-				(2617, 1286)
-				(2409, 1282))
+				(2177, 2138)
+				(2176, 2213))
 			    line_style 	0
 			    x_offset   	FALSE)
-			(object StateView "Normal" "System delete a schedule" @36
+			(object StateView "Normal" "System delete a schedule" @30
 			    Parent_View 	@1
-			    location   	(2177, 1891)
+			    location   	(2177, 2411)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -1374,8 +1463,8 @@
 				color      	0
 				default_color 	TRUE)
 			    label      	(object ItemLabel
-				Parent_View 	@36
-				location   	(2177, 1880)
+				Parent_View 	@30
+				location   	(2177, 2400)
 				fill_color 	13434879
 				anchor_loc 	1
 				nlines     	2
@@ -1389,20 +1478,9 @@
 			    width      	368
 			    height     	134
 			    autoResize 	TRUE)
-			(object TransView "" @37
-			    stereotype 	TRUE
-			    line_color 	3342489
-			    quidu      	"5A0575A902C8"
-			    client     	@31
-			    supplier   	@36
-			    vertices   	(list Points
-				(2176, 1720)
-				(2176, 1823))
-			    line_style 	0
-			    x_offset   	FALSE)
-			(object StateView "Normal" "system check" @38
+			(object StateView "Normal" "system check" @31
 			    Parent_View 	@1
-			    location   	(870, 2634)
+			    location   	(870, 3154)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -1413,8 +1491,8 @@
 				color      	0
 				default_color 	TRUE)
 			    label      	(object ItemLabel
-				Parent_View 	@38
-				location   	(870, 2623)
+				Parent_View 	@31
+				location   	(870, 3143)
 				fill_color 	13434879
 				anchor_loc 	1
 				nlines     	2
@@ -1427,9 +1505,9 @@
 			    quidu      	"5A0575DB0102"
 			    height     	134
 			    autoResize 	TRUE)
-			(object StateView "Normal" "Display Main Frame" @39
+			(object StateView "Normal" "Display Main Frame" @32
 			    Parent_View 	@1
-			    location   	(1170, 611)
+			    location   	(1171, 1131)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -1440,8 +1518,8 @@
 				color      	0
 				default_color 	TRUE)
 			    label      	(object ItemLabel
-				Parent_View 	@39
-				location   	(1170, 600)
+				Parent_View 	@32
+				location   	(1171, 1120)
 				fill_color 	13434879
 				anchor_loc 	1
 				nlines     	2
@@ -1455,7 +1533,33 @@
 			    width      	350
 			    height     	134
 			    autoResize 	TRUE)
-			(object TransView "" @40
+			(object DecisionView "$UNNAMED$45" @33
+			    Parent_View 	@1
+			    location   	(868, 3349)
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"5A0577890027"
+			    autoResize 	TRUE)
+			(object TransView "" @34
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5A057790035E"
+			    client     	@31
+			    supplier   	@33
+			    vertices   	(list Points
+				(869, 3221)
+				(868, 3312))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object StateView "EndState" "$UNNAMED$46" @35
+			    Parent_View 	@1
+			    location   	(523, 3351)
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"5A05780400B6"
+			    autoResize 	TRUE)
+			(object TransView "" @36
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -1465,9 +1569,9 @@
 				strike     	FALSE
 				color      	0
 				default_color 	TRUE)
-			    label      	(object SegLabel @41
-				Parent_View 	@40
-				location   	(1288, 490)
+			    label      	(object SegLabel @37
+				Parent_View 	@36
+				location   	(692, 3311)
 				font       	(object Font
 				    size       	10
 				    face       	"Arial"
@@ -1482,52 +1586,22 @@
 				max_width  	450
 				justify    	0
 				label      	"[Succeed]"
-				pctDist    	0.469388
-				height     	118
-				orientation 	0)
+				pctDist    	0.443845
+				height     	39
+				orientation 	1)
 			    stereotype 	TRUE
 			    line_color 	3342489
-			    quidu      	"5A05768E01B7"
-			    client     	@5
-			    supplier   	@39
+			    quidu      	"5A057BC80313"
+			    client     	@33
+			    supplier   	@35
 			    vertices   	(list Points
-				(1170, 443)
-				(1170, 544))
+				(793, 3349)
+				(565, 3350))
 			    line_style 	0
 			    x_offset   	FALSE)
-			(object TransView "" @42
-			    stereotype 	TRUE
-			    line_color 	3342489
-			    quidu      	"5A05785A0004"
-			    client     	@36
-			    supplier   	@39
-			    vertices   	(list Points
-				(2361, 1891)
-				(2751, 1891)
-				(2751, 613)
-				(1345, 611))
-			    line_style 	0
-			    x_offset   	FALSE)
-			(object DecisionView "$UNNAMED$45" @43
+			(object StateView "Normal" "System save the schedule" @38
 			    Parent_View 	@1
-			    location   	(867, 2829)
-			    icon_style 	"Icon"
-			    line_color 	3342489
-			    fill_color 	13434879
-			    quidu      	"5A0577890027"
-			    autoResize 	TRUE)
-			(object TransView "" @44
-			    stereotype 	TRUE
-			    line_color 	3342489
-			    quidu      	"5A057790035E"
-			    client     	@38
-			    supplier   	@43
-			    vertices   	(list Points
-				(868, 2700)
-				(867, 2792))
-			    line_style 	0
-			    x_offset   	FALSE)
-			(object TransView "" @45
+			    location   	(1453, 3378)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -1537,9 +1611,463 @@
 				strike     	FALSE
 				color      	0
 				default_color 	TRUE)
-			    label      	(object SegLabel @46
-				Parent_View 	@45
-				location   	(620, 2787)
+			    label      	(object ItemLabel
+				Parent_View 	@38
+				location   	(1453, 3366)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	298
+				justify    	0
+				label      	"System save the schedule")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"5A057A180357"
+			    width      	394
+			    height     	136
+			    autoResize 	TRUE)
+			(object StateView "Normal" "Change selected courses condition" @39
+			    Parent_View 	@1
+			    location   	(1452, 3145)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@39
+				location   	(1452, 3134)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	336
+				justify    	0
+				label      	"Change selected courses condition")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"5A057A5503DE"
+			    width      	432
+			    height     	134
+			    autoResize 	TRUE)
+			(object TransView "" @40
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5A057ABB039F"
+			    client     	@39
+			    supplier   	@38
+			    vertices   	(list Points
+				(1452, 3212)
+				(1452, 3309))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object StateView "EndState" "$UNNAMED$47" @41
+			    Parent_View 	@1
+			    location   	(1454, 3568)
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"5A057A6E036B"
+			    autoResize 	TRUE)
+			(object TransView "" @42
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5A057ABF02F0"
+			    client     	@38
+			    supplier   	@41
+			    vertices   	(list Points
+				(1453, 3446)
+				(1453, 3525))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object DecisionView "$UNNAMED$50" @43
+			    Parent_View 	@1
+			    location   	(1498, 1906)
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"5A057CFB02C5"
+			    autoResize 	TRUE)
+			(object TransView "" @44
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5A057D0702DC"
+			    client     	@14
+			    supplier   	@43
+			    vertices   	(list Points
+				(1496, 1806)
+				(1498, 1869))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object DecisionView "$UNNAMED$51" @45
+			    Parent_View 	@1
+			    location   	(2181, 1895)
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"5A057E7D03E0"
+			    autoResize 	TRUE)
+			(object TransView "" @46
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5A057E850149"
+			    client     	@24
+			    supplier   	@45
+			    vertices   	(list Points
+				(2182, 1785)
+				(2181, 1858))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object StateView "Normal" "Display error message" @47
+			    Parent_View 	@1
+			    location   	(1671, 239)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@47
+				location   	(1671, 228)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	272
+				justify    	0
+				label      	"Display error message")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"5A057EF30228"
+			    width      	368
+			    height     	134
+			    autoResize 	TRUE)
+			(object TransView "" @48
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5A057F1301BA"
+			    client     	@47
+			    supplier   	@3
+			    vertices   	(list Points
+				(1487, 240)
+				(1320, 241))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object StateView "Normal" "Compare current time with deadline" @49
+			    Parent_View 	@1
+			    location   	(1174, 680)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@49
+				location   	(1174, 669)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	368
+				justify    	0
+				label      	"Compare current time with deadline")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"5A0580BC00D6"
+			    width      	464
+			    height     	134
+			    autoResize 	TRUE)
+			(object DecisionView "$UNNAMED$52" @50
+			    Parent_View 	@1
+			    location   	(1172, 892)
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"5A0580F30292"
+			    autoResize 	TRUE)
+			(object SynchronizationView "$UNNAMED$42" @51
+			    location   	(1173, 1325)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @52
+				Parent_View 	@51
+				location   	(1335, 1325)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				hidden     	TRUE
+				nlines     	1
+				max_width  	300
+				justify    	1
+				label      	""
+				pctDist    	1.000000
+				height     	0
+				orientation 	1)
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"5A05767B0323"
+			    autoResize 	TRUE
+			    sync_flow_direction 	1
+			    sync_is_horizontal 	TRUE)
+			(object TransView "" @53
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5A05769302BA"
+			    client     	@32
+			    supplier   	@51
+			    vertices   	(list Points
+				(1171, 1197)
+				(1172, 1315))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @54
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5A05769E001B"
+			    client     	@51
+			    supplier   	@7
+			    vertices   	(list Points
+				(1156, 1334)
+				(940, 1472))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @55
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5A0576A20170"
+			    client     	@51
+			    supplier   	@8
+			    vertices   	(list Points
+				(1188, 1334)
+				(1385, 1463))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @56
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5A0576A60395"
+			    client     	@51
+			    supplier   	@9
+			    vertices   	(list Points
+				(1220, 1334)
+				(1989, 1483))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object SynchronizationView "$UNNAMED$43" @57
+			    location   	(1161, 2635)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @58
+				Parent_View 	@57
+				location   	(1323, 2564)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	TRUE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				hidden     	TRUE
+				nlines     	2
+				max_width  	300
+				justify    	1
+				label      	""
+				pctDist    	1.000000
+				height     	0
+				orientation 	0)
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"5A05774400B2"
+			    autoResize 	TRUE
+			    sync_flow_direction 	1
+			    sync_is_horizontal 	TRUE)
+			(object TransView "" @59
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5A05774C03E5"
+			    client     	@57
+			    supplier   	@13
+			    vertices   	(list Points
+				(1161, 2644)
+				(1161, 2732))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @60
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5A05775B0085"
+			    client     	@11
+			    supplier   	@57
+			    vertices   	(list Points
+				(921, 2462)
+				(1148, 2625))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @61
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5A05775F00A2"
+			    client     	@22
+			    supplier   	@57
+			    vertices   	(list Points
+				(1354, 2545)
+				(1178, 2625))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object SynchronizationView "$UNNAMED$48" @62
+			    location   	(1164, 2971)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @63
+				Parent_View 	@62
+				location   	(1326, 2900)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	TRUE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				hidden     	TRUE
+				nlines     	2
+				max_width  	300
+				justify    	1
+				label      	""
+				pctDist    	1.000000
+				height     	0
+				orientation 	0)
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"5A057B0D0285"
+			    autoResize 	TRUE
+			    sync_flow_direction 	1
+			    sync_is_horizontal 	TRUE)
+			(object TransView "" @64
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5A057B1902E2"
+			    client     	@13
+			    supplier   	@62
+			    vertices   	(list Points
+				(1162, 2870)
+				(1163, 2961))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @65
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5A057B1E03CB"
+			    client     	@62
+			    supplier   	@31
+			    vertices   	(list Points
+				(1147, 2980)
+				(976, 3087))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @66
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5A057B25037F"
+			    client     	@62
+			    supplier   	@39
+			    vertices   	(list Points
+				(1180, 2980)
+				(1340, 3077))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object SynchronizationView "$UNNAMED$49" @67
+			    location   	(868, 3500)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @68
+				Parent_View 	@67
+				location   	(1030, 3429)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	TRUE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				hidden     	TRUE
+				nlines     	2
+				max_width  	300
+				justify    	1
+				label      	""
+				pctDist    	1.000000
+				height     	0
+				orientation 	0)
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"5A057BE901C1"
+			    autoResize 	TRUE
+			    sync_flow_direction 	1
+			    sync_is_horizontal 	TRUE)
+			(object TransView "" @69
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @70
+				Parent_View 	@69
+				location   	(935, 3431)
 				font       	(object Font
 				    size       	10
 				    face       	"Arial"
@@ -1554,29 +2082,59 @@
 				max_width  	450
 				justify    	0
 				label      	"[Fail]"
-				pctDist    	0.054077
-				height     	43
-				orientation 	1)
+				pctDist    	0.442308
+				height     	67
+				orientation 	0)
 			    stereotype 	TRUE
 			    line_color 	3342489
-			    quidu      	"5A0577AF02A0"
-			    client     	@43
-			    supplier   	@39
+			    quidu      	"5A057BF103B8"
+			    client     	@33
+			    supplier   	@67
 			    vertices   	(list Points
-				(792, 2829)
-				(369, 2829)
-				(366, 686)
-				(995, 627))
+				(868, 3386)
+				(868, 3490))
 			    line_style 	0
 			    x_offset   	FALSE)
-			(object StateView "EndState" "$UNNAMED$46" @47
-			    Parent_View 	@1
-			    location   	(868, 3025)
-			    icon_style 	"Icon"
+			(object TransView "" @71
+			    stereotype 	TRUE
 			    line_color 	3342489
-			    quidu      	"5A05780400B6"
-			    autoResize 	TRUE)
-			(object TransView "" @48
+			    quidu      	"5A057C120203"
+			    client     	@67
+			    supplier   	@39
+			    vertices   	(list Points
+				(873, 3509)
+				(962, 3638)
+				(1137, 3638)
+				(1137, 3141)
+				(1236, 3141))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @72
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5A057C38015E"
+			    client     	@67
+			    supplier   	@32
+			    vertices   	(list Points
+				(861, 3509)
+				(775, 3638)
+				(356, 3638)
+				(356, 1132)
+				(996, 1131))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @73
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5A0581030266"
+			    client     	@49
+			    supplier   	@50
+			    vertices   	(list Points
+				(1173, 747)
+				(1172, 855))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @74
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -1586,9 +2144,238 @@
 				strike     	FALSE
 				color      	0
 				default_color 	TRUE)
-			    label      	(object SegLabel @49
-				Parent_View 	@48
-				location   	(989, 2915)
+			    label      	(object SegLabel @75
+				Parent_View 	@74
+				location   	(1439, 440)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	450
+				justify    	0
+				label      	"[Fail]"
+				pctDist    	0.329412
+				height     	37
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5A057F0A0015"
+			    client     	@5
+			    supplier   	@47
+			    vertices   	(list Points
+				(1245, 476)
+				(1668, 475)
+				(1670, 306))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @76
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @77
+				Parent_View 	@76
+				location   	(1282, 560)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	450
+				justify    	0
+				label      	"[Succeed]"
+				pctDist    	0.492203
+				height     	111
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5A0580FF024A"
+			    client     	@5
+			    supplier   	@49
+			    vertices   	(list Points
+				(1170, 513)
+				(1172, 613))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @78
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @79
+				Parent_View 	@78
+				location   	(2288, 1961)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	450
+				justify    	0
+				label      	"[Succeed]"
+				pctDist    	0.379782
+				height     	108
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5A057E8B0166"
+			    client     	@45
+			    supplier   	@26
+			    vertices   	(list Points
+				(2181, 1932)
+				(2179, 2003))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @80
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @81
+				Parent_View 	@80
+				location   	(2428, 1858)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	12
+				justify    	0
+				label      	"[Fail]"
+				pctDist    	0.076062
+				height     	39
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5A057E9D01D6"
+			    client     	@45
+			    supplier   	@32
+			    vertices   	(list Points
+				(2256, 1895)
+				(2553, 1897)
+				(2553, 1131)
+				(1346, 1131))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @82
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5A0575A902C8"
+			    client     	@27
+			    supplier   	@30
+			    vertices   	(list Points
+				(2176, 2287)
+				(2176, 2344))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @83
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @84
+				Parent_View 	@83
+				location   	(2457, 2209)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	450
+				justify    	0
+				label      	"[No]"
+				pctDist    	0.073913
+				height     	42
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5A05800E0330"
+			    client     	@27
+			    supplier   	@32
+			    vertices   	(list Points
+				(2251, 2250)
+				(2634, 2250)
+				(2634, 1131)
+				(1346, 1131))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @85
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5A05785A0004"
+			    client     	@30
+			    supplier   	@32
+			    vertices   	(list Points
+				(2361, 2409)
+				(2719, 2408)
+				(2719, 1131)
+				(1346, 1131))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @86
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @87
+				Parent_View 	@86
+				location   	(1384, 1969)
 				font       	(object Font
 				    size       	10
 				    face       	"Arial"
@@ -1603,301 +2390,142 @@
 				max_width  	217
 				justify    	0
 				label      	"[ Succeed ]"
-				pctDist    	0.431947
-				height     	122
+				pctDist    	0.364865
+				height     	115
+				orientation 	1)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5A057D0E0230"
+			    client     	@43
+			    supplier   	@19
+			    vertices   	(list Points
+				(1498, 1943)
+				(1498, 2017))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @88
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @89
+				Parent_View 	@88
+				location   	(1685, 1874)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	450
+				justify    	0
+				label      	"[Fail]"
+				pctDist    	0.022681
+				height     	32
 				orientation 	0)
 			    stereotype 	TRUE
 			    line_color 	3342489
-			    quidu      	"5A05780B02CC"
+			    quidu      	"5A057DA102C1"
 			    client     	@43
+			    supplier   	@32
+			    vertices   	(list Points
+				(1573, 1906)
+				(1825, 1903)
+				(1825, 2643)
+				(2806, 2643)
+				(2806, 1131)
+				(1346, 1131))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @90
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @91
+				Parent_View 	@90
+				location   	(1257, 998)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	450
+				justify    	0
+				label      	"[Within]"
+				pctDist    	0.501673
+				height     	86
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5A05810803B2"
+			    client     	@50
+			    supplier   	@32
+			    vertices   	(list Points
+				(1172, 929)
+				(1171, 1064))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @92
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @93
+				Parent_View 	@92
+				location   	(1455, 857)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	450
+				justify    	0
+				label      	"[Over]"
+				pctDist    	0.205855
+				height     	36
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"5A0581120015"
+			    client     	@50
 			    supplier   	@47
 			    vertices   	(list Points
-				(867, 2866)
-				(867, 2982))
-			    line_style 	0
-			    x_offset   	FALSE)
-			(object StateView "Normal" "System save the schedule" @50
-			    Parent_View 	@1
-			    location   	(1453, 2858)
-			    font       	(object Font
-				size       	10
-				face       	"Arial"
-				bold       	FALSE
-				italics    	FALSE
-				underline  	FALSE
-				strike     	FALSE
-				color      	0
-				default_color 	TRUE)
-			    label      	(object ItemLabel
-				Parent_View 	@50
-				location   	(1453, 2846)
-				fill_color 	13434879
-				anchor_loc 	1
-				nlines     	2
-				max_width  	298
-				justify    	0
-				label      	"System save the schedule")
-			    icon_style 	"Icon"
-			    line_color 	3342489
-			    fill_color 	13434879
-			    quidu      	"5A057A180357"
-			    width      	394
-			    height     	136
-			    autoResize 	TRUE)
-			(object StateView "Normal" "Change selected courses condition" @51
-			    Parent_View 	@1
-			    location   	(1452, 2625)
-			    font       	(object Font
-				size       	10
-				face       	"Arial"
-				bold       	FALSE
-				italics    	FALSE
-				underline  	FALSE
-				strike     	FALSE
-				color      	0
-				default_color 	TRUE)
-			    label      	(object ItemLabel
-				Parent_View 	@51
-				location   	(1452, 2614)
-				fill_color 	13434879
-				anchor_loc 	1
-				nlines     	2
-				max_width  	336
-				justify    	0
-				label      	"Change selected courses condition")
-			    icon_style 	"Icon"
-			    line_color 	3342489
-			    fill_color 	13434879
-			    quidu      	"5A057A5503DE"
-			    width      	432
-			    height     	134
-			    autoResize 	TRUE)
-			(object StateView "EndState" "$UNNAMED$47" @52
-			    Parent_View 	@1
-			    location   	(1454, 3048)
-			    icon_style 	"Icon"
-			    line_color 	3342489
-			    quidu      	"5A057A6E036B"
-			    autoResize 	TRUE)
-			(object SynchronizationView "$UNNAMED$42" @53
-			    location   	(1173, 805)
-			    font       	(object Font
-				size       	10
-				face       	"Arial"
-				bold       	FALSE
-				italics    	FALSE
-				underline  	FALSE
-				strike     	FALSE
-				color      	0
-				default_color 	TRUE)
-			    icon_style 	"Icon"
-			    line_color 	3342489
-			    quidu      	"5A05767B0323"
-			    autoResize 	TRUE
-			    sync_flow_direction 	1
-			    sync_is_horizontal 	TRUE)
-			(object TransView "" @54
-			    stereotype 	TRUE
-			    line_color 	3342489
-			    quidu      	"5A05769302BA"
-			    client     	@39
-			    supplier   	@53
-			    vertices   	(list Points
-				(1171, 678)
-				(1172, 795))
-			    line_style 	0
-			    x_offset   	FALSE)
-			(object TransView "" @55
-			    stereotype 	TRUE
-			    line_color 	3342489
-			    quidu      	"5A05769E001B"
-			    client     	@53
-			    supplier   	@9
-			    vertices   	(list Points
-				(1156, 814)
-				(942, 953))
-			    line_style 	0
-			    x_offset   	FALSE)
-			(object TransView "" @56
-			    stereotype 	TRUE
-			    line_color 	3342489
-			    quidu      	"5A0576A20170"
-			    client     	@53
-			    supplier   	@10
-			    vertices   	(list Points
-				(1188, 814)
-				(1385, 942))
-			    line_style 	0
-			    x_offset   	FALSE)
-			(object TransView "" @57
-			    stereotype 	TRUE
-			    line_color 	3342489
-			    quidu      	"5A0576A60395"
-			    client     	@53
-			    supplier   	@11
-			    vertices   	(list Points
-				(1220, 814)
-				(1989, 963))
-			    line_style 	0
-			    x_offset   	FALSE)
-			(object SynchronizationView "$UNNAMED$43" @58
-			    location   	(1161, 2115)
-			    font       	(object Font
-				size       	10
-				face       	"Arial"
-				bold       	FALSE
-				italics    	FALSE
-				underline  	FALSE
-				strike     	FALSE
-				color      	0
-				default_color 	TRUE)
-			    label      	(object SegLabel @59
-				Parent_View 	@58
-				location   	(1323, 2044)
-				font       	(object Font
-				    size       	10
-				    face       	"Arial"
-				    bold       	FALSE
-				    italics    	TRUE
-				    underline  	FALSE
-				    strike     	FALSE
-				    color      	0
-				    default_color 	TRUE)
-				nlines     	2
-				max_width  	300
-				justify    	1
-				label      	""
-				pctDist    	1.000000
-				height     	0
-				orientation 	0)
-			    icon_style 	"Icon"
-			    line_color 	3342489
-			    quidu      	"5A05774400B2"
-			    autoResize 	TRUE
-			    sync_flow_direction 	1
-			    sync_is_horizontal 	TRUE)
-			(object TransView "" @60
-			    stereotype 	TRUE
-			    line_color 	3342489
-			    quidu      	"5A05774C03E5"
-			    client     	@58
-			    supplier   	@15
-			    vertices   	(list Points
-				(1161, 2124)
-				(1161, 2212))
-			    line_style 	0
-			    x_offset   	FALSE)
-			(object TransView "" @61
-			    stereotype 	TRUE
-			    line_color 	3342489
-			    quidu      	"5A05775B0085"
-			    client     	@13
-			    supplier   	@58
-			    vertices   	(list Points
-				(921, 1942)
-				(1148, 2105))
-			    line_style 	0
-			    x_offset   	FALSE)
-			(object TransView "" @62
-			    stereotype 	TRUE
-			    line_color 	3342489
-			    quidu      	"5A05775F00A2"
-			    client     	@25
-			    supplier   	@58
-			    vertices   	(list Points
-				(1377, 2001)
-				(1175, 2105))
-			    line_style 	0
-			    x_offset   	FALSE)
-			(object TransView "" @63
-			    stereotype 	TRUE
-			    line_color 	3342489
-			    quidu      	"5A057ABB039F"
-			    client     	@51
-			    supplier   	@50
-			    vertices   	(list Points
-				(1452, 2692)
-				(1452, 2789))
-			    line_style 	0
-			    x_offset   	FALSE)
-			(object TransView "" @64
-			    stereotype 	TRUE
-			    line_color 	3342489
-			    quidu      	"5A057ABF02F0"
-			    client     	@50
-			    supplier   	@52
-			    vertices   	(list Points
-				(1453, 2926)
-				(1453, 3005))
-			    line_style 	0
-			    x_offset   	FALSE)
-			(object SynchronizationView "$UNNAMED$48" @65
-			    location   	(1164, 2451)
-			    font       	(object Font
-				size       	10
-				face       	"Arial"
-				bold       	FALSE
-				italics    	FALSE
-				underline  	FALSE
-				strike     	FALSE
-				color      	0
-				default_color 	TRUE)
-			    label      	(object SegLabel @66
-				Parent_View 	@65
-				location   	(1326, 2380)
-				font       	(object Font
-				    size       	10
-				    face       	"Arial"
-				    bold       	FALSE
-				    italics    	TRUE
-				    underline  	FALSE
-				    strike     	FALSE
-				    color      	0
-				    default_color 	TRUE)
-				nlines     	2
-				max_width  	300
-				justify    	1
-				label      	""
-				pctDist    	1.000000
-				height     	0
-				orientation 	0)
-			    icon_style 	"Icon"
-			    line_color 	3342489
-			    quidu      	"5A057B0D0285"
-			    autoResize 	TRUE
-			    sync_flow_direction 	1
-			    sync_is_horizontal 	TRUE)
-			(object TransView "" @67
-			    stereotype 	TRUE
-			    line_color 	3342489
-			    quidu      	"5A057B1902E2"
-			    client     	@15
-			    supplier   	@65
-			    vertices   	(list Points
-				(1162, 2350)
-				(1163, 2441))
-			    line_style 	0
-			    x_offset   	FALSE)
-			(object TransView "" @68
-			    stereotype 	TRUE
-			    line_color 	3342489
-			    quidu      	"5A057B1E03CB"
-			    client     	@65
-			    supplier   	@38
-			    vertices   	(list Points
-				(1147, 2460)
-				(976, 2567))
-			    line_style 	0
-			    x_offset   	FALSE)
-			(object TransView "" @69
-			    stereotype 	TRUE
-			    line_color 	3342489
-			    quidu      	"5A057B25037F"
-			    client     	@65
-			    supplier   	@51
-			    vertices   	(list Points
-				(1180, 2460)
-				(1340, 2557))
+				(1247, 892)
+				(1672, 891)
+				(1671, 306))
 			    line_style 	0
 			    x_offset   	FALSE)))))
 	logical_presentations 	(list unit_reference_list
@@ -1907,11 +2535,11 @@
 		zoom       	100
 		max_height 	28350
 		max_width  	21600
-		origin_x   	0
+		origin_x   	13
 		origin_y   	372
 		items      	(list diagram_item_list
-		    (object UseCaseView "Use Case View::LogIn" @70
-			location   	(517, 904)
+		    (object UseCaseView "Use Case View::EnrollCourse" @94
+			location   	(1946, 734)
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -1922,32 +2550,8 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@70
-			    location   	(517, 1042)
-			    anchor_loc 	1
-			    nlines     	2
-			    max_width  	630
-			    justify    	0
-			    label      	"LogIn")
-			icon_style 	"Icon"
-			line_color 	3342489
-			fill_color 	13434879
-			quidu      	"5A05680B01FF"
-			height     	118)
-		    (object UseCaseView "Use Case View::EnrollCourse" @71
-			location   	(1961, 563)
-			font       	(object Font
-			    size       	10
-			    face       	"Arial"
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			label      	(object ItemLabel
-			    Parent_View 	@71
-			    location   	(1961, 701)
+			    Parent_View 	@94
+			    location   	(1946, 872)
 			    anchor_loc 	1
 			    nlines     	2
 			    max_width  	630
@@ -1958,8 +2562,8 @@
 			fill_color 	13434879
 			quidu      	"5A056927003A"
 			height     	118)
-		    (object UseCaseView "Use Case View::CreateSchedule" @72
-			location   	(1460, 540)
+		    (object UseCaseView "Use Case View::CheckScore" @95
+			location   	(1949, 1000)
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -1970,67 +2574,19 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@72
-			    location   	(1460, 678)
+			    Parent_View 	@95
+			    location   	(1949, 1138)
 			    anchor_loc 	1
 			    nlines     	2
 			    max_width  	630
 			    justify    	0
-			    label      	"CreateSchedule")
+			    label      	"CheckScore")
 			icon_style 	"Icon"
 			line_color 	3342489
 			fill_color 	13434879
-			quidu      	"5A05698600F7"
+			quidu      	"5A056A620262"
 			height     	118)
-		    (object UseCaseView "Use Case View::UpdateSchedule" @73
-			location   	(1153, 538)
-			font       	(object Font
-			    size       	10
-			    face       	"Arial"
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			label      	(object ItemLabel
-			    Parent_View 	@73
-			    location   	(1153, 676)
-			    anchor_loc 	1
-			    nlines     	2
-			    max_width  	630
-			    justify    	0
-			    label      	"UpdateSchedule")
-			icon_style 	"Icon"
-			line_color 	3342489
-			fill_color 	13434879
-			quidu      	"5A056995026F"
-			height     	118)
-		    (object UseCaseView "Use Case View::DeleteSchedule" @74
-			location   	(813, 537)
-			font       	(object Font
-			    size       	10
-			    face       	"Arial"
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			label      	(object ItemLabel
-			    Parent_View 	@74
-			    location   	(813, 675)
-			    anchor_loc 	1
-			    nlines     	2
-			    max_width  	630
-			    justify    	0
-			    label      	"DeleteSchedule")
-			icon_style 	"Icon"
-			line_color 	3342489
-			fill_color 	13434879
-			quidu      	"5A0569AC0327"
-			height     	118)
-		    (object ClassView "Class" "Use Case View::Student" @75
+		    (object ClassView "Class" "Use Case View::学生" @96
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -2045,60 +2601,21 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@75
+			    Parent_View 	@96
 			    location   	(1210, 1089)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	362
+			    max_width  	325
 			    justify    	0
-			    label      	"Student")
+			    label      	"学生")
 			icon       	"Actor"
 			icon_style 	"Icon"
 			line_color 	3342489
 			quidu      	"5A0567B10262"
 			annotation 	8
 			autoResize 	TRUE)
-		    (object AssociationViewNew "$UNNAMED$3" @76
-			location   	(888, 914)
-			font       	(object Font
-			    size       	10
-			    face       	"Arial"
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			stereotype 	TRUE
-			line_color 	3342489
-			quidu      	"5A05683D01DC"
-			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$4" @77
-				Parent_View 	@76
-				location   	(608, 608)
-				stereotype 	TRUE
-				line_color 	3342489
-				quidu      	"5A056841006D"
-				client     	@76
-				supplier   	@70
-				vertices   	(list Points
-				    (888, 914)
-				    (625, 905))
-				line_style 	0)
-			    (object RoleView "$UNNAMED$5" @78
-				Parent_View 	@76
-				location   	(608, 608)
-				stereotype 	TRUE
-				line_color 	3342489
-				quidu      	"5A056841006F"
-				client     	@76
-				supplier   	@75
-				vertices   	(list Points
-				    (888, 914)
-				    (1151, 924))
-				line_style 	0)))
-		    (object AssociationViewNew "$UNNAMED$12" @79
-			location   	(1553, 758)
+		    (object AssociationViewNew "$UNNAMED$12" @97
+			location   	(1550, 835)
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -2112,173 +2629,32 @@
 			line_color 	3342489
 			quidu      	"5A05697E01F2"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$13" @80
-				Parent_View 	@79
-				location   	(448, 249)
+			    (object RoleView "$UNNAMED$13" @98
+				Parent_View 	@97
+				location   	(445, 326)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5A05698002ED"
-				client     	@79
-				supplier   	@71
+				client     	@97
+				supplier   	@94
 				vertices   	(list Points
-				    (1553, 758)
-				    (1840, 620))
+				    (1550, 835)
+				    (1834, 760))
 				line_style 	0)
-			    (object RoleView "$UNNAMED$14" @81
-				Parent_View 	@79
-				location   	(448, 249)
+			    (object RoleView "$UNNAMED$14" @99
+				Parent_View 	@97
+				location   	(445, 326)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5A05698002EF"
-				client     	@79
-				supplier   	@75
+				client     	@97
+				supplier   	@96
 				vertices   	(list Points
-				    (1553, 758)
-				    (1267, 897))
+				    (1550, 835)
+				    (1267, 910))
 				line_style 	0)))
-		    (object AssociationViewNew "$UNNAMED$15" @82
-			location   	(1304, 775)
-			font       	(object Font
-			    size       	10
-			    face       	"Arial"
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			stereotype 	TRUE
-			line_color 	3342489
-			quidu      	"5A056A0003B9"
-			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$16" @83
-				Parent_View 	@82
-				location   	(199, 266)
-				stereotype 	TRUE
-				line_color 	3342489
-				quidu      	"5A056A020109"
-				client     	@82
-				supplier   	@72
-				vertices   	(list Points
-				    (1304, 775)
-				    (1351, 703))
-				line_style 	0)
-			    (object RoleView "$UNNAMED$17" @84
-				Parent_View 	@82
-				location   	(199, 266)
-				stereotype 	TRUE
-				line_color 	3342489
-				quidu      	"5A056A02010B"
-				client     	@82
-				supplier   	@75
-				vertices   	(list Points
-				    (1304, 775)
-				    (1258, 847))
-				line_style 	0)))
-		    (object AssociationViewNew "$UNNAMED$18" @85
-			location   	(1184, 774)
-			font       	(object Font
-			    size       	10
-			    face       	"Arial"
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			stereotype 	TRUE
-			line_color 	3342489
-			quidu      	"5A056A050282"
-			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$19" @86
-				Parent_View 	@85
-				location   	(79, 265)
-				stereotype 	TRUE
-				line_color 	3342489
-				quidu      	"5A056A060179"
-				client     	@85
-				supplier   	@73
-				vertices   	(list Points
-				    (1184, 774)
-				    (1174, 701))
-				line_style 	0)
-			    (object RoleView "$UNNAMED$20" @87
-				Parent_View 	@85
-				location   	(79, 265)
-				stereotype 	TRUE
-				line_color 	3342489
-				quidu      	"5A056A06017B"
-				client     	@85
-				supplier   	@75
-				vertices   	(list Points
-				    (1184, 774)
-				    (1195, 847))
-				line_style 	0)))
-		    (object AssociationViewNew "$UNNAMED$21" @88
-			location   	(1055, 775)
-			font       	(object Font
-			    size       	10
-			    face       	"Arial"
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			stereotype 	TRUE
-			line_color 	3342489
-			quidu      	"5A056A090221"
-			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$22" @89
-				Parent_View 	@88
-				location   	(-50, 266)
-				stereotype 	TRUE
-				line_color 	3342489
-				quidu      	"5A056A0A02FA"
-				client     	@88
-				supplier   	@74
-				vertices   	(list Points
-				    (1055, 775)
-				    (960, 681))
-				line_style 	0)
-			    (object RoleView "$UNNAMED$23" @90
-				Parent_View 	@88
-				location   	(-50, 266)
-				stereotype 	TRUE
-				line_color 	3342489
-				quidu      	"5A056A0A02FC"
-				client     	@88
-				supplier   	@75
-				vertices   	(list Points
-				    (1055, 775)
-				    (1151, 870))
-				line_style 	0)))
-		    (object UseCaseView "Use Case View::CheckScore" @91
-			location   	(1967, 797)
-			font       	(object Font
-			    size       	10
-			    face       	"Arial"
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			label      	(object ItemLabel
-			    Parent_View 	@91
-			    location   	(1967, 935)
-			    anchor_loc 	1
-			    nlines     	2
-			    max_width  	630
-			    justify    	0
-			    label      	"CheckScore")
-			icon_style 	"Icon"
-			line_color 	3342489
-			fill_color 	13434879
-			quidu      	"5A056A620262"
-			height     	118)
-		    (object AssociationViewNew "$UNNAMED$24" @92
-			location   	(1562, 863)
+		    (object AssociationViewNew "$UNNAMED$24" @100
+			location   	(1552, 959)
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -2292,32 +2668,32 @@
 			line_color 	3342489
 			quidu      	"5A056A990148"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$25" @93
-				Parent_View 	@92
-				location   	(457, 354)
+			    (object RoleView "$UNNAMED$25" @101
+				Parent_View 	@100
+				location   	(447, 450)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5A056A9A0167"
-				client     	@92
-				supplier   	@91
+				client     	@100
+				supplier   	@95
 				vertices   	(list Points
-				    (1562, 863)
-				    (1857, 812))
+				    (1552, 959)
+				    (1837, 986))
 				line_style 	0)
-			    (object RoleView "$UNNAMED$26" @94
-				Parent_View 	@92
-				location   	(457, 354)
+			    (object RoleView "$UNNAMED$26" @102
+				Parent_View 	@100
+				location   	(447, 450)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5A056A9A0169"
-				client     	@92
-				supplier   	@75
+				client     	@100
+				supplier   	@96
 				vertices   	(list Points
-				    (1562, 863)
-				    (1267, 914))
+				    (1552, 959)
+				    (1267, 933))
 				line_style 	0)))
-		    (object UseCaseView "Use Case View::GetCourseInfo" @95
-			location   	(511, 1288)
+		    (object UseCaseView "Use Case View::LogIn" @103
+			location   	(539, 793)
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -2328,8 +2704,71 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@95
-			    location   	(511, 1426)
+			    Parent_View 	@103
+			    location   	(539, 931)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"LogIn")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5A05680B01FF"
+			height     	118)
+		    (object AssociationViewNew "$UNNAMED$3" @104
+			location   	(898, 862)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5A05683D01DC"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$4" @105
+				Parent_View 	@104
+				location   	(618, 556)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5A056841006D"
+				client     	@104
+				supplier   	@103
+				vertices   	(list Points
+				    (898, 862)
+				    (647, 811))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$5" @106
+				Parent_View 	@104
+				location   	(618, 556)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5A056841006F"
+				client     	@104
+				supplier   	@96
+				vertices   	(list Points
+				    (898, 862)
+				    (1150, 914))
+				line_style 	0)))
+		    (object UseCaseView "Use Case View::GetCourseInfo" @107
+			location   	(542, 1453)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@107
+			    location   	(542, 1591)
 			    anchor_loc 	1
 			    nlines     	2
 			    max_width  	630
@@ -2340,8 +2779,8 @@
 			fill_color 	13434879
 			quidu      	"5A0567F70013"
 			height     	118)
-		    (object AssociationViewNew "$UNNAMED$9" @96
-			location   	(883, 1093)
+		    (object AssociationViewNew "$UNNAMED$9" @108
+			location   	(881, 1182)
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -2355,32 +2794,32 @@
 			line_color 	3342489
 			quidu      	"5A05686702B4"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$10" @97
-				Parent_View 	@96
-				location   	(603, 787)
+			    (object RoleView "$UNNAMED$10" @109
+				Parent_View 	@108
+				location   	(601, 876)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5A05686D02B3"
-				client     	@96
-				supplier   	@95
+				client     	@108
+				supplier   	@107
 				vertices   	(list Points
-				    (883, 1093)
-				    (615, 1230))
+				    (881, 1182)
+				    (611, 1395))
 				line_style 	0)
-			    (object RoleView "$UNNAMED$11" @98
-				Parent_View 	@96
-				location   	(603, 787)
+			    (object RoleView "$UNNAMED$11" @110
+				Parent_View 	@108
+				location   	(601, 876)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5A05686D02B5"
-				client     	@96
-				supplier   	@75
+				client     	@108
+				supplier   	@96
 				vertices   	(list Points
-				    (883, 1093)
-				    (1151, 956))
+				    (881, 1182)
+				    (1151, 970))
 				line_style 	0)))
-		    (object UseCaseView "Use Case View::SelectCourse" @99
-			location   	(1964, 1126)
+		    (object UseCaseView "Use Case View::SelectCourse" @111
+			location   	(1966, 1243)
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -2391,8 +2830,8 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@99
-			    location   	(1964, 1264)
+			    Parent_View 	@111
+			    location   	(1966, 1381)
 			    anchor_loc 	1
 			    nlines     	2
 			    max_width  	630
@@ -2403,7 +2842,31 @@
 			fill_color 	13434879
 			quidu      	"5A056AB4033F"
 			height     	118)
-		    (object ClassView "Class" "Use Case View::Teacher" @100
+		    (object UseCaseView "Use Case View::InputScore" @112
+			location   	(1959, 1517)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@112
+			    location   	(1959, 1655)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"InputScore")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5A056AFD0011"
+			height     	118)
+		    (object ClassView "Class" "Use Case View::教授" @113
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -2418,21 +2881,21 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@100
+			    Parent_View 	@113
 			    location   	(1213, 1539)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	365
+			    max_width  	325
 			    justify    	0
-			    label      	"Teacher")
+			    label      	"教授")
 			icon       	"Actor"
 			icon_style 	"Icon"
 			line_color 	3342489
 			quidu      	"5A0567C20331"
 			annotation 	8
 			autoResize 	TRUE)
-		    (object AssociationViewNew "$UNNAMED$6" @101
-			location   	(877, 1148)
+		    (object AssociationViewNew "$UNNAMED$6" @114
+			location   	(878, 1087)
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -2446,32 +2909,32 @@
 			line_color 	3342489
 			quidu      	"5A0568590222"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$7" @102
-				Parent_View 	@101
-				location   	(594, 392)
+			    (object RoleView "$UNNAMED$7" @115
+				Parent_View 	@114
+				location   	(595, 331)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5A05685A034B"
-				client     	@101
-				supplier   	@70
+				client     	@114
+				supplier   	@103
 				vertices   	(list Points
-				    (877, 1148)
-				    (601, 960))
+				    (878, 1087)
+				    (603, 849))
 				line_style 	0)
-			    (object RoleView "$UNNAMED$8" @103
-				Parent_View 	@101
-				location   	(594, 392)
+			    (object RoleView "$UNNAMED$8" @116
+				Parent_View 	@114
+				location   	(595, 331)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5A05685A034D"
-				client     	@101
-				supplier   	@100
+				client     	@114
+				supplier   	@113
 				vertices   	(list Points
-				    (877, 1148)
-				    (1154, 1337))
+				    (878, 1087)
+				    (1153, 1325))
 				line_style 	0)))
-		    (object AssociationViewNew "$UNNAMED$27" @104
-			location   	(886, 1334)
+		    (object AssociationViewNew "$UNNAMED$27" @117
+			location   	(901, 1410)
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -2485,32 +2948,32 @@
 			line_color 	3342489
 			quidu      	"5A056AEC034F"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$28" @105
-				Parent_View 	@104
-				location   	(-222, 375)
+			    (object RoleView "$UNNAMED$28" @118
+				Parent_View 	@117
+				location   	(-207, 451)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5A056AEE0013"
-				client     	@104
-				supplier   	@95
+				client     	@117
+				supplier   	@107
 				vertices   	(list Points
-				    (886, 1334)
-				    (619, 1300))
+				    (901, 1410)
+				    (650, 1437))
 				line_style 	0)
-			    (object RoleView "$UNNAMED$29" @106
-				Parent_View 	@104
-				location   	(-222, 375)
+			    (object RoleView "$UNNAMED$29" @119
+				Parent_View 	@117
+				location   	(-207, 451)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5A056AEE0015"
-				client     	@104
-				supplier   	@100
+				client     	@117
+				supplier   	@113
 				vertices   	(list Points
-				    (886, 1334)
-				    (1154, 1369))
+				    (901, 1410)
+				    (1153, 1383))
 				line_style 	0)))
-		    (object AssociationViewNew "$UNNAMED$30" @107
-			location   	(1561, 1257)
+		    (object AssociationViewNew "$UNNAMED$30" @120
+			location   	(1562, 1311)
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -2524,56 +2987,32 @@
 			line_color 	3342489
 			quidu      	"5A056B250148"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$31" @108
-				Parent_View 	@107
-				location   	(453, 298)
+			    (object RoleView "$UNNAMED$31" @121
+				Parent_View 	@120
+				location   	(454, 352)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5A056B2602FC"
-				client     	@107
-				supplier   	@99
+				client     	@120
+				supplier   	@111
 				vertices   	(list Points
-				    (1561, 1257)
-				    (1853, 1159))
+				    (1562, 1311)
+				    (1855, 1258))
 				line_style 	0)
-			    (object RoleView "$UNNAMED$32" @109
-				Parent_View 	@107
-				location   	(453, 298)
+			    (object RoleView "$UNNAMED$32" @122
+				Parent_View 	@120
+				location   	(454, 352)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5A056B2602FE"
-				client     	@107
-				supplier   	@100
+				client     	@120
+				supplier   	@113
 				vertices   	(list Points
-				    (1561, 1257)
-				    (1270, 1355))
+				    (1562, 1311)
+				    (1270, 1364))
 				line_style 	0)))
-		    (object UseCaseView "Use Case View::InputScore" @110
-			location   	(1960, 1423)
-			font       	(object Font
-			    size       	10
-			    face       	"Arial"
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			label      	(object ItemLabel
-			    Parent_View 	@110
-			    location   	(1960, 1561)
-			    anchor_loc 	1
-			    nlines     	2
-			    max_width  	630
-			    justify    	0
-			    label      	"InputScore")
-			icon_style 	"Icon"
-			line_color 	3342489
-			fill_color 	13434879
-			quidu      	"5A056AFD0011"
-			height     	118)
-		    (object AssociationViewNew "$UNNAMED$33" @111
-			location   	(1560, 1396)
+		    (object AssociationViewNew "$UNNAMED$33" @123
+			location   	(1559, 1440)
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -2587,29 +3026,29 @@
 			line_color 	3342489
 			quidu      	"5A056B2A0355"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$34" @112
-				Parent_View 	@111
-				location   	(452, 437)
+			    (object RoleView "$UNNAMED$34" @124
+				Parent_View 	@123
+				location   	(451, 481)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5A056B2B03B8"
-				client     	@111
-				supplier   	@110
+				client     	@123
+				supplier   	@112
 				vertices   	(list Points
-				    (1560, 1396)
-				    (1850, 1412))
+				    (1559, 1440)
+				    (1849, 1493))
 				line_style 	0)
-			    (object RoleView "$UNNAMED$35" @113
-				Parent_View 	@111
-				location   	(452, 437)
+			    (object RoleView "$UNNAMED$35" @125
+				Parent_View 	@123
+				location   	(451, 481)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5A056B2B03C7"
-				client     	@111
-				supplier   	@100
+				client     	@123
+				supplier   	@113
 				vertices   	(list Points
-				    (1560, 1396)
-				    (1270, 1381))
+				    (1559, 1440)
+				    (1270, 1388))
 				line_style 	0)))))))
     root_category 	(object Class_Category "Logical View"
 	quid       	"5A0565F40302"
@@ -2617,7 +3056,442 @@
 	global     	TRUE
 	subsystem  	"Component View"
 	quidu      	"5A0565F40304"
-	logical_models 	(list unit_reference_list)
+	logical_models 	(list unit_reference_list
+	    (object Class "Person"
+		quid       	"5A0598D101E1"
+		operations 	(list Operations
+		    (object Operation "displayCurrentCourse"
+			quid       	"5A059CEE01C7"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "name"
+			quid       	"5A059C080194")
+		    (object ClassAttribute "UserID"
+			quid       	"5A059C1C005E")
+		    (object ClassAttribute "isTeacher"
+			quid       	"5A059C2700CD")
+		    (object ClassAttribute "password"
+			quid       	"5A059CCF014D")))
+	    (object Class "Course"
+		quid       	"5A0598D9007D"
+		used_nodes 	(list uses_relationship_list
+		    (object Uses_Relationship
+			quid       	"5A05A0BF0199"
+			supplier   	"Logical View::Person"
+			quidu      	"5A0598D101E1"))
+		operations 	(list Operations
+		    (object Operation "isValidEnroll"
+			quid       	"5A059FFE002E"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "getSingleScore"
+			quid       	"5A05A00D0203"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "name"
+			quid       	"5A059FB20184")
+		    (object ClassAttribute "courseID"
+			quid       	"5A059FC102FF")
+		    (object ClassAttribute "enrollNum"
+			quid       	"5A059FE10256")
+		    (object ClassAttribute "isOpen"
+			quid       	"5A05A05E01DB")
+		    (object ClassAttribute "isSelected"
+			quid       	"5A05A07A0290")))
+	    (object Class "StudentDb"
+		quid       	"5A0599190169"
+		superclasses 	(list inheritance_relationship_list
+		    (object Inheritance_Relationship
+			quid       	"5A05A60802F1"
+			supplier   	"Logical View::DatabaseControl"
+			quidu      	"5A05A5F30004")))
+	    (object Class "CoursDb"
+		quid       	"5A0599450078"
+		superclasses 	(list inheritance_relationship_list
+		    (object Inheritance_Relationship
+			quid       	"5A05A607001F"
+			supplier   	"Logical View::DatabaseControl"
+			quidu      	"5A05A5F30004")))
+	    (object Class "LoginFrame"
+		quid       	"5A05994F03E7")
+	    (object Class "StudentFrame"
+		quid       	"5A0599620277")
+	    (object Class "TeacherFrame"
+		quid       	"5A05996B00F9")
+	    (object Class "Teacher"
+		quid       	"5A0599880299"
+		superclasses 	(list inheritance_relationship_list
+		    (object Inheritance_Relationship
+			quid       	"5A0599FE0080"
+			supplier   	"Logical View::Person"
+			quidu      	"5A0598D101E1"))
+		operations 	(list Operations
+		    (object Operation "selectCourse"
+			quid       	"5A059F6000CF"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "submitScore"
+			quid       	"5A059F7202B5"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "selectCourseList"
+			quid       	"5A059D3901C7")))
+	    (object Class "Student"
+		quid       	"5A059C6A01CE"
+		superclasses 	(list inheritance_relationship_list
+		    (object Inheritance_Relationship
+			quid       	"5A059D490069"
+			supplier   	"Logical View::Person"
+			quidu      	"5A0598D101E1"))
+		operations 	(list Operations
+		    (object Operation "isOverEnroll"
+			quid       	"5A059DA701AA"
+			stereotype 	"boolean"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "getTotalScore"
+			quid       	"5A059E6B007B"
+			stereotype 	"ArrayList"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "createSchedule"
+			quid       	"5A059EE7031B"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "updateSchedule"
+			quid       	"5A059EF80131"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "deleteSchedule"
+			quid       	"5A059F180388"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "mainCourseNum"
+			quid       	"5A059D670089")
+		    (object ClassAttribute "optCourseNum"
+			quid       	"5A059D790077")
+		    (object ClassAttribute "enrollSchedule"
+			quid       	"5A059EAE028A")))
+	    (object Class "courseEnrollSystem"
+		quid       	"5A05A2E40391"
+		operations 	(list Operations
+		    (object Operation "isOverTime"
+			quid       	"5A05A2FD00B3"
+			stereotype 	"boolean"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "isConnected"
+			quid       	"5A05A31201C0"
+			stereotype 	"boolean"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "isLogin"
+			quid       	"5A05A35500CA"
+			stereotype 	"boolean"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "getCurrentCourseList"
+			quid       	"5A05A38601A4"
+			stereotype 	"boolean"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "_mainFrame"
+			quid       	"5A05A40700C2")
+		    (object ClassAttribute "_studentFrame"
+			quid       	"5A05A413039B")
+		    (object ClassAttribute "_teacherFrame"
+			quid       	"5A05A41B0316")))
+	    (object Class "MainFrame"
+		quid       	"5A05A4280190")
+	    (object Class "teacherFrame"
+		quid       	"5A05A42A01A1")
+	    (object Class "Frame"
+		quid       	"5A05A48B029B")
+	    (object Class "NewInterface"
+		quid       	"5A05A4D503D1"
+		stereotype 	"Interface")
+	    (object Class "TeacherDb"
+		quid       	"5A05A5B5030E"
+		superclasses 	(list inheritance_relationship_list
+		    (object Inheritance_Relationship
+			quid       	"5A05A60A03A9"
+			supplier   	"Logical View::DatabaseControl"
+			quidu      	"5A05A5F30004")))
+	    (object Class "DatabaseControl"
+		quid       	"5A05A5F30004"
+		operations 	(list Operations
+		    (object Operation "find"
+			quid       	"5A05A612030F"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "update"
+			quid       	"5A05A73A00DA"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "delete"
+			quid       	"5A05A742023E"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "add"
+			quid       	"5A05A746017F"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "initialize"
+			quid       	"5A05A74A0119"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "terminate"
+			quid       	"5A05A7510092"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)))
+	    (object Association "$UNNAMED$53"
+		quid       	"5A05999E00D0"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$54"
+			quid       	"5A05999E0244"
+			supplier   	"Logical View::Person"
+			quidu      	"5A0598D101E1"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$55"
+			quid       	"5A05999E0248"
+			supplier   	"Logical View::Teacher"
+			quidu      	"5A0599880299")))
+	    (object Association "$UNNAMED$56"
+		quid       	"5A0599EB000B"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$57"
+			quid       	"5A0599EC0374"
+			supplier   	"Logical View::Person"
+			quidu      	"5A0598D101E1"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$58"
+			quid       	"5A0599EC0377"
+			supplier   	"Logical View::Teacher"
+			quidu      	"5A0599880299")))
+	    (object Association "Select"
+		quid       	"5A05A1CD016A"
+		roles      	(list role_list
+		    (object Role "*"
+			quid       	"5A05A1CD030F"
+			label      	"*"
+			supplier   	"Logical View::Person"
+			quidu      	"5A0598D101E1"
+			is_navigable 	TRUE)
+		    (object Role "*"
+			quid       	"5A05A1CD0314"
+			label      	"*"
+			supplier   	"Logical View::Course"
+			quidu      	"5A0598D9007D"
+			is_navigable 	TRUE)))
+	    (object Association "$UNNAMED$59"
+		quid       	"5A05A2150389"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$60"
+			quid       	"5A05A216013B"
+			supplier   	"Logical View::StudentDb"
+			quidu      	"5A0599190169"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$61"
+			quid       	"5A05A216013D"
+			supplier   	"Logical View::Course"
+			quidu      	"5A0598D9007D"
+			is_navigable 	TRUE
+			is_aggregate 	TRUE)))
+	    (object Association "$UNNAMED$62"
+		quid       	"5A05A237033D"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$63"
+			quid       	"5A05A2380104"
+			supplier   	"Logical View::Person"
+			quidu      	"5A0598D101E1"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$64"
+			quid       	"5A05A238010B"
+			supplier   	"Logical View::Course"
+			quidu      	"5A0598D9007D"
+			is_navigable 	TRUE)))
+	    (object Association "Property"
+		quid       	"5A05A23D00F4"
+		stereotype 	"communicate"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$65"
+			quid       	"5A05A23D01D2"
+			supplier   	"Logical View::Person"
+			quidu      	"5A0598D101E1"
+			client_cardinality 	(value cardinality "*")
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$66"
+			quid       	"5A05A23D01D9"
+			supplier   	"Logical View::Course"
+			quidu      	"5A0598D9007D"
+			client_cardinality 	(value cardinality "*")
+			is_navigable 	TRUE)))
+	    (object Association "$UNNAMED$67"
+		quid       	"5A05A4CC02D1"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$68"
+			quid       	"5A05A4CC03A7"
+			supplier   	"Logical View::courseEnrollSystem"
+			quidu      	"5A05A2E40391"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$69"
+			quid       	"5A05A4CC03AE"
+			supplier   	"Logical View::MainFrame"
+			quidu      	"5A05A4280190"
+			is_navigable 	TRUE
+			is_aggregate 	TRUE)))
+	    (object Association "$UNNAMED$70"
+		quid       	"5A05A52200FB"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$71"
+			quid       	"5A05A52201EC"
+			supplier   	"Logical View::courseEnrollSystem"
+			quidu      	"5A05A2E40391"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$72"
+			quid       	"5A05A52201EF"
+			supplier   	"Logical View::MainFrame"
+			quidu      	"5A05A4280190"
+			is_navigable 	TRUE
+			is_aggregate 	TRUE)))
+	    (object Association "$UNNAMED$73"
+		quid       	"5A05A52702BE"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$74"
+			quid       	"5A05A52703A5"
+			supplier   	"Logical View::MainFrame"
+			quidu      	"5A05A4280190"
+			client_cardinality 	(value cardinality "1")
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$75"
+			quid       	"5A05A52703A9"
+			supplier   	"Logical View::courseEnrollSystem"
+			quidu      	"5A05A2E40391"
+			client_cardinality 	(value cardinality "1")
+			is_navigable 	TRUE
+			is_aggregate 	TRUE)))
+	    (object Association "$UNNAMED$76"
+		quid       	"5A05A52902B8"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$77"
+			quid       	"5A05A52903B3"
+			supplier   	"Logical View::StudentFrame"
+			quidu      	"5A0599620277"
+			client_cardinality 	(value cardinality "1")
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$78"
+			quid       	"5A05A52903B5"
+			supplier   	"Logical View::courseEnrollSystem"
+			quidu      	"5A05A2E40391"
+			client_cardinality 	(value cardinality "1")
+			is_navigable 	TRUE
+			is_aggregate 	TRUE)))
+	    (object Association "$UNNAMED$79"
+		quid       	"5A05A52B0122"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$80"
+			quid       	"5A05A52B02BD"
+			supplier   	"Logical View::TeacherFrame"
+			quidu      	"5A05996B00F9"
+			client_cardinality 	(value cardinality "1")
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$81"
+			quid       	"5A05A52B02C1"
+			supplier   	"Logical View::courseEnrollSystem"
+			quidu      	"5A05A2E40391"
+			client_cardinality 	(value cardinality "1")
+			is_navigable 	TRUE
+			is_aggregate 	TRUE)))
+	    (object Association "$UNNAMED$82"
+		quid       	"5A05A77400CC"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$83"
+			quid       	"5A05A77E025E"
+			supplier   	"Logical View::Course"
+			quidu      	"5A0598D9007D"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$84"
+			quid       	"5A05A77E0262"
+			supplier   	"Logical View::CoursDb"
+			quidu      	"5A0599450078"
+			is_navigable 	TRUE)))
+	    (object Association "$UNNAMED$85"
+		quid       	"5A05A7BF0045"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$86"
+			quid       	"5A05A7C101F4"
+			supplier   	"Logical View::Course"
+			quidu      	"5A0598D9007D"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$87"
+			quid       	"5A05A7C101FA"
+			supplier   	"Logical View::CoursDb"
+			quidu      	"5A0599450078"
+			is_navigable 	TRUE)))
+	    (object Association "$UNNAMED$88"
+		quid       	"5A05A7C702B7"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$89"
+			quid       	"5A05A7CA0042"
+			supplier   	"Logical View::Student"
+			quidu      	"5A059C6A01CE"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$90"
+			quid       	"5A05A7CA0046"
+			supplier   	"Logical View::StudentDb"
+			quidu      	"5A0599190169"
+			is_navigable 	TRUE)))
+	    (object Association "$UNNAMED$91"
+		quid       	"5A05A7D101D4"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$92"
+			quid       	"5A05A7D103C4"
+			supplier   	"Logical View::Teacher"
+			quidu      	"5A0599880299"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$93"
+			quid       	"5A05A7D103C7"
+			supplier   	"Logical View::TeacherDb"
+			quidu      	"5A05A5B5030E"
+			is_navigable 	TRUE)))
+	    (object Association "$UNNAMED$94"
+		quid       	"5A05A8320103"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$95"
+			quid       	"5A05A8370296"
+			supplier   	"Logical View::DatabaseControl"
+			quidu      	"5A05A5F30004"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$96"
+			quid       	"5A05A8370299"
+			supplier   	"Logical View::TeacherDb"
+			quidu      	"5A05A5B5030E"
+			is_navigable 	TRUE))))
 	logical_presentations 	(list unit_reference_list
 	    (object ClassDiagram "Main"
 		quid       	"5A0565F601F5"
@@ -2627,7 +3501,1103 @@
 		max_width  	21600
 		origin_x   	0
 		origin_y   	0
-		items      	(list diagram_item_list))))
+		items      	(list diagram_item_list))
+	    (object ClassDiagram "ClassDiagram"
+		quid       	"5A0598C101DA"
+		title      	"ClassDiagram"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	225
+		items      	(list diagram_item_list
+		    (object ClassView "Class" "Logical View::MainFrame" @126
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(377, 1187)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@126
+			    location   	(255, 1136)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	244
+			    justify    	0
+			    label      	"MainFrame")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5A05A4280190"
+			width      	262
+			height     	126
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::StudentFrame" @127
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(689, 1187)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@127
+			    location   	(538, 1136)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	302
+			    justify    	0
+			    label      	"StudentFrame")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5A0599620277"
+			width      	320
+			height     	126
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::TeacherFrame" @128
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(1015, 1187)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@128
+			    location   	(872, 1136)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	286
+			    justify    	0
+			    label      	"TeacherFrame")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5A05996B00F9"
+			width      	304
+			height     	126
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::courseEnrollSystem" @129
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(690, 534)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@129
+			    location   	(345, 303)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	690
+			    justify    	0
+			    label      	"courseEnrollSystem")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5A05A2E40391"
+			compartment 	(object Compartment
+			    Parent_View 	@129
+			    location   	(345, 364)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	8
+			    max_width  	718
+			    justify    	1)
+			width      	708
+			height     	486
+			annotation 	8
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$73" @130
+			location   	(489, 950)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5A05A52702BE"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$74" @131
+				Parent_View 	@130
+				location   	(-67, 344)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5A05A52703A5"
+				client     	@130
+				supplier   	@126
+				vertices   	(list Points
+				    (489, 950)
+				    (406, 1123))
+				line_style 	0
+				label      	(object SegLabel @132
+				    Parent_View 	@131
+				    location   	(464, 1094)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	15
+				    justify    	0
+				    label      	"1"
+				    pctDist    	0.737683
+				    height     	40
+				    orientation 	0))
+			    (object RoleView "$UNNAMED$75" @133
+				Parent_View 	@130
+				location   	(-67, 344)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5A05A52703A9"
+				client     	@130
+				supplier   	@129
+				vertices   	(list Points
+				    (489, 950)
+				    (572, 777))
+				line_style 	0
+				label      	(object SegLabel @134
+				    Parent_View 	@133
+				    location   	(575, 850)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	15
+				    justify    	0
+				    label      	"1"
+				    pctDist    	0.665351
+				    height     	34
+				    orientation 	1))))
+		    (object AssociationViewNew "$UNNAMED$76" @135
+			location   	(689, 950)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5A05A52902B8"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$77" @136
+				Parent_View 	@135
+				location   	(133, 344)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5A05A52903B3"
+				client     	@135
+				supplier   	@127
+				vertices   	(list Points
+				    (689, 950)
+				    (689, 1123))
+				line_style 	0
+				label      	(object SegLabel @137
+				    Parent_View 	@136
+				    location   	(736, 1092)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	15
+				    justify    	0
+				    label      	"1"
+				    pctDist    	0.826590
+				    height     	47
+				    orientation 	0))
+			    (object RoleView "$UNNAMED$78" @138
+				Parent_View 	@135
+				location   	(133, 344)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5A05A52903B5"
+				client     	@135
+				supplier   	@129
+				vertices   	(list Points
+				    (689, 950)
+				    (689, 777))
+				line_style 	0
+				label      	(object SegLabel @139
+				    Parent_View 	@138
+				    location   	(738, 846)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	15
+				    justify    	0
+				    label      	"1"
+				    pctDist    	0.608587
+				    height     	49
+				    orientation 	1))))
+		    (object AssociationViewNew "$UNNAMED$79" @140
+			location   	(896, 950)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5A05A52B0122"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$80" @141
+				Parent_View 	@140
+				location   	(340, 344)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5A05A52B02BD"
+				client     	@140
+				supplier   	@128
+				vertices   	(list Points
+				    (896, 950)
+				    (983, 1123))
+				line_style 	0
+				label      	(object SegLabel @142
+				    Parent_View 	@141
+				    location   	(1028, 1089)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	15
+				    justify    	0
+				    label      	"1"
+				    pctDist    	0.941460
+				    height     	56
+				    orientation 	0))
+			    (object RoleView "$UNNAMED$81" @143
+				Parent_View 	@140
+				location   	(340, 344)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5A05A52B02C1"
+				client     	@140
+				supplier   	@129
+				vertices   	(list Points
+				    (896, 950)
+				    (810, 777))
+				line_style 	0
+				label      	(object SegLabel @144
+				    Parent_View 	@143
+				    location   	(885, 844)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	15
+				    justify    	0
+				    label      	"1"
+				    pctDist    	0.521286
+				    height     	38
+				    orientation 	1))))
+		    (object ClassView "Class" "Logical View::Person" @145
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(2387, 533)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@145
+			    location   	(2162, 352)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	450
+			    justify    	0
+			    label      	"Person")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5A0598D101E1"
+			compartment 	(object Compartment
+			    Parent_View 	@145
+			    location   	(2162, 413)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	6
+			    max_width  	471
+			    justify    	1)
+			width      	468
+			height     	386
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::Course" @146
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(1440, 534)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@146
+			    location   	(1230, 297)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	420
+			    justify    	0
+			    label      	"Course")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5A0598D9007D"
+			compartment 	(object Compartment
+			    Parent_View 	@146
+			    location   	(1230, 358)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	8
+			    max_width  	359
+			    justify    	1)
+			width      	438
+			height     	499
+			annotation 	8
+			autoResize 	TRUE)
+		    (object AssociationViewNew "Property" @147
+			location   	(1905, 533)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @148
+			    Parent_View 	@147
+			    location   	(1905, 474)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	TRUE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    anchor     	1
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	450
+			    justify    	0
+			    label      	"Property"
+			    pctDist    	0.500000
+			    height     	60
+			    orientation 	0)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5A05A23D00F4"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$65" @149
+				Parent_View 	@147
+				location   	(749, -14)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @150
+				    Parent_View 	@149
+				    location   	(2100, 490)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    hidden     	TRUE
+				    anchor     	1
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	60
+				    justify    	0
+				    label      	""
+				    pctDist    	0.794830
+				    height     	44
+				    orientation 	0)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5A05A23D01D2"
+				client     	@147
+				supplier   	@145
+				vertices   	(list Points
+				    (1905, 533)
+				    (2152, 533))
+				line_style 	0
+				label      	(object SegLabel @151
+				    Parent_View 	@149
+				    location   	(2126, 587)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	15
+				    justify    	0
+				    label      	"*"
+				    pctDist    	0.900000
+				    height     	54
+				    orientation 	1))
+			    (object RoleView "$UNNAMED$66" @152
+				Parent_View 	@147
+				location   	(749, -14)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @153
+				    Parent_View 	@152
+				    location   	(1708, 492)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    hidden     	TRUE
+				    anchor     	1
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	60
+				    justify    	0
+				    label      	""
+				    pctDist    	0.800000
+				    height     	42
+				    orientation 	1)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5A05A23D01D9"
+				client     	@147
+				supplier   	@146
+				vertices   	(list Points
+				    (1905, 533)
+				    (1659, 533))
+				line_style 	0
+				label      	(object SegLabel @154
+				    Parent_View 	@152
+				    location   	(1685, 587)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	2
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	15
+				    justify    	0
+				    label      	"*"
+				    pctDist    	0.900000
+				    height     	54
+				    orientation 	0))))
+		    (object ClassView "Class" "Logical View::CoursDb" @155
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(1437, 1595)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@155
+			    location   	(1342, 1543)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	190
+			    justify    	0
+			    label      	"CoursDb")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5A0599450078"
+			width      	208
+			height     	128
+			annotation 	8
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$85" @156
+			location   	(1438, 1156)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5A05A7BF0045"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$86" @157
+				Parent_View 	@156
+				location   	(206, -439)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5A05A7C101F4"
+				client     	@156
+				supplier   	@146
+				vertices   	(list Points
+				    (1438, 1156)
+				    (1439, 783))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$87" @158
+				Parent_View 	@156
+				location   	(206, -439)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5A05A7C101FA"
+				client     	@156
+				supplier   	@155
+				vertices   	(list Points
+				    (1438, 1156)
+				    (1437, 1530))
+				line_style 	0)))
+		    (object ClassView "Class" "Logical View::Student" @159
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(2386, 1130)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@159
+			    location   	(2094, 874)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	584
+			    justify    	0
+			    label      	"Student")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5A059C6A01CE"
+			compartment 	(object Compartment
+			    Parent_View 	@159
+			    location   	(2094, 935)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	9
+			    max_width  	606
+			    justify    	1)
+			width      	602
+			height     	536
+			annotation 	8
+			autoResize 	TRUE)
+		    (object InheritView "" @160
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5A059D490069"
+			client     	@159
+			supplier   	@145
+			vertices   	(list Points
+			    (2386, 861)
+			    (2386, 726))
+			line_style 	0)
+		    (object ClassView "Class" "Logical View::StudentDb" @161
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(2381, 1598)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@161
+			    location   	(2270, 1546)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	222
+			    justify    	0
+			    label      	"StudentDb")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5A0599190169"
+			width      	240
+			height     	128
+			annotation 	8
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$88" @162
+			location   	(2381, 1465)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5A05A7C702B7"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$89" @163
+				Parent_View 	@162
+				location   	(214, -130)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5A05A7CA0042"
+				client     	@162
+				supplier   	@159
+				vertices   	(list Points
+				    (2381, 1465)
+				    (2382, 1398))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$90" @164
+				Parent_View 	@162
+				location   	(214, -130)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5A05A7CA0046"
+				client     	@162
+				supplier   	@161
+				vertices   	(list Points
+				    (2381, 1465)
+				    (2381, 1533))
+				line_style 	0)))
+		    (object ClassView "Class" "Logical View::Teacher" @165
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(3107, 1046)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@165
+			    location   	(2885, 871)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	445
+			    justify    	0
+			    label      	"Teacher")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5A0599880299"
+			compartment 	(object Compartment
+			    Parent_View 	@165
+			    location   	(2885, 932)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	4
+			    max_width  	362
+			    justify    	1)
+			width      	463
+			height     	375
+			annotation 	8
+			autoResize 	TRUE)
+		    (object InheritView "" @166
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5A0599FE0080"
+			client     	@165
+			supplier   	@145
+			vertices   	(list Points
+			    (3106, 858)
+			    (3106, 534)
+			    (2621, 533))
+			line_style 	0)
+		    (object ClassView "Class" "Logical View::TeacherDb" @167
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(3104, 1593)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@167
+			    location   	(2994, 1542)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	220
+			    justify    	0
+			    label      	"TeacherDb")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5A05A5B5030E"
+			width      	238
+			height     	126
+			annotation 	8
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$91" @168
+			location   	(3104, 1381)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5A05A7D101D4"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$92" @169
+				Parent_View 	@168
+				location   	(170, -215)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5A05A7D103C4"
+				client     	@168
+				supplier   	@165
+				vertices   	(list Points
+				    (3104, 1381)
+				    (3105, 1233))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$93" @170
+				Parent_View 	@168
+				location   	(170, -215)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5A05A7D103C7"
+				client     	@168
+				supplier   	@167
+				vertices   	(list Points
+				    (3104, 1381)
+				    (3104, 1529))
+				line_style 	0)))
+		    (object ClassView "Class" "Logical View::DatabaseControl" @171
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(2381, 2169)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@171
+			    location   	(2210, 1963)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	342
+			    justify    	0
+			    label      	"DatabaseControl")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5A05A5F30004"
+			compartment 	(object Compartment
+			    Parent_View 	@171
+			    location   	(2210, 2024)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	7
+			    max_width  	253
+			    justify    	1)
+			width      	360
+			height     	436
+			annotation 	8
+			autoResize 	TRUE)
+		    (object InheritTreeView "" @172
+			location   	(2381, 1860)
+			line_color 	3342489
+			fill_color 	13434879
+			supplier   	@171
+			vertices   	(list Points
+			    (2381, 1860)
+			    (2381, 1951)))
+		    (object InheritView "" @173
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5A05A60802F1"
+			client     	@161
+			supplier   	@171
+			vertices   	(list Points
+			    (2381, 1662)
+			    (2381, 1860))
+			line_style 	3
+			origin_attachment 	(2381, 1662)
+			terminal_attachment 	(2381, 1860)
+			drawSupplier 	@172)
+		    (object InheritView "" @174
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5A05A607001F"
+			client     	@155
+			supplier   	@171
+			vertices   	(list Points
+			    (1436, 1659)
+			    (1436, 1860))
+			line_style 	3
+			origin_attachment 	(1436, 1659)
+			terminal_attachment 	(1436, 1860)
+			drawSupplier 	@172)
+		    (object InheritView "" @175
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5A05A60A03A9"
+			client     	@167
+			supplier   	@171
+			vertices   	(list Points
+			    (3105, 1656)
+			    (3105, 1860))
+			line_style 	3
+			origin_attachment 	(3105, 1656)
+			terminal_attachment 	(3105, 1860)
+			drawSupplier 	@172)))))
     root_subsystem 	(object SubSystem "Component View"
 	quid       	"5A0565F40304"
 	physical_models 	(list unit_reference_list)
