@@ -84,7 +84,7 @@
 		superclasses 	(list inheritance_relationship_list
 		    (object Inheritance_Relationship
 			quid       	"5A0599CC0073"
-			supplier   	"Logical View::Person"
+			supplier   	"Use Case View::Person"
 			quidu      	"5A0598D101E1")))
 	    (object Class "½ÌÊÚ"
 		quid       	"5A0567C20331"
@@ -94,6 +94,215 @@
 			quid       	"5A0568540237"
 			supplier   	"Use Case View::LogIn"
 			quidu      	"5A05680B01FF")))
+	    (object Class "Course"
+		quid       	"5A0598D9007D"
+		used_nodes 	(list uses_relationship_list
+		    (object Uses_Relationship
+			quid       	"5A05A0BF0199"
+			supplier   	"Use Case View::Person"
+			quidu      	"5A0598D101E1"))
+		operations 	(list Operations
+		    (object Operation "isValidEnroll"
+			quid       	"5A059FFE002E"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "getSingleScore"
+			quid       	"5A05A00D0203"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "name"
+			quid       	"5A059FB20184")
+		    (object ClassAttribute "courseID"
+			quid       	"5A059FC102FF")
+		    (object ClassAttribute "enrollNum"
+			quid       	"5A059FE10256")
+		    (object ClassAttribute "isOpen"
+			quid       	"5A05A05E01DB")
+		    (object ClassAttribute "isSelected"
+			quid       	"5A05A07A0290")))
+	    (object Class "CourseDB"
+		quid       	"5A0599450078"
+		superclasses 	(list inheritance_relationship_list
+		    (object Inheritance_Relationship
+			quid       	"5A05A607001F"
+			supplier   	"Use Case View::DatabaseControl"
+			quidu      	"5A05A5F30004")))
+	    (object Class "CourseEnrollSystem"
+		quid       	"5A05A2E40391"
+		operations 	(list Operations
+		    (object Operation "isOverTime"
+			quid       	"5A05A2FD00B3"
+			stereotype 	"boolean"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "isConnected"
+			quid       	"5A05A31201C0"
+			stereotype 	"boolean"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "isLogin"
+			quid       	"5A05A35500CA"
+			stereotype 	"boolean"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "getCurrentCourseList"
+			quid       	"5A05A38601A4"
+			stereotype 	"boolean"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "_mainFrame"
+			quid       	"5A05A40700C2")
+		    (object ClassAttribute "_studentFrame"
+			quid       	"5A05A413039B")
+		    (object ClassAttribute "_professorFrame"
+			quid       	"5A05A41B0316")))
+	    (object Class "DatabaseControl"
+		quid       	"5A05A5F30004"
+		operations 	(list Operations
+		    (object Operation "find"
+			quid       	"5A05A612030F"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "update"
+			quid       	"5A05A73A00DA"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "delete"
+			quid       	"5A05A742023E"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "add"
+			quid       	"5A05A746017F"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "initialize"
+			quid       	"5A05A74A0119"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "terminate"
+			quid       	"5A05A7510092"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)))
+	    (object Class "Frame"
+		quid       	"5A05A48B029B")
+	    (object Class "MainFrame"
+		quid       	"5A05A4280190")
+	    (object Class "LoginFrame"
+		quid       	"5A05994F03E7")
+	    (object Class "Person"
+		quid       	"5A0598D101E1"
+		operations 	(list Operations
+		    (object Operation "displayCurrentCourse"
+			quid       	"5A059CEE01C7"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "name"
+			quid       	"5A059C080194")
+		    (object ClassAttribute "UserID"
+			quid       	"5A059C1C005E")
+		    (object ClassAttribute "isProfessor"
+			quid       	"5A059C2700CD")
+		    (object ClassAttribute "password"
+			quid       	"5A059CCF014D")))
+	    (object Class "Professor"
+		quid       	"5A0599880299"
+		superclasses 	(list inheritance_relationship_list
+		    (object Inheritance_Relationship
+			quid       	"5A0599FE0080"
+			supplier   	"Use Case View::Person"
+			quidu      	"5A0598D101E1"))
+		operations 	(list Operations
+		    (object Operation "selectCourse"
+			quid       	"5A059F6000CF"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "submitScore"
+			quid       	"5A059F7202B5"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "selectCourseList"
+			quid       	"5A059D3901C7")))
+	    (object Class "ProfessorDB"
+		quid       	"5A05A5B5030E"
+		superclasses 	(list inheritance_relationship_list
+		    (object Inheritance_Relationship
+			quid       	"5A05A60A03A9"
+			supplier   	"Use Case View::DatabaseControl"
+			quidu      	"5A05A5F30004")))
+	    (object Class "ProfessorFrame"
+		quid       	"5A05996B00F9")
+	    (object Class "Student"
+		quid       	"5A059C6A01CE"
+		superclasses 	(list inheritance_relationship_list
+		    (object Inheritance_Relationship
+			quid       	"5A059D490069"
+			supplier   	"Use Case View::Person"
+			quidu      	"5A0598D101E1"))
+		operations 	(list Operations
+		    (object Operation "isOverEnroll"
+			quid       	"5A059DA701AA"
+			stereotype 	"boolean"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "getTotalScore"
+			quid       	"5A059E6B007B"
+			stereotype 	"ArrayList"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "createSchedule"
+			quid       	"5A059EE7031B"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "updateSchedule"
+			quid       	"5A059EF80131"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "deleteSchedule"
+			quid       	"5A059F180388"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "mainCourseNum"
+			quid       	"5A059D670089")
+		    (object ClassAttribute "optCourseNum"
+			quid       	"5A059D790077")
+		    (object ClassAttribute "enrollSchedule"
+			quid       	"5A059EAE028A")))
+	    (object Class "StudentDB"
+		quid       	"5A0599190169"
+		superclasses 	(list inheritance_relationship_list
+		    (object Inheritance_Relationship
+			quid       	"5A05A60802F1"
+			supplier   	"Use Case View::DatabaseControl"
+			quidu      	"5A05A5F30004")))
+	    (object Class "StudentFrame"
+		quid       	"5A0599620277")
+	    (object Class "teacherFrame"
+		quid       	"5A05A42A01A1")
 	    (object UseCase "GetCourseInfo"
 		quid       	"5A0567F70013")
 	    (object UseCase "LogIn"
@@ -255,19 +464,242 @@
 		    (object Role "$UNNAMED$35"
 			quid       	"5A056B2B03C7"
 			supplier   	"Use Case View::½ÌÊÚ"
-			quidu      	"5A0567C20331"))))
+			quidu      	"5A0567C20331")))
+	    (object Association "$UNNAMED$36"
+		quid       	"5A05999E00D0"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$37"
+			quid       	"5A05999E0244"
+			supplier   	"Use Case View::Person"
+			quidu      	"5A0598D101E1"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$38"
+			quid       	"5A05999E0248"
+			supplier   	"Use Case View::Professor"
+			quidu      	"5A0599880299")))
+	    (object Association "$UNNAMED$39"
+		quid       	"5A0599EB000B"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$40"
+			quid       	"5A0599EC0374"
+			supplier   	"Use Case View::Person"
+			quidu      	"5A0598D101E1"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$41"
+			quid       	"5A0599EC0377"
+			supplier   	"Use Case View::Professor"
+			quidu      	"5A0599880299")))
+	    (object Association "$UNNAMED$42"
+		quid       	"5A05A2150389"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$43"
+			quid       	"5A05A216013B"
+			supplier   	"Use Case View::StudentDB"
+			quidu      	"5A0599190169"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$44"
+			quid       	"5A05A216013D"
+			supplier   	"Use Case View::Course"
+			quidu      	"5A0598D9007D"
+			is_navigable 	TRUE
+			is_aggregate 	TRUE)))
+	    (object Association "$UNNAMED$45"
+		quid       	"5A05A237033D"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$46"
+			quid       	"5A05A2380104"
+			supplier   	"Use Case View::Person"
+			quidu      	"5A0598D101E1"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$47"
+			quid       	"5A05A238010B"
+			supplier   	"Use Case View::Course"
+			quidu      	"5A0598D9007D"
+			is_navigable 	TRUE)))
+	    (object Association "$UNNAMED$48"
+		quid       	"5A05A4CC02D1"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$49"
+			quid       	"5A05A4CC03A7"
+			supplier   	"Use Case View::CourseEnrollSystem"
+			quidu      	"5A05A2E40391"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$50"
+			quid       	"5A05A4CC03AE"
+			supplier   	"Use Case View::MainFrame"
+			quidu      	"5A05A4280190"
+			is_navigable 	TRUE
+			is_aggregate 	TRUE)))
+	    (object Association "$UNNAMED$51"
+		quid       	"5A05A52200FB"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$52"
+			quid       	"5A05A52201EC"
+			supplier   	"Use Case View::CourseEnrollSystem"
+			quidu      	"5A05A2E40391"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$53"
+			quid       	"5A05A52201EF"
+			supplier   	"Use Case View::MainFrame"
+			quidu      	"5A05A4280190"
+			is_navigable 	TRUE
+			is_aggregate 	TRUE)))
+	    (object Association "$UNNAMED$54"
+		quid       	"5A05A52702BE"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$55"
+			quid       	"5A05A52703A5"
+			supplier   	"Use Case View::MainFrame"
+			quidu      	"5A05A4280190"
+			client_cardinality 	(value cardinality "1")
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$56"
+			quid       	"5A05A52703A9"
+			supplier   	"Use Case View::CourseEnrollSystem"
+			quidu      	"5A05A2E40391"
+			client_cardinality 	(value cardinality "1")
+			is_navigable 	TRUE
+			is_aggregate 	TRUE)))
+	    (object Association "$UNNAMED$57"
+		quid       	"5A05A52902B8"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$58"
+			quid       	"5A05A52903B3"
+			supplier   	"Use Case View::StudentFrame"
+			quidu      	"5A0599620277"
+			client_cardinality 	(value cardinality "1")
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$59"
+			quid       	"5A05A52903B5"
+			supplier   	"Use Case View::CourseEnrollSystem"
+			quidu      	"5A05A2E40391"
+			client_cardinality 	(value cardinality "1")
+			is_navigable 	TRUE
+			is_aggregate 	TRUE)))
+	    (object Association "$UNNAMED$60"
+		quid       	"5A05A52B0122"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$61"
+			quid       	"5A05A52B02BD"
+			supplier   	"Use Case View::ProfessorFrame"
+			quidu      	"5A05996B00F9"
+			client_cardinality 	(value cardinality "1")
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$62"
+			quid       	"5A05A52B02C1"
+			supplier   	"Use Case View::CourseEnrollSystem"
+			quidu      	"5A05A2E40391"
+			client_cardinality 	(value cardinality "1")
+			is_navigable 	TRUE
+			is_aggregate 	TRUE)))
+	    (object Association "$UNNAMED$63"
+		quid       	"5A05A77400CC"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$64"
+			quid       	"5A05A77E025E"
+			supplier   	"Use Case View::Course"
+			quidu      	"5A0598D9007D"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$65"
+			quid       	"5A05A77E0262"
+			supplier   	"Use Case View::CourseDB"
+			quidu      	"5A0599450078"
+			is_navigable 	TRUE)))
+	    (object Association "$UNNAMED$66"
+		quid       	"5A05A7BF0045"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$67"
+			quid       	"5A05A7C101F4"
+			supplier   	"Use Case View::Course"
+			quidu      	"5A0598D9007D"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$68"
+			quid       	"5A05A7C101FA"
+			supplier   	"Use Case View::CourseDB"
+			quidu      	"5A0599450078"
+			is_navigable 	TRUE)))
+	    (object Association "$UNNAMED$69"
+		quid       	"5A05A7C702B7"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$70"
+			quid       	"5A05A7CA0042"
+			supplier   	"Use Case View::Student"
+			quidu      	"5A059C6A01CE"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$71"
+			quid       	"5A05A7CA0046"
+			supplier   	"Use Case View::StudentDB"
+			quidu      	"5A0599190169"
+			is_navigable 	TRUE)))
+	    (object Association "$UNNAMED$72"
+		quid       	"5A05A7D101D4"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$73"
+			quid       	"5A05A7D103C4"
+			supplier   	"Use Case View::Professor"
+			quidu      	"5A0599880299"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$74"
+			quid       	"5A05A7D103C7"
+			supplier   	"Use Case View::ProfessorDB"
+			quidu      	"5A05A5B5030E"
+			is_navigable 	TRUE)))
+	    (object Association "$UNNAMED$75"
+		quid       	"5A05A8320103"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$76"
+			quid       	"5A05A8370296"
+			supplier   	"Use Case View::DatabaseControl"
+			quidu      	"5A05A5F30004"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$77"
+			quid       	"5A05A8370299"
+			supplier   	"Use Case View::ProfessorDB"
+			quidu      	"5A05A5B5030E"
+			is_navigable 	TRUE)))
+	    (object Association "Property"
+		quid       	"5A05A23D00F4"
+		stereotype 	"communicate"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$78"
+			quid       	"5A05A23D01D2"
+			supplier   	"Use Case View::Person"
+			quidu      	"5A0598D101E1"
+			client_cardinality 	(value cardinality "*")
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$79"
+			quid       	"5A05A23D01D9"
+			supplier   	"Use Case View::Course"
+			quidu      	"5A0598D9007D"
+			client_cardinality 	(value cardinality "*")
+			is_navigable 	TRUE)))
+	    (object Association "Select"
+		quid       	"5A05A1CD016A"
+		roles      	(list role_list
+		    (object Role "*"
+			quid       	"5A05A1CD030F"
+			label      	"*"
+			supplier   	"Use Case View::Person"
+			quidu      	"5A0598D101E1"
+			is_navigable 	TRUE)
+		    (object Role "*"
+			quid       	"5A05A1CD0314"
+			label      	"*"
+			supplier   	"Use Case View::Course"
+			quidu      	"5A0598D9007D"
+			is_navigable 	TRUE))))
 	statemachine 	(object State_Machine "State/Activity Model"
 	    quid       	"5A056F7701A2"
 	    states     	(list States
-		(object State "$UNNAMED$36"
+		(object State "$UNNAMED$80"
 		    quid       	"5A056FA6007E"
 		    type       	"StartState")
 		(object State "Log in system"
 		    quid       	"5A056FAB0353"
 		    type       	"Normal")
-		(object Decision "$UNNAMED$37"
+		(object Decision "$UNNAMED$81"
 		    quid       	"5A056FB80169")
-		(object SynchronizationState "$UNNAMED$38"
+		(object SynchronizationState "$UNNAMED$82"
 		    quid       	"5A05704B02DA")
 		(object State "Create a schedule"
 		    quid       	"5A05708103E2"
@@ -278,7 +710,7 @@
 		(object State "Delete a schedule"
 		    quid       	"5A0570CA025E"
 		    type       	"Normal")
-		(object State "$UNNAMED$39"
+		(object State "$UNNAMED$83"
 		    quid       	"5A0571F000FB"
 		    type       	"Normal")
 		(object State "Select courses to enroll"
@@ -293,7 +725,7 @@
 		(object State "Display current schedule"
 		    quid       	"5A0573100233"
 		    type       	"Normal")
-		(object ActivityState "$UNNAMED$40"
+		(object ActivityState "$UNNAMED$84"
 		    quid       	"5A0573670368")
 		(object State "Display course list"
 		    quid       	"5A05736E0103"
@@ -313,7 +745,7 @@
 		(object State "Confirm delete"
 		    quid       	"5A057455005D"
 		    type       	"Normal")
-		(object Decision "$UNNAMED$41"
+		(object Decision "$UNNAMED$85"
 		    quid       	"5A057476023F")
 		(object State "System delete a schedule"
 		    quid       	"5A05758C0310"
@@ -324,16 +756,16 @@
 		(object State "Display Main Frame"
 		    quid       	"5A05763200D8"
 		    type       	"Normal")
-		(object SynchronizationState "$UNNAMED$42"
+		(object SynchronizationState "$UNNAMED$86"
 		    quid       	"5A05767B0323")
-		(object SynchronizationState "$UNNAMED$43"
+		(object SynchronizationState "$UNNAMED$87"
 		    quid       	"5A05774400B2")
-		(object State "$UNNAMED$44"
+		(object State "$UNNAMED$88"
 		    quid       	"5A05775300F8"
 		    type       	"EndState")
-		(object Decision "$UNNAMED$45"
+		(object Decision "$UNNAMED$89"
 		    quid       	"5A0577890027")
-		(object State "$UNNAMED$46"
+		(object State "$UNNAMED$90"
 		    quid       	"5A05780400B6"
 		    type       	"EndState")
 		(object State "System save the schedule"
@@ -342,16 +774,16 @@
 		(object State "Change selected courses condition"
 		    quid       	"5A057A5503DE"
 		    type       	"Normal")
-		(object State "$UNNAMED$47"
+		(object State "$UNNAMED$91"
 		    quid       	"5A057A6E036B"
 		    type       	"EndState")
-		(object SynchronizationState "$UNNAMED$48"
+		(object SynchronizationState "$UNNAMED$92"
 		    quid       	"5A057B0D0285")
-		(object SynchronizationState "$UNNAMED$49"
+		(object SynchronizationState "$UNNAMED$93"
 		    quid       	"5A057BE901C1")
-		(object Decision "$UNNAMED$50"
+		(object Decision "$UNNAMED$94"
 		    quid       	"5A057CFB02C5")
-		(object Decision "$UNNAMED$51"
+		(object Decision "$UNNAMED$95"
 		    quid       	"5A057E7D03E0")
 		(object State "Display error message"
 		    quid       	"5A057EF30228"
@@ -359,7 +791,7 @@
 		(object State "Compare current time with deadline"
 		    quid       	"5A0580BC00D6"
 		    type       	"Normal")
-		(object Decision "$UNNAMED$52"
+		(object Decision "$UNNAMED$96"
 		    quid       	"5A0580F30292"))
 	    partitions 	(list Partitions)
 	    objects    	(list Objects)
@@ -368,13 +800,13 @@
 		    quid       	"5A056FC201B8"
 		    supplier   	"Use Case View::State/Activity Model::Log in system"
 		    supplier_quidu 	"5A056FAB0353"
-		    client     	"$UNNAMED$36"
+		    client     	"$UNNAMED$80"
 		    client_quidu 	"5A056FA6007E"
 		    sendEvent  	(object sendEvent
 			quid       	"5A056FC201BB"))
 		(object State_Transition
 		    quid       	"5A056FC903C9"
-		    supplier   	"$UNNAMED$37"
+		    supplier   	"$UNNAMED$81"
 		    supplier_quidu 	"5A056FB80169"
 		    client     	"Use Case View::State/Activity Model::Log in system"
 		    client_quidu 	"5A056FAB0353"
@@ -385,7 +817,7 @@
 		    label      	""
 		    supplier   	"Use Case View::State/Activity Model::Log in system"
 		    supplier_quidu 	"5A056FAB0353"
-		    client     	"$UNNAMED$37"
+		    client     	"$UNNAMED$81"
 		    client_quidu 	"5A056FB80169"
 		    Event      	(object Event "[Fail]"
 			quid       	"5A056FD500A5")
@@ -394,9 +826,9 @@
 		(object State_Transition
 		    quid       	"5A0570590290"
 		    label      	""
-		    supplier   	"$UNNAMED$38"
+		    supplier   	"$UNNAMED$82"
 		    supplier_quidu 	"5A05704B02DA"
-		    client     	"$UNNAMED$37"
+		    client     	"$UNNAMED$81"
 		    client_quidu 	"5A056FB80169"
 		    Event      	(object Event "[Succeed]"
 			quid       	"5A0570590291")
@@ -406,7 +838,7 @@
 		    quid       	"5A05712702AA"
 		    supplier   	"Use Case View::State/Activity Model::Create a schedule"
 		    supplier_quidu 	"5A05708103E2"
-		    client     	"$UNNAMED$38"
+		    client     	"$UNNAMED$82"
 		    client_quidu 	"5A05704B02DA"
 		    sendEvent  	(object sendEvent
 			quid       	"5A05712702AD"))
@@ -414,7 +846,7 @@
 		    quid       	"5A0571350084"
 		    supplier   	"Use Case View::State/Activity Model::Update a schedule"
 		    supplier_quidu 	"5A0570A302D5"
-		    client     	"$UNNAMED$38"
+		    client     	"$UNNAMED$82"
 		    client_quidu 	"5A05704B02DA"
 		    sendEvent  	(object sendEvent
 			quid       	"5A0571350087"))
@@ -422,13 +854,13 @@
 		    quid       	"5A05713D00A0"
 		    supplier   	"Use Case View::State/Activity Model::Delete a schedule"
 		    supplier_quidu 	"5A0570CA025E"
-		    client     	"$UNNAMED$38"
+		    client     	"$UNNAMED$82"
 		    client_quidu 	"5A05704B02DA"
 		    sendEvent  	(object sendEvent
 			quid       	"5A05713D00A3"))
 		(object State_Transition
 		    quid       	"5A057204007A"
-		    supplier   	"$UNNAMED$39"
+		    supplier   	"$UNNAMED$83"
 		    supplier_quidu 	"5A0571F000FB"
 		    client     	"Use Case View::State/Activity Model::Create a schedule"
 		    client_quidu 	"5A05708103E2"
@@ -438,7 +870,7 @@
 		    quid       	"5A0572C803CF"
 		    supplier   	"Use Case View::State/Activity Model::Select courses to enroll"
 		    supplier_quidu 	"5A057210019F"
-		    client     	"$UNNAMED$39"
+		    client     	"$UNNAMED$83"
 		    client_quidu 	"5A0571F000FB"
 		    sendEvent  	(object sendEvent
 			quid       	"5A0572C803D2"))
@@ -533,7 +965,7 @@
 		(object State_Transition
 		    quid       	"5A057491026F"
 		    label      	""
-		    supplier   	"$UNNAMED$41"
+		    supplier   	"$UNNAMED$85"
 		    supplier_quidu 	"5A057476023F"
 		    client     	"Use Case View::State/Activity Model::Confirm delete"
 		    client_quidu 	"5A057455005D"
@@ -546,7 +978,7 @@
 		    label      	""
 		    supplier   	"Use Case View::State/Activity Model::Display current available course list"
 		    supplier_quidu 	"5A05742C0382"
-		    client     	"$UNNAMED$41"
+		    client     	"$UNNAMED$85"
 		    client_quidu 	"5A057476023F"
 		    condition  	"No"
 		    sendEvent  	(object sendEvent
@@ -555,7 +987,7 @@
 		    quid       	"5A0575A902C8"
 		    supplier   	"Use Case View::State/Activity Model::System delete a schedule"
 		    supplier_quidu 	"5A05758C0310"
-		    client     	"$UNNAMED$41"
+		    client     	"$UNNAMED$85"
 		    client_quidu 	"5A057476023F"
 		    sendEvent  	(object sendEvent
 			quid       	"5A0575A902CB"))
@@ -564,7 +996,7 @@
 		    label      	""
 		    supplier   	"Use Case View::State/Activity Model::Display Main Frame"
 		    supplier_quidu 	"5A05763200D8"
-		    client     	"$UNNAMED$37"
+		    client     	"$UNNAMED$81"
 		    client_quidu 	"5A056FB80169"
 		    Event      	(object Event "[Succeed]"
 			quid       	"5A05768E01B8")
@@ -572,7 +1004,7 @@
 			quid       	"5A05768E01BA"))
 		(object State_Transition
 		    quid       	"5A05769302BA"
-		    supplier   	"$UNNAMED$42"
+		    supplier   	"$UNNAMED$86"
 		    supplier_quidu 	"5A05767B0323"
 		    client     	"Use Case View::State/Activity Model::Display Main Frame"
 		    client_quidu 	"5A05763200D8"
@@ -582,7 +1014,7 @@
 		    quid       	"5A05769E001B"
 		    supplier   	"Use Case View::State/Activity Model::Create a schedule"
 		    supplier_quidu 	"5A05708103E2"
-		    client     	"$UNNAMED$42"
+		    client     	"$UNNAMED$86"
 		    client_quidu 	"5A05767B0323"
 		    sendEvent  	(object sendEvent
 			quid       	"5A05769E001E"))
@@ -590,7 +1022,7 @@
 		    quid       	"5A0576A20170"
 		    supplier   	"Use Case View::State/Activity Model::Update a schedule"
 		    supplier_quidu 	"5A0570A302D5"
-		    client     	"$UNNAMED$42"
+		    client     	"$UNNAMED$86"
 		    client_quidu 	"5A05767B0323"
 		    sendEvent  	(object sendEvent
 			quid       	"5A0576A20173"))
@@ -598,7 +1030,7 @@
 		    quid       	"5A0576A60395"
 		    supplier   	"Use Case View::State/Activity Model::Delete a schedule"
 		    supplier_quidu 	"5A0570CA025E"
-		    client     	"$UNNAMED$42"
+		    client     	"$UNNAMED$86"
 		    client_quidu 	"5A05767B0323"
 		    sendEvent  	(object sendEvent
 			quid       	"5A0576A60398"))
@@ -614,13 +1046,13 @@
 		    quid       	"5A05774C03E5"
 		    supplier   	"Use Case View::State/Activity Model::Submit the schedule"
 		    supplier_quidu 	"5A05729E0024"
-		    client     	"$UNNAMED$43"
+		    client     	"$UNNAMED$87"
 		    client_quidu 	"5A05774400B2"
 		    sendEvent  	(object sendEvent
 			quid       	"5A05774C03E8"))
 		(object State_Transition
 		    quid       	"5A05775B0085"
-		    supplier   	"$UNNAMED$43"
+		    supplier   	"$UNNAMED$87"
 		    supplier_quidu 	"5A05774400B2"
 		    client     	"Use Case View::State/Activity Model::finish creating a schedule"
 		    client_quidu 	"5A057237026C"
@@ -628,7 +1060,7 @@
 			quid       	"5A05775B0088"))
 		(object State_Transition
 		    quid       	"5A05775F00A2"
-		    supplier   	"$UNNAMED$43"
+		    supplier   	"$UNNAMED$87"
 		    supplier_quidu 	"5A05774400B2"
 		    client     	"Use Case View::State/Activity Model::modify schedule"
 		    client_quidu 	"5A0573C90093"
@@ -636,7 +1068,7 @@
 			quid       	"5A05775F00A5"))
 		(object State_Transition
 		    quid       	"5A057790035E"
-		    supplier   	"$UNNAMED$45"
+		    supplier   	"$UNNAMED$89"
 		    supplier_quidu 	"5A0577890027"
 		    client     	"Use Case View::State/Activity Model::system check"
 		    client_quidu 	"5A0575DB0102"
@@ -647,7 +1079,7 @@
 		    label      	""
 		    supplier   	"Use Case View::State/Activity Model::Display Main Frame"
 		    supplier_quidu 	"5A05763200D8"
-		    client     	"$UNNAMED$45"
+		    client     	"$UNNAMED$89"
 		    client_quidu 	"5A0577890027"
 		    Event      	(object Event "[Fail]"
 			quid       	"5A0577AF02A1")
@@ -656,9 +1088,9 @@
 		(object State_Transition
 		    quid       	"5A05780B02CC"
 		    label      	""
-		    supplier   	"$UNNAMED$46"
+		    supplier   	"$UNNAMED$90"
 		    supplier_quidu 	"5A05780400B6"
-		    client     	"$UNNAMED$45"
+		    client     	"$UNNAMED$89"
 		    client_quidu 	"5A0577890027"
 		    condition  	"Succeed"
 		    sendEvent  	(object sendEvent
@@ -681,7 +1113,7 @@
 			quid       	"5A057ABB03A2"))
 		(object State_Transition
 		    quid       	"5A057ABF02F0"
-		    supplier   	"$UNNAMED$47"
+		    supplier   	"$UNNAMED$91"
 		    supplier_quidu 	"5A057A6E036B"
 		    client     	"Use Case View::State/Activity Model::System save the schedule"
 		    client_quidu 	"5A057A180357"
@@ -689,7 +1121,7 @@
 			quid       	"5A057ABF02F3"))
 		(object State_Transition
 		    quid       	"5A057B1902E2"
-		    supplier   	"$UNNAMED$48"
+		    supplier   	"$UNNAMED$92"
 		    supplier_quidu 	"5A057B0D0285"
 		    client     	"Use Case View::State/Activity Model::Submit the schedule"
 		    client_quidu 	"5A05729E0024"
@@ -699,7 +1131,7 @@
 		    quid       	"5A057B1E03CB"
 		    supplier   	"Use Case View::State/Activity Model::system check"
 		    supplier_quidu 	"5A0575DB0102"
-		    client     	"$UNNAMED$48"
+		    client     	"$UNNAMED$92"
 		    client_quidu 	"5A057B0D0285"
 		    sendEvent  	(object sendEvent
 			quid       	"5A057B1E03CE"))
@@ -707,7 +1139,7 @@
 		    quid       	"5A057B25037F"
 		    supplier   	"Use Case View::State/Activity Model::Change selected courses condition"
 		    supplier_quidu 	"5A057A5503DE"
-		    client     	"$UNNAMED$48"
+		    client     	"$UNNAMED$92"
 		    client_quidu 	"5A057B0D0285"
 		    sendEvent  	(object sendEvent
 			quid       	"5A057B250382"))
@@ -715,16 +1147,16 @@
 		    quid       	"5A057B9300B1"
 		    supplier   	"Use Case View::State/Activity Model::Change selected courses condition"
 		    supplier_quidu 	"5A057A5503DE"
-		    client     	"$UNNAMED$45"
+		    client     	"$UNNAMED$89"
 		    client_quidu 	"5A0577890027"
 		    sendEvent  	(object sendEvent
 			quid       	"5A057B9300B4"))
 		(object State_Transition
 		    quid       	"5A057BC80313"
 		    label      	""
-		    supplier   	"$UNNAMED$46"
+		    supplier   	"$UNNAMED$90"
 		    supplier_quidu 	"5A05780400B6"
-		    client     	"$UNNAMED$45"
+		    client     	"$UNNAMED$89"
 		    client_quidu 	"5A0577890027"
 		    Event      	(object Event "[Succeed]"
 			quid       	"5A057BC80314")
@@ -733,9 +1165,9 @@
 		(object State_Transition
 		    quid       	"5A057BF103B8"
 		    label      	""
-		    supplier   	"$UNNAMED$49"
+		    supplier   	"$UNNAMED$93"
 		    supplier_quidu 	"5A057BE901C1"
-		    client     	"$UNNAMED$45"
+		    client     	"$UNNAMED$89"
 		    client_quidu 	"5A0577890027"
 		    Event      	(object Event "[Fail]"
 			quid       	"5A057BF103B9")
@@ -745,7 +1177,7 @@
 		    quid       	"5A057C120203"
 		    supplier   	"Use Case View::State/Activity Model::Change selected courses condition"
 		    supplier_quidu 	"5A057A5503DE"
-		    client     	"$UNNAMED$49"
+		    client     	"$UNNAMED$93"
 		    client_quidu 	"5A057BE901C1"
 		    sendEvent  	(object sendEvent
 			quid       	"5A057C120206"))
@@ -753,13 +1185,13 @@
 		    quid       	"5A057C38015E"
 		    supplier   	"Use Case View::State/Activity Model::Display Main Frame"
 		    supplier_quidu 	"5A05763200D8"
-		    client     	"$UNNAMED$49"
+		    client     	"$UNNAMED$93"
 		    client_quidu 	"5A057BE901C1"
 		    sendEvent  	(object sendEvent
 			quid       	"5A057C380161"))
 		(object State_Transition
 		    quid       	"5A057D0702DC"
-		    supplier   	"$UNNAMED$50"
+		    supplier   	"$UNNAMED$94"
 		    supplier_quidu 	"5A057CFB02C5"
 		    client     	"Use Case View::State/Activity Model::Display current schedule"
 		    client_quidu 	"5A0573100233"
@@ -770,7 +1202,7 @@
 		    label      	""
 		    supplier   	"Use Case View::State/Activity Model::Display available course list"
 		    supplier_quidu 	"5A05737C03D0"
-		    client     	"$UNNAMED$50"
+		    client     	"$UNNAMED$94"
 		    client_quidu 	"5A057CFB02C5"
 		    condition  	"Succeed"
 		    sendEvent  	(object sendEvent
@@ -780,7 +1212,7 @@
 		    label      	""
 		    supplier   	"Use Case View::State/Activity Model::Display Main Frame"
 		    supplier_quidu 	"5A05763200D8"
-		    client     	"$UNNAMED$50"
+		    client     	"$UNNAMED$94"
 		    client_quidu 	"5A057CFB02C5"
 		    Event      	(object Event "[Fail]"
 			quid       	"5A057DA102C2")
@@ -788,7 +1220,7 @@
 			quid       	"5A057DA102C4"))
 		(object State_Transition
 		    quid       	"5A057E850149"
-		    supplier   	"$UNNAMED$51"
+		    supplier   	"$UNNAMED$95"
 		    supplier_quidu 	"5A057E7D03E0"
 		    client     	"Use Case View::State/Activity Model::Display current available course list"
 		    client_quidu 	"5A05742C0382"
@@ -799,7 +1231,7 @@
 		    label      	""
 		    supplier   	"Use Case View::State/Activity Model::Confirm delete"
 		    supplier_quidu 	"5A057455005D"
-		    client     	"$UNNAMED$51"
+		    client     	"$UNNAMED$95"
 		    client_quidu 	"5A057E7D03E0"
 		    Event      	(object Event "[Succeed]"
 			quid       	"5A057E8B0167")
@@ -810,7 +1242,7 @@
 		    label      	""
 		    supplier   	"Use Case View::State/Activity Model::Display Main Frame"
 		    supplier_quidu 	"5A05763200D8"
-		    client     	"$UNNAMED$51"
+		    client     	"$UNNAMED$95"
 		    client_quidu 	"5A057E7D03E0"
 		    Event      	(object Event "[Fail]"
 			quid       	"5A057E9D01D7")
@@ -821,7 +1253,7 @@
 		    label      	""
 		    supplier   	"Use Case View::State/Activity Model::Display error message"
 		    supplier_quidu 	"5A057EF30228"
-		    client     	"$UNNAMED$37"
+		    client     	"$UNNAMED$81"
 		    client_quidu 	"5A056FB80169"
 		    Event      	(object Event "[Fail]"
 			quid       	"5A057F0A0016")
@@ -840,7 +1272,7 @@
 		    label      	""
 		    supplier   	"Use Case View::State/Activity Model::Display Main Frame"
 		    supplier_quidu 	"5A05763200D8"
-		    client     	"$UNNAMED$41"
+		    client     	"$UNNAMED$85"
 		    client_quidu 	"5A057476023F"
 		    Event      	(object Event "[No]"
 			quid       	"5A05800E0331")
@@ -851,7 +1283,7 @@
 		    label      	""
 		    supplier   	"Use Case View::State/Activity Model::Compare current time with deadline"
 		    supplier_quidu 	"5A0580BC00D6"
-		    client     	"$UNNAMED$37"
+		    client     	"$UNNAMED$81"
 		    client_quidu 	"5A056FB80169"
 		    Event      	(object Event "[Succeed]"
 			quid       	"5A0580FF024B")
@@ -859,7 +1291,7 @@
 			quid       	"5A0580FF024D"))
 		(object State_Transition
 		    quid       	"5A0581030266"
-		    supplier   	"$UNNAMED$52"
+		    supplier   	"$UNNAMED$96"
 		    supplier_quidu 	"5A0580F30292"
 		    client     	"Use Case View::State/Activity Model::Compare current time with deadline"
 		    client_quidu 	"5A0580BC00D6"
@@ -870,7 +1302,7 @@
 		    label      	""
 		    supplier   	"Use Case View::State/Activity Model::Display Main Frame"
 		    supplier_quidu 	"5A05763200D8"
-		    client     	"$UNNAMED$52"
+		    client     	"$UNNAMED$96"
 		    client_quidu 	"5A0580F30292"
 		    Event      	(object Event "[Within]"
 			quid       	"5A05810803B3")
@@ -881,7 +1313,7 @@
 		    label      	""
 		    supplier   	"Use Case View::State/Activity Model::Display error message"
 		    supplier_quidu 	"5A057EF30228"
-		    client     	"$UNNAMED$52"
+		    client     	"$UNNAMED$96"
 		    client_quidu 	"5A0580F30292"
 		    Event      	(object Event "[Over]"
 			quid       	"5A0581120016")
@@ -889,9 +1321,9 @@
 			quid       	"5A0581120018")))
 	    objectflows 	(list objectflow_list)
 	    statediagrams 	(list StateDiagrams
-		(object ActivityDiagram "CorseEnrollAD"
+		(object ActivityDiagram "CorseEnrollActivityDiagram"
 		    quid       	"5A056F7701B2"
-		    title      	"CorseEnrollAD"
+		    title      	"CorseEnrollActivityDiagram"
 		    zoom       	100
 		    max_height 	28350
 		    max_width  	21600
@@ -901,7 +1333,7 @@
 			(object Swimlane "" @1
 			    line_color 	3342489
 			    width      	450)
-			(object StateView "StartState" "$UNNAMED$36" @2
+			(object StateView "StartState" "$UNNAMED$80" @2
 			    Parent_View 	@1
 			    location   	(773, 242)
 			    icon_style 	"Icon"
@@ -946,7 +1378,7 @@
 				(1020, 242))
 			    line_style 	0
 			    x_offset   	FALSE)
-			(object DecisionView "$UNNAMED$37" @5
+			(object DecisionView "$UNNAMED$81" @5
 			    Parent_View 	@1
 			    location   	(1170, 476)
 			    icon_style 	"Icon"
@@ -1402,7 +1834,7 @@
 			    quidu      	"5A057455005D"
 			    height     	134
 			    autoResize 	TRUE)
-			(object DecisionView "$UNNAMED$41" @27
+			(object DecisionView "$UNNAMED$85" @27
 			    Parent_View 	@1
 			    location   	(2176, 2250)
 			    icon_style 	"Icon"
@@ -1533,7 +1965,7 @@
 			    width      	350
 			    height     	134
 			    autoResize 	TRUE)
-			(object DecisionView "$UNNAMED$45" @33
+			(object DecisionView "$UNNAMED$89" @33
 			    Parent_View 	@1
 			    location   	(868, 3349)
 			    icon_style 	"Icon"
@@ -1552,7 +1984,7 @@
 				(868, 3312))
 			    line_style 	0
 			    x_offset   	FALSE)
-			(object StateView "EndState" "$UNNAMED$46" @35
+			(object StateView "EndState" "$UNNAMED$90" @35
 			    Parent_View 	@1
 			    location   	(523, 3351)
 			    icon_style 	"Icon"
@@ -1666,7 +2098,7 @@
 				(1452, 3309))
 			    line_style 	0
 			    x_offset   	FALSE)
-			(object StateView "EndState" "$UNNAMED$47" @41
+			(object StateView "EndState" "$UNNAMED$91" @41
 			    Parent_View 	@1
 			    location   	(1454, 3568)
 			    icon_style 	"Icon"
@@ -1684,7 +2116,7 @@
 				(1453, 3525))
 			    line_style 	0
 			    x_offset   	FALSE)
-			(object DecisionView "$UNNAMED$50" @43
+			(object DecisionView "$UNNAMED$94" @43
 			    Parent_View 	@1
 			    location   	(1498, 1906)
 			    icon_style 	"Icon"
@@ -1703,7 +2135,7 @@
 				(1498, 1869))
 			    line_style 	0
 			    x_offset   	FALSE)
-			(object DecisionView "$UNNAMED$51" @45
+			(object DecisionView "$UNNAMED$95" @45
 			    Parent_View 	@1
 			    location   	(2181, 1895)
 			    icon_style 	"Icon"
@@ -1789,7 +2221,7 @@
 			    width      	464
 			    height     	134
 			    autoResize 	TRUE)
-			(object DecisionView "$UNNAMED$52" @50
+			(object DecisionView "$UNNAMED$96" @50
 			    Parent_View 	@1
 			    location   	(1172, 892)
 			    icon_style 	"Icon"
@@ -1797,7 +2229,7 @@
 			    fill_color 	13434879
 			    quidu      	"5A0580F30292"
 			    autoResize 	TRUE)
-			(object SynchronizationView "$UNNAMED$42" @51
+			(object SynchronizationView "$UNNAMED$86" @51
 			    location   	(1173, 1325)
 			    font       	(object Font
 				size       	10
@@ -1878,7 +2310,7 @@
 				(1989, 1483))
 			    line_style 	0
 			    x_offset   	FALSE)
-			(object SynchronizationView "$UNNAMED$43" @57
+			(object SynchronizationView "$UNNAMED$87" @57
 			    location   	(1161, 2635)
 			    font       	(object Font
 				size       	10
@@ -1948,7 +2380,7 @@
 				(1178, 2625))
 			    line_style 	0
 			    x_offset   	FALSE)
-			(object SynchronizationView "$UNNAMED$48" @62
+			(object SynchronizationView "$UNNAMED$92" @62
 			    location   	(1164, 2971)
 			    font       	(object Font
 				size       	10
@@ -2018,7 +2450,7 @@
 				(1340, 3077))
 			    line_style 	0
 			    x_offset   	FALSE)
-			(object SynchronizationView "$UNNAMED$49" @67
+			(object SynchronizationView "$UNNAMED$93" @67
 			    location   	(868, 3500)
 			    font       	(object Font
 				size       	10
@@ -2529,13 +2961,13 @@
 			    line_style 	0
 			    x_offset   	FALSE)))))
 	logical_presentations 	(list unit_reference_list
-	    (object UseCaseDiagram "MainSystem"
+	    (object UseCaseDiagram "UseCaseDiagram"
 		quid       	"5A0565F601F4"
-		title      	"MainSystem"
+		title      	"UseCaseDiagram"
 		zoom       	100
 		max_height 	28350
 		max_width  	21600
-		origin_x   	13
+		origin_x   	12
 		origin_y   	372
 		items      	(list diagram_item_list
 		    (object UseCaseView "Use Case View::EnrollCourse" @94
@@ -2639,7 +3071,7 @@
 				supplier   	@94
 				vertices   	(list Points
 				    (1550, 835)
-				    (1625, 813))
+				    (1834, 760))
 				line_style 	0)
 			    (object RoleView "$UNNAMED$14" @99
 				Parent_View 	@97
@@ -2678,7 +3110,7 @@
 				supplier   	@95
 				vertices   	(list Points
 				    (1552, 959)
-				    (1839, 985))
+				    (1837, 986))
 				line_style 	0)
 			    (object RoleView "$UNNAMED$26" @102
 				Parent_View 	@100
@@ -2690,7 +3122,7 @@
 				supplier   	@96
 				vertices   	(list Points
 				    (1552, 959)
-				    (1267, 932))
+				    (1267, 933))
 				line_style 	0)))
 		    (object UseCaseView "Use Case View::LogIn" @103
 			location   	(539, 793)
@@ -2741,7 +3173,7 @@
 				supplier   	@103
 				vertices   	(list Points
 				    (898, 862)
-				    (539, 793))
+				    (647, 811))
 				line_style 	0)
 			    (object RoleView "$UNNAMED$5" @106
 				Parent_View 	@104
@@ -2753,7 +3185,7 @@
 				supplier   	@96
 				vertices   	(list Points
 				    (898, 862)
-				    (1151, 913))
+				    (1150, 914))
 				line_style 	0)))
 		    (object UseCaseView "Use Case View::GetCourseInfo" @107
 			location   	(542, 1453)
@@ -2804,7 +3236,7 @@
 				supplier   	@107
 				vertices   	(list Points
 				    (881, 1182)
-				    (608, 1395))
+				    (611, 1395))
 				line_style 	0)
 			    (object RoleView "$UNNAMED$11" @110
 				Parent_View 	@108
@@ -2816,7 +3248,7 @@
 				supplier   	@96
 				vertices   	(list Points
 				    (881, 1182)
-				    (1149, 973))
+				    (1151, 970))
 				line_style 	0)))
 		    (object UseCaseView "Use Case View::SelectCourse" @111
 			location   	(1966, 1243)
@@ -2919,7 +3351,7 @@
 				supplier   	@103
 				vertices   	(list Points
 				    (878, 1087)
-				    (727, 956))
+				    (603, 849))
 				line_style 	0)
 			    (object RoleView "$UNNAMED$8" @116
 				Parent_View 	@114
@@ -2931,7 +3363,7 @@
 				supplier   	@113
 				vertices   	(list Points
 				    (878, 1087)
-				    (1153, 1326))
+				    (1153, 1325))
 				line_style 	0)))
 		    (object AssociationViewNew "$UNNAMED$27" @117
 			location   	(901, 1410)
@@ -2970,7 +3402,7 @@
 				supplier   	@113
 				vertices   	(list Points
 				    (901, 1410)
-				    (1154, 1383))
+				    (1153, 1383))
 				line_style 	0)))
 		    (object AssociationViewNew "$UNNAMED$30" @120
 			location   	(1562, 1311)
@@ -2997,7 +3429,7 @@
 				supplier   	@111
 				vertices   	(list Points
 				    (1562, 1311)
-				    (1645, 1295))
+				    (1855, 1258))
 				line_style 	0)
 			    (object RoleView "$UNNAMED$32" @122
 				Parent_View 	@120
@@ -3009,7 +3441,7 @@
 				supplier   	@113
 				vertices   	(list Points
 				    (1562, 1311)
-				    (1270, 1366))
+				    (1270, 1364))
 				line_style 	0)))
 		    (object AssociationViewNew "$UNNAMED$33" @123
 			location   	(1559, 1440)
@@ -3036,7 +3468,7 @@
 				supplier   	@112
 				vertices   	(list Points
 				    (1559, 1440)
-				    (1848, 1492))
+				    (1849, 1493))
 				line_style 	0)
 			    (object RoleView "$UNNAMED$35" @125
 				Parent_View 	@123
@@ -3048,470 +3480,18 @@
 				supplier   	@113
 				vertices   	(list Points
 				    (1559, 1440)
-				    (1270, 1387))
-				line_style 	0)))))))
-    root_category 	(object Class_Category "Logical View"
-	quid       	"5A0565F40302"
-	exportControl 	"Public"
-	global     	TRUE
-	subsystem  	"Component View"
-	quidu      	"5A0565F40304"
-	logical_models 	(list unit_reference_list
-	    (object Class "Person"
-		quid       	"5A0598D101E1"
-		operations 	(list Operations
-		    (object Operation "displayCurrentCourse"
-			quid       	"5A059CEE01C7"
-			concurrency 	"Sequential"
-			opExportControl 	"Public"
-			uid        	0))
-		class_attributes 	(list class_attribute_list
-		    (object ClassAttribute "name"
-			quid       	"5A059C080194")
-		    (object ClassAttribute "UserID"
-			quid       	"5A059C1C005E")
-		    (object ClassAttribute "isProfessor"
-			quid       	"5A059C2700CD")
-		    (object ClassAttribute "password"
-			quid       	"5A059CCF014D")))
-	    (object Class "Course"
-		quid       	"5A0598D9007D"
-		used_nodes 	(list uses_relationship_list
-		    (object Uses_Relationship
-			quid       	"5A05A0BF0199"
-			supplier   	"Logical View::Person"
-			quidu      	"5A0598D101E1"))
-		operations 	(list Operations
-		    (object Operation "isValidEnroll"
-			quid       	"5A059FFE002E"
-			concurrency 	"Sequential"
-			opExportControl 	"Public"
-			uid        	0)
-		    (object Operation "getSingleScore"
-			quid       	"5A05A00D0203"
-			concurrency 	"Sequential"
-			opExportControl 	"Public"
-			uid        	0))
-		class_attributes 	(list class_attribute_list
-		    (object ClassAttribute "name"
-			quid       	"5A059FB20184")
-		    (object ClassAttribute "courseID"
-			quid       	"5A059FC102FF")
-		    (object ClassAttribute "enrollNum"
-			quid       	"5A059FE10256")
-		    (object ClassAttribute "isOpen"
-			quid       	"5A05A05E01DB")
-		    (object ClassAttribute "isSelected"
-			quid       	"5A05A07A0290")))
-	    (object Class "StudentDB"
-		quid       	"5A0599190169"
-		superclasses 	(list inheritance_relationship_list
-		    (object Inheritance_Relationship
-			quid       	"5A05A60802F1"
-			supplier   	"Logical View::DatabaseControl"
-			quidu      	"5A05A5F30004")))
-	    (object Class "CourseDB"
-		quid       	"5A0599450078"
-		superclasses 	(list inheritance_relationship_list
-		    (object Inheritance_Relationship
-			quid       	"5A05A607001F"
-			supplier   	"Logical View::DatabaseControl"
-			quidu      	"5A05A5F30004")))
-	    (object Class "LoginFrame"
-		quid       	"5A05994F03E7")
-	    (object Class "StudentFrame"
-		quid       	"5A0599620277")
-	    (object Class "ProfessorFrame"
-		quid       	"5A05996B00F9")
-	    (object Class "Professor"
-		quid       	"5A0599880299"
-		superclasses 	(list inheritance_relationship_list
-		    (object Inheritance_Relationship
-			quid       	"5A0599FE0080"
-			supplier   	"Logical View::Person"
-			quidu      	"5A0598D101E1"))
-		operations 	(list Operations
-		    (object Operation "selectCourse"
-			quid       	"5A059F6000CF"
-			concurrency 	"Sequential"
-			opExportControl 	"Public"
-			uid        	0)
-		    (object Operation "submitScore"
-			quid       	"5A059F7202B5"
-			concurrency 	"Sequential"
-			opExportControl 	"Public"
-			uid        	0))
-		class_attributes 	(list class_attribute_list
-		    (object ClassAttribute "selectCourseList"
-			quid       	"5A059D3901C7")))
-	    (object Class "Student"
-		quid       	"5A059C6A01CE"
-		superclasses 	(list inheritance_relationship_list
-		    (object Inheritance_Relationship
-			quid       	"5A059D490069"
-			supplier   	"Logical View::Person"
-			quidu      	"5A0598D101E1"))
-		operations 	(list Operations
-		    (object Operation "isOverEnroll"
-			quid       	"5A059DA701AA"
-			stereotype 	"boolean"
-			concurrency 	"Sequential"
-			opExportControl 	"Public"
-			uid        	0)
-		    (object Operation "getTotalScore"
-			quid       	"5A059E6B007B"
-			stereotype 	"ArrayList"
-			concurrency 	"Sequential"
-			opExportControl 	"Public"
-			uid        	0)
-		    (object Operation "createSchedule"
-			quid       	"5A059EE7031B"
-			concurrency 	"Sequential"
-			opExportControl 	"Public"
-			uid        	0)
-		    (object Operation "updateSchedule"
-			quid       	"5A059EF80131"
-			concurrency 	"Sequential"
-			opExportControl 	"Public"
-			uid        	0)
-		    (object Operation "deleteSchedule"
-			quid       	"5A059F180388"
-			concurrency 	"Sequential"
-			opExportControl 	"Public"
-			uid        	0))
-		class_attributes 	(list class_attribute_list
-		    (object ClassAttribute "mainCourseNum"
-			quid       	"5A059D670089")
-		    (object ClassAttribute "optCourseNum"
-			quid       	"5A059D790077")
-		    (object ClassAttribute "enrollSchedule"
-			quid       	"5A059EAE028A")))
-	    (object Class "courseEnrollSystem"
-		quid       	"5A05A2E40391"
-		operations 	(list Operations
-		    (object Operation "isOverTime"
-			quid       	"5A05A2FD00B3"
-			stereotype 	"boolean"
-			concurrency 	"Sequential"
-			opExportControl 	"Public"
-			uid        	0)
-		    (object Operation "isConnected"
-			quid       	"5A05A31201C0"
-			stereotype 	"boolean"
-			concurrency 	"Sequential"
-			opExportControl 	"Public"
-			uid        	0)
-		    (object Operation "isLogin"
-			quid       	"5A05A35500CA"
-			stereotype 	"boolean"
-			concurrency 	"Sequential"
-			opExportControl 	"Public"
-			uid        	0)
-		    (object Operation "getCurrentCourseList"
-			quid       	"5A05A38601A4"
-			stereotype 	"boolean"
-			concurrency 	"Sequential"
-			opExportControl 	"Public"
-			uid        	0))
-		class_attributes 	(list class_attribute_list
-		    (object ClassAttribute "_mainFrame"
-			quid       	"5A05A40700C2")
-		    (object ClassAttribute "_studentFrame"
-			quid       	"5A05A413039B")
-		    (object ClassAttribute "_professorFrame"
-			quid       	"5A05A41B0316")))
-	    (object Class "MainFrame"
-		quid       	"5A05A4280190")
-	    (object Class "teacherFrame"
-		quid       	"5A05A42A01A1")
-	    (object Class "Frame"
-		quid       	"5A05A48B029B")
-	    (object Class "NewInterface"
-		quid       	"5A05A4D503D1"
-		stereotype 	"Interface")
-	    (object Class "ProfessorDB"
-		quid       	"5A05A5B5030E"
-		superclasses 	(list inheritance_relationship_list
-		    (object Inheritance_Relationship
-			quid       	"5A05A60A03A9"
-			supplier   	"Logical View::DatabaseControl"
-			quidu      	"5A05A5F30004")))
-	    (object Class "DatabaseControl"
-		quid       	"5A05A5F30004"
-		operations 	(list Operations
-		    (object Operation "find"
-			quid       	"5A05A612030F"
-			concurrency 	"Sequential"
-			opExportControl 	"Public"
-			uid        	0)
-		    (object Operation "update"
-			quid       	"5A05A73A00DA"
-			concurrency 	"Sequential"
-			opExportControl 	"Public"
-			uid        	0)
-		    (object Operation "delete"
-			quid       	"5A05A742023E"
-			concurrency 	"Sequential"
-			opExportControl 	"Public"
-			uid        	0)
-		    (object Operation "add"
-			quid       	"5A05A746017F"
-			concurrency 	"Sequential"
-			opExportControl 	"Public"
-			uid        	0)
-		    (object Operation "initialize"
-			quid       	"5A05A74A0119"
-			concurrency 	"Sequential"
-			opExportControl 	"Public"
-			uid        	0)
-		    (object Operation "terminate"
-			quid       	"5A05A7510092"
-			concurrency 	"Sequential"
-			opExportControl 	"Public"
-			uid        	0)))
-	    (object Association "$UNNAMED$53"
-		quid       	"5A05999E00D0"
-		roles      	(list role_list
-		    (object Role "$UNNAMED$54"
-			quid       	"5A05999E0244"
-			supplier   	"Logical View::Person"
-			quidu      	"5A0598D101E1"
-			is_navigable 	TRUE)
-		    (object Role "$UNNAMED$55"
-			quid       	"5A05999E0248"
-			supplier   	"Logical View::Professor"
-			quidu      	"5A0599880299")))
-	    (object Association "$UNNAMED$56"
-		quid       	"5A0599EB000B"
-		roles      	(list role_list
-		    (object Role "$UNNAMED$57"
-			quid       	"5A0599EC0374"
-			supplier   	"Logical View::Person"
-			quidu      	"5A0598D101E1"
-			is_navigable 	TRUE)
-		    (object Role "$UNNAMED$58"
-			quid       	"5A0599EC0377"
-			supplier   	"Logical View::Professor"
-			quidu      	"5A0599880299")))
-	    (object Association "Select"
-		quid       	"5A05A1CD016A"
-		roles      	(list role_list
-		    (object Role "*"
-			quid       	"5A05A1CD030F"
-			label      	"*"
-			supplier   	"Logical View::Person"
-			quidu      	"5A0598D101E1"
-			is_navigable 	TRUE)
-		    (object Role "*"
-			quid       	"5A05A1CD0314"
-			label      	"*"
-			supplier   	"Logical View::Course"
-			quidu      	"5A0598D9007D"
-			is_navigable 	TRUE)))
-	    (object Association "$UNNAMED$59"
-		quid       	"5A05A2150389"
-		roles      	(list role_list
-		    (object Role "$UNNAMED$60"
-			quid       	"5A05A216013B"
-			supplier   	"Logical View::StudentDB"
-			quidu      	"5A0599190169"
-			is_navigable 	TRUE)
-		    (object Role "$UNNAMED$61"
-			quid       	"5A05A216013D"
-			supplier   	"Logical View::Course"
-			quidu      	"5A0598D9007D"
-			is_navigable 	TRUE
-			is_aggregate 	TRUE)))
-	    (object Association "$UNNAMED$62"
-		quid       	"5A05A237033D"
-		roles      	(list role_list
-		    (object Role "$UNNAMED$63"
-			quid       	"5A05A2380104"
-			supplier   	"Logical View::Person"
-			quidu      	"5A0598D101E1"
-			is_navigable 	TRUE)
-		    (object Role "$UNNAMED$64"
-			quid       	"5A05A238010B"
-			supplier   	"Logical View::Course"
-			quidu      	"5A0598D9007D"
-			is_navigable 	TRUE)))
-	    (object Association "Property"
-		quid       	"5A05A23D00F4"
-		stereotype 	"communicate"
-		roles      	(list role_list
-		    (object Role "$UNNAMED$65"
-			quid       	"5A05A23D01D2"
-			supplier   	"Logical View::Person"
-			quidu      	"5A0598D101E1"
-			client_cardinality 	(value cardinality "*")
-			is_navigable 	TRUE)
-		    (object Role "$UNNAMED$66"
-			quid       	"5A05A23D01D9"
-			supplier   	"Logical View::Course"
-			quidu      	"5A0598D9007D"
-			client_cardinality 	(value cardinality "*")
-			is_navigable 	TRUE)))
-	    (object Association "$UNNAMED$67"
-		quid       	"5A05A4CC02D1"
-		roles      	(list role_list
-		    (object Role "$UNNAMED$68"
-			quid       	"5A05A4CC03A7"
-			supplier   	"Logical View::courseEnrollSystem"
-			quidu      	"5A05A2E40391"
-			is_navigable 	TRUE)
-		    (object Role "$UNNAMED$69"
-			quid       	"5A05A4CC03AE"
-			supplier   	"Logical View::MainFrame"
-			quidu      	"5A05A4280190"
-			is_navigable 	TRUE
-			is_aggregate 	TRUE)))
-	    (object Association "$UNNAMED$70"
-		quid       	"5A05A52200FB"
-		roles      	(list role_list
-		    (object Role "$UNNAMED$71"
-			quid       	"5A05A52201EC"
-			supplier   	"Logical View::courseEnrollSystem"
-			quidu      	"5A05A2E40391"
-			is_navigable 	TRUE)
-		    (object Role "$UNNAMED$72"
-			quid       	"5A05A52201EF"
-			supplier   	"Logical View::MainFrame"
-			quidu      	"5A05A4280190"
-			is_navigable 	TRUE
-			is_aggregate 	TRUE)))
-	    (object Association "$UNNAMED$73"
-		quid       	"5A05A52702BE"
-		roles      	(list role_list
-		    (object Role "$UNNAMED$74"
-			quid       	"5A05A52703A5"
-			supplier   	"Logical View::MainFrame"
-			quidu      	"5A05A4280190"
-			client_cardinality 	(value cardinality "1")
-			is_navigable 	TRUE)
-		    (object Role "$UNNAMED$75"
-			quid       	"5A05A52703A9"
-			supplier   	"Logical View::courseEnrollSystem"
-			quidu      	"5A05A2E40391"
-			client_cardinality 	(value cardinality "1")
-			is_navigable 	TRUE
-			is_aggregate 	TRUE)))
-	    (object Association "$UNNAMED$76"
-		quid       	"5A05A52902B8"
-		roles      	(list role_list
-		    (object Role "$UNNAMED$77"
-			quid       	"5A05A52903B3"
-			supplier   	"Logical View::StudentFrame"
-			quidu      	"5A0599620277"
-			client_cardinality 	(value cardinality "1")
-			is_navigable 	TRUE)
-		    (object Role "$UNNAMED$78"
-			quid       	"5A05A52903B5"
-			supplier   	"Logical View::courseEnrollSystem"
-			quidu      	"5A05A2E40391"
-			client_cardinality 	(value cardinality "1")
-			is_navigable 	TRUE
-			is_aggregate 	TRUE)))
-	    (object Association "$UNNAMED$79"
-		quid       	"5A05A52B0122"
-		roles      	(list role_list
-		    (object Role "$UNNAMED$80"
-			quid       	"5A05A52B02BD"
-			supplier   	"Logical View::ProfessorFrame"
-			quidu      	"5A05996B00F9"
-			client_cardinality 	(value cardinality "1")
-			is_navigable 	TRUE)
-		    (object Role "$UNNAMED$81"
-			quid       	"5A05A52B02C1"
-			supplier   	"Logical View::courseEnrollSystem"
-			quidu      	"5A05A2E40391"
-			client_cardinality 	(value cardinality "1")
-			is_navigable 	TRUE
-			is_aggregate 	TRUE)))
-	    (object Association "$UNNAMED$82"
-		quid       	"5A05A77400CC"
-		roles      	(list role_list
-		    (object Role "$UNNAMED$83"
-			quid       	"5A05A77E025E"
-			supplier   	"Logical View::Course"
-			quidu      	"5A0598D9007D"
-			is_navigable 	TRUE)
-		    (object Role "$UNNAMED$84"
-			quid       	"5A05A77E0262"
-			supplier   	"Logical View::CourseDB"
-			quidu      	"5A0599450078"
-			is_navigable 	TRUE)))
-	    (object Association "$UNNAMED$85"
-		quid       	"5A05A7BF0045"
-		roles      	(list role_list
-		    (object Role "$UNNAMED$86"
-			quid       	"5A05A7C101F4"
-			supplier   	"Logical View::Course"
-			quidu      	"5A0598D9007D"
-			is_navigable 	TRUE)
-		    (object Role "$UNNAMED$87"
-			quid       	"5A05A7C101FA"
-			supplier   	"Logical View::CourseDB"
-			quidu      	"5A0599450078"
-			is_navigable 	TRUE)))
-	    (object Association "$UNNAMED$88"
-		quid       	"5A05A7C702B7"
-		roles      	(list role_list
-		    (object Role "$UNNAMED$89"
-			quid       	"5A05A7CA0042"
-			supplier   	"Logical View::Student"
-			quidu      	"5A059C6A01CE"
-			is_navigable 	TRUE)
-		    (object Role "$UNNAMED$90"
-			quid       	"5A05A7CA0046"
-			supplier   	"Logical View::StudentDB"
-			quidu      	"5A0599190169"
-			is_navigable 	TRUE)))
-	    (object Association "$UNNAMED$91"
-		quid       	"5A05A7D101D4"
-		roles      	(list role_list
-		    (object Role "$UNNAMED$92"
-			quid       	"5A05A7D103C4"
-			supplier   	"Logical View::Professor"
-			quidu      	"5A0599880299"
-			is_navigable 	TRUE)
-		    (object Role "$UNNAMED$93"
-			quid       	"5A05A7D103C7"
-			supplier   	"Logical View::ProfessorDB"
-			quidu      	"5A05A5B5030E"
-			is_navigable 	TRUE)))
-	    (object Association "$UNNAMED$94"
-		quid       	"5A05A8320103"
-		roles      	(list role_list
-		    (object Role "$UNNAMED$95"
-			quid       	"5A05A8370296"
-			supplier   	"Logical View::DatabaseControl"
-			quidu      	"5A05A5F30004"
-			is_navigable 	TRUE)
-		    (object Role "$UNNAMED$96"
-			quid       	"5A05A8370299"
-			supplier   	"Logical View::ProfessorDB"
-			quidu      	"5A05A5B5030E"
-			is_navigable 	TRUE))))
-	logical_presentations 	(list unit_reference_list
-	    (object ClassDiagram "Main"
-		quid       	"5A0565F601F5"
-		title      	"Main"
-		zoom       	100
-		max_height 	28350
-		max_width  	21600
-		origin_x   	0
-		origin_y   	0
-		items      	(list diagram_item_list))
+				    (1270, 1388))
+				line_style 	0)))))
 	    (object ClassDiagram "ClassDiagram"
 		quid       	"5A0598C101DA"
 		title      	"ClassDiagram"
 		zoom       	100
 		max_height 	28350
 		max_width  	21600
-		origin_x   	1126
+		origin_x   	0
 		origin_y   	225
 		items      	(list diagram_item_list
-		    (object ClassView "Class" "Logical View::MainFrame" @126
+		    (object ClassView "Class" "Use Case View::MainFrame" @126
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -3527,21 +3507,21 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@126
-			    location   	(255, 1136)
+			    location   	(258, 1136)
 			    fill_color 	13434879
 			    nlines     	1
-			    max_width  	244
+			    max_width  	238
 			    justify    	0
 			    label      	"MainFrame")
 			icon_style 	"Icon"
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5A05A4280190"
-			width      	262
+			width      	256
 			height     	126
 			annotation 	8
 			autoResize 	TRUE)
-		    (object ClassView "Class" "Logical View::StudentFrame" @127
+		    (object ClassView "Class" "Use Case View::StudentFrame" @127
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -3557,21 +3537,21 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@127
-			    location   	(538, 1136)
+			    location   	(546, 1136)
 			    fill_color 	13434879
 			    nlines     	1
-			    max_width  	302
+			    max_width  	286
 			    justify    	0
 			    label      	"StudentFrame")
 			icon_style 	"Icon"
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5A0599620277"
-			width      	320
+			width      	304
 			height     	126
 			annotation 	8
 			autoResize 	TRUE)
-		    (object ClassView "Class" "Logical View::ProfessorFrame" @128
+		    (object ClassView "Class" "Use Case View::ProfessorFrame" @128
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -3587,21 +3567,21 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@128
-			    location   	(849, 1136)
+			    location   	(851, 1136)
 			    fill_color 	13434879
 			    nlines     	1
-			    max_width  	332
+			    max_width  	328
 			    justify    	0
 			    label      	"ProfessorFrame")
 			icon_style 	"Icon"
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5A05996B00F9"
-			width      	350
+			width      	346
 			height     	126
 			annotation 	8
 			autoResize 	TRUE)
-		    (object ClassView "Class" "Logical View::courseEnrollSystem" @129
+		    (object ClassView "Class" "Use Case View::CourseEnrollSystem" @129
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -3622,7 +3602,7 @@
 			    nlines     	1
 			    max_width  	718
 			    justify    	0
-			    label      	"courseEnrollSystem")
+			    label      	"CourseEnrollSystem")
 			icon_style 	"Icon"
 			line_color 	3342489
 			fill_color 	13434879
@@ -3649,7 +3629,7 @@
 			height     	486
 			annotation 	8
 			autoResize 	TRUE)
-		    (object AssociationViewNew "$UNNAMED$73" @130
+		    (object AssociationViewNew "$UNNAMED$54" @130
 			location   	(489, 950)
 			font       	(object Font
 			    size       	10
@@ -3664,7 +3644,7 @@
 			line_color 	3342489
 			quidu      	"5A05A52702BE"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$74" @131
+			    (object RoleView "$UNNAMED$55" @131
 				Parent_View 	@130
 				location   	(-67, 344)
 				font       	(object Font
@@ -3706,7 +3686,7 @@
 				    pctDist    	0.737683
 				    height     	40
 				    orientation 	0))
-			    (object RoleView "$UNNAMED$75" @133
+			    (object RoleView "$UNNAMED$56" @133
 				Parent_View 	@130
 				location   	(-67, 344)
 				font       	(object Font
@@ -3748,7 +3728,7 @@
 				    pctDist    	0.665351
 				    height     	34
 				    orientation 	1))))
-		    (object AssociationViewNew "$UNNAMED$76" @135
+		    (object AssociationViewNew "$UNNAMED$57" @135
 			location   	(689, 950)
 			font       	(object Font
 			    size       	10
@@ -3763,7 +3743,7 @@
 			line_color 	3342489
 			quidu      	"5A05A52902B8"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$77" @136
+			    (object RoleView "$UNNAMED$58" @136
 				Parent_View 	@135
 				location   	(133, 344)
 				font       	(object Font
@@ -3805,7 +3785,7 @@
 				    pctDist    	0.826590
 				    height     	47
 				    orientation 	0))
-			    (object RoleView "$UNNAMED$78" @138
+			    (object RoleView "$UNNAMED$59" @138
 				Parent_View 	@135
 				location   	(133, 344)
 				font       	(object Font
@@ -3847,7 +3827,7 @@
 				    pctDist    	0.608587
 				    height     	49
 				    orientation 	1))))
-		    (object AssociationViewNew "$UNNAMED$79" @140
+		    (object AssociationViewNew "$UNNAMED$60" @140
 			location   	(896, 950)
 			font       	(object Font
 			    size       	10
@@ -3862,7 +3842,7 @@
 			line_color 	3342489
 			quidu      	"5A05A52B0122"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$80" @141
+			    (object RoleView "$UNNAMED$61" @141
 				Parent_View 	@140
 				location   	(340, 344)
 				font       	(object Font
@@ -3904,7 +3884,7 @@
 				    pctDist    	0.941460
 				    height     	56
 				    orientation 	0))
-			    (object RoleView "$UNNAMED$81" @143
+			    (object RoleView "$UNNAMED$62" @143
 				Parent_View 	@140
 				location   	(340, 344)
 				font       	(object Font
@@ -3946,7 +3926,7 @@
 				    pctDist    	0.521286
 				    height     	38
 				    orientation 	1))))
-		    (object ClassView "Class" "Logical View::Person" @145
+		    (object ClassView "Class" "Use Case View::Person" @145
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -3994,7 +3974,7 @@
 			height     	386
 			annotation 	8
 			autoResize 	TRUE)
-		    (object ClassView "Class" "Logical View::Course" @146
+		    (object ClassView "Class" "Use Case View::Course" @146
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -4010,10 +3990,10 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@146
-			    location   	(1230, 297)
+			    location   	(1262, 303)
 			    fill_color 	13434879
 			    nlines     	1
-			    max_width  	420
+			    max_width  	356
 			    justify    	0
 			    label      	"Course")
 			icon_style 	"Icon"
@@ -4022,7 +4002,7 @@
 			quidu      	"5A0598D9007D"
 			compartment 	(object Compartment
 			    Parent_View 	@146
-			    location   	(1230, 358)
+			    location   	(1262, 364)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -4036,14 +4016,14 @@
 			    fill_color 	13434879
 			    anchor     	2
 			    nlines     	8
-			    max_width  	359
+			    max_width  	353
 			    justify    	1)
-			width      	438
-			height     	499
+			width      	374
+			height     	486
 			annotation 	8
 			autoResize 	TRUE)
 		    (object AssociationViewNew "Property" @147
-			location   	(1901, 533)
+			location   	(1885, 533)
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -4055,7 +4035,7 @@
 			    default_color 	TRUE)
 			label      	(object SegLabel @148
 			    Parent_View 	@147
-			    location   	(1901, 474)
+			    location   	(1885, 474)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -4078,9 +4058,9 @@
 			line_color 	3342489
 			quidu      	"5A05A23D00F4"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$65" @149
+			    (object RoleView "$UNNAMED$78" @149
 				Parent_View 	@147
-				location   	(745, -14)
+				location   	(729, -14)
 				font       	(object Font
 				    size       	10
 				    face       	"Arial"
@@ -4092,7 +4072,7 @@
 				    default_color 	TRUE)
 				label      	(object SegLabel @150
 				    Parent_View 	@149
-				    location   	(2092, 490)
+				    location   	(2090, 490)
 				    font       	(object Font
 					size       	10
 					face       	"Arial"
@@ -4118,12 +4098,12 @@
 				client     	@147
 				supplier   	@145
 				vertices   	(list Points
-				    (1901, 533)
+				    (1885, 533)
 				    (2143, 533))
 				line_style 	0
 				label      	(object SegLabel @151
 				    Parent_View 	@149
-				    location   	(2119, 587)
+				    location   	(2117, 587)
 				    font       	(object Font
 					size       	10
 					face       	"Arial"
@@ -4142,9 +4122,9 @@
 				    pctDist    	0.900000
 				    height     	54
 				    orientation 	1))
-			    (object RoleView "$UNNAMED$66" @152
+			    (object RoleView "$UNNAMED$79" @152
 				Parent_View 	@147
-				location   	(745, -14)
+				location   	(729, -14)
 				font       	(object Font
 				    size       	10
 				    face       	"Arial"
@@ -4156,7 +4136,7 @@
 				    default_color 	TRUE)
 				label      	(object SegLabel @153
 				    Parent_View 	@152
-				    location   	(1707, 492)
+				    location   	(1679, 492)
 				    font       	(object Font
 					size       	10
 					face       	"Arial"
@@ -4182,12 +4162,12 @@
 				client     	@147
 				supplier   	@146
 				vertices   	(list Points
-				    (1901, 533)
-				    (1659, 533))
+				    (1885, 533)
+				    (1627, 533))
 				line_style 	0
 				label      	(object SegLabel @154
 				    Parent_View 	@152
-				    location   	(1683, 587)
+				    location   	(1653, 587)
 				    font       	(object Font
 					size       	10
 					face       	"Arial"
@@ -4206,7 +4186,7 @@
 				    pctDist    	0.900000
 				    height     	54
 				    orientation 	0))))
-		    (object ClassView "Class" "Logical View::CourseDB" @155
+		    (object ClassView "Class" "Use Case View::CourseDB" @155
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -4236,37 +4216,37 @@
 			height     	128
 			annotation 	8
 			autoResize 	TRUE)
-		    (object AssociationViewNew "$UNNAMED$85" @156
-			location   	(1438, 1156)
+		    (object AssociationViewNew "$UNNAMED$66" @156
+			location   	(1438, 1153)
 			stereotype 	TRUE
 			line_color 	3342489
 			quidu      	"5A05A7BF0045"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$86" @157
+			    (object RoleView "$UNNAMED$67" @157
 				Parent_View 	@156
-				location   	(206, -439)
+				location   	(206, -442)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5A05A7C101F4"
 				client     	@156
 				supplier   	@146
 				vertices   	(list Points
-				    (1438, 1156)
-				    (1439, 783))
+				    (1438, 1153)
+				    (1439, 777))
 				line_style 	0)
-			    (object RoleView "$UNNAMED$87" @158
+			    (object RoleView "$UNNAMED$68" @158
 				Parent_View 	@156
-				location   	(206, -439)
+				location   	(206, -442)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5A05A7C101FA"
 				client     	@156
 				supplier   	@155
 				vertices   	(list Points
-				    (1438, 1156)
+				    (1438, 1153)
 				    (1437, 1530))
 				line_style 	0)))
-		    (object ClassView "Class" "Logical View::Student" @159
+		    (object ClassView "Class" "Use Case View::Student" @159
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -4282,10 +4262,10 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@159
-			    location   	(2094, 874)
+			    location   	(2083, 874)
 			    fill_color 	13434879
 			    nlines     	1
-			    max_width  	584
+			    max_width  	606
 			    justify    	0
 			    label      	"Student")
 			icon_style 	"Icon"
@@ -4294,7 +4274,7 @@
 			quidu      	"5A059C6A01CE"
 			compartment 	(object Compartment
 			    Parent_View 	@159
-			    location   	(2094, 935)
+			    location   	(2083, 935)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -4308,9 +4288,9 @@
 			    fill_color 	13434879
 			    anchor     	2
 			    nlines     	9
-			    max_width  	606
+			    max_width  	603
 			    justify    	1)
-			width      	602
+			width      	624
 			height     	536
 			annotation 	8
 			autoResize 	TRUE)
@@ -4324,7 +4304,7 @@
 			    (2386, 861)
 			    (2386, 726))
 			line_style 	0)
-		    (object ClassView "Class" "Logical View::StudentDB" @161
+		    (object ClassView "Class" "Use Case View::StudentDB" @161
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -4354,13 +4334,13 @@
 			height     	128
 			annotation 	8
 			autoResize 	TRUE)
-		    (object AssociationViewNew "$UNNAMED$88" @162
+		    (object AssociationViewNew "$UNNAMED$69" @162
 			location   	(2381, 1465)
 			stereotype 	TRUE
 			line_color 	3342489
 			quidu      	"5A05A7C702B7"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$89" @163
+			    (object RoleView "$UNNAMED$70" @163
 				Parent_View 	@162
 				location   	(214, -130)
 				stereotype 	TRUE
@@ -4372,7 +4352,7 @@
 				    (2381, 1465)
 				    (2382, 1398))
 				line_style 	0)
-			    (object RoleView "$UNNAMED$90" @164
+			    (object RoleView "$UNNAMED$71" @164
 				Parent_View 	@162
 				location   	(214, -130)
 				stereotype 	TRUE
@@ -4384,7 +4364,7 @@
 				    (2381, 1465)
 				    (2381, 1533))
 				line_style 	0)))
-		    (object ClassView "Class" "Logical View::Professor" @165
+		    (object ClassView "Class" "Use Case View::Professor" @165
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -4400,10 +4380,10 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@165
-			    location   	(2929, 915)
+			    location   	(2928, 915)
 			    fill_color 	13434879
 			    nlines     	1
-			    max_width  	356
+			    max_width  	358
 			    justify    	0
 			    label      	"Professor")
 			icon_style 	"Icon"
@@ -4412,7 +4392,7 @@
 			quidu      	"5A0599880299"
 			compartment 	(object Compartment
 			    Parent_View 	@165
-			    location   	(2929, 976)
+			    location   	(2928, 976)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -4426,9 +4406,9 @@
 			    fill_color 	13434879
 			    anchor     	2
 			    nlines     	4
-			    max_width  	362
+			    max_width  	356
 			    justify    	1)
-			width      	374
+			width      	376
 			height     	286
 			annotation 	8
 			autoResize 	TRUE)
@@ -4443,7 +4423,7 @@
 			    (3106, 534)
 			    (2630, 533))
 			line_style 	0)
-		    (object ClassView "Class" "Logical View::ProfessorDB" @167
+		    (object ClassView "Class" "Use Case View::ProfessorDB" @167
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -4473,13 +4453,13 @@
 			height     	126
 			annotation 	8
 			autoResize 	TRUE)
-		    (object AssociationViewNew "$UNNAMED$91" @168
+		    (object AssociationViewNew "$UNNAMED$72" @168
 			location   	(3104, 1359)
 			stereotype 	TRUE
 			line_color 	3342489
 			quidu      	"5A05A7D101D4"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$92" @169
+			    (object RoleView "$UNNAMED$73" @169
 				Parent_View 	@168
 				location   	(170, -237)
 				stereotype 	TRUE
@@ -4491,7 +4471,7 @@
 				    (3104, 1359)
 				    (3105, 1189))
 				line_style 	0)
-			    (object RoleView "$UNNAMED$93" @170
+			    (object RoleView "$UNNAMED$74" @170
 				Parent_View 	@168
 				location   	(170, -237)
 				stereotype 	TRUE
@@ -4503,7 +4483,7 @@
 				    (3104, 1359)
 				    (3104, 1529))
 				line_style 	0)))
-		    (object ClassView "Class" "Logical View::DatabaseControl" @171
+		    (object ClassView "Class" "Use Case View::DatabaseControl" @171
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -4519,17 +4499,35 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@171
-			    location   	(2210, 1963)
+			    location   	(2211, 1963)
 			    fill_color 	13434879
 			    nlines     	1
-			    max_width  	342
+			    max_width  	340
 			    justify    	0
 			    label      	"DatabaseControl")
 			icon_style 	"Icon"
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5A05A5F30004"
-			width      	360
+			compartment 	(object Compartment
+			    Parent_View 	@171
+			    location   	(2211, 2024)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	16777215
+			    anchor     	2
+			    nlines     	7
+			    max_width  	241
+			    justify    	1)
+			width      	358
 			height     	436
 			annotation 	8
 			autoResize 	TRUE)
@@ -4580,6 +4578,23 @@
 			origin_attachment 	(3105, 1656)
 			terminal_attachment 	(3105, 1860)
 			drawSupplier 	@172)))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"5A0565F40302"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"5A0565F40304"
+	logical_models 	(list unit_reference_list)
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "Main"
+		quid       	"5A0565F601F5"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
     root_subsystem 	(object SubSystem "Component View"
 	quid       	"5A0565F40304"
 	physical_models 	(list unit_reference_list)

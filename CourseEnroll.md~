@@ -2639,7 +2639,7 @@
 				supplier   	@94
 				vertices   	(list Points
 				    (1550, 835)
-				    (1834, 760))
+				    (1625, 813))
 				line_style 	0)
 			    (object RoleView "$UNNAMED$14" @99
 				Parent_View 	@97
@@ -2678,7 +2678,7 @@
 				supplier   	@95
 				vertices   	(list Points
 				    (1552, 959)
-				    (1837, 986))
+				    (1839, 985))
 				line_style 	0)
 			    (object RoleView "$UNNAMED$26" @102
 				Parent_View 	@100
@@ -2690,7 +2690,7 @@
 				supplier   	@96
 				vertices   	(list Points
 				    (1552, 959)
-				    (1267, 933))
+				    (1267, 932))
 				line_style 	0)))
 		    (object UseCaseView "Use Case View::LogIn" @103
 			location   	(539, 793)
@@ -2741,7 +2741,7 @@
 				supplier   	@103
 				vertices   	(list Points
 				    (898, 862)
-				    (647, 811))
+				    (539, 793))
 				line_style 	0)
 			    (object RoleView "$UNNAMED$5" @106
 				Parent_View 	@104
@@ -2753,7 +2753,7 @@
 				supplier   	@96
 				vertices   	(list Points
 				    (898, 862)
-				    (1150, 914))
+				    (1151, 913))
 				line_style 	0)))
 		    (object UseCaseView "Use Case View::GetCourseInfo" @107
 			location   	(542, 1453)
@@ -2804,7 +2804,7 @@
 				supplier   	@107
 				vertices   	(list Points
 				    (881, 1182)
-				    (611, 1395))
+				    (608, 1395))
 				line_style 	0)
 			    (object RoleView "$UNNAMED$11" @110
 				Parent_View 	@108
@@ -2816,7 +2816,7 @@
 				supplier   	@96
 				vertices   	(list Points
 				    (881, 1182)
-				    (1151, 970))
+				    (1149, 973))
 				line_style 	0)))
 		    (object UseCaseView "Use Case View::SelectCourse" @111
 			location   	(1966, 1243)
@@ -2919,7 +2919,7 @@
 				supplier   	@103
 				vertices   	(list Points
 				    (878, 1087)
-				    (603, 849))
+				    (727, 956))
 				line_style 	0)
 			    (object RoleView "$UNNAMED$8" @116
 				Parent_View 	@114
@@ -2931,7 +2931,7 @@
 				supplier   	@113
 				vertices   	(list Points
 				    (878, 1087)
-				    (1153, 1325))
+				    (1153, 1326))
 				line_style 	0)))
 		    (object AssociationViewNew "$UNNAMED$27" @117
 			location   	(901, 1410)
@@ -2970,7 +2970,7 @@
 				supplier   	@113
 				vertices   	(list Points
 				    (901, 1410)
-				    (1153, 1383))
+				    (1154, 1383))
 				line_style 	0)))
 		    (object AssociationViewNew "$UNNAMED$30" @120
 			location   	(1562, 1311)
@@ -2997,7 +2997,7 @@
 				supplier   	@111
 				vertices   	(list Points
 				    (1562, 1311)
-				    (1855, 1258))
+				    (1645, 1295))
 				line_style 	0)
 			    (object RoleView "$UNNAMED$32" @122
 				Parent_View 	@120
@@ -3009,7 +3009,7 @@
 				supplier   	@113
 				vertices   	(list Points
 				    (1562, 1311)
-				    (1270, 1364))
+				    (1270, 1366))
 				line_style 	0)))
 		    (object AssociationViewNew "$UNNAMED$33" @123
 			location   	(1559, 1440)
@@ -3036,7 +3036,7 @@
 				supplier   	@112
 				vertices   	(list Points
 				    (1559, 1440)
-				    (1849, 1493))
+				    (1848, 1492))
 				line_style 	0)
 			    (object RoleView "$UNNAMED$35" @125
 				Parent_View 	@123
@@ -3048,7 +3048,7 @@
 				supplier   	@113
 				vertices   	(list Points
 				    (1559, 1440)
-				    (1270, 1388))
+				    (1270, 1387))
 				line_style 	0)))))))
     root_category 	(object Class_Category "Logical View"
 	quid       	"5A0565F40302"
@@ -3070,7 +3070,7 @@
 			quid       	"5A059C080194")
 		    (object ClassAttribute "UserID"
 			quid       	"5A059C1C005E")
-		    (object ClassAttribute "isTeacher"
+		    (object ClassAttribute "isProfessor"
 			quid       	"5A059C2700CD")
 		    (object ClassAttribute "password"
 			quid       	"5A059CCF014D")))
@@ -3103,14 +3103,14 @@
 			quid       	"5A05A05E01DB")
 		    (object ClassAttribute "isSelected"
 			quid       	"5A05A07A0290")))
-	    (object Class "StudentDb"
+	    (object Class "StudentDB"
 		quid       	"5A0599190169"
 		superclasses 	(list inheritance_relationship_list
 		    (object Inheritance_Relationship
 			quid       	"5A05A60802F1"
 			supplier   	"Logical View::DatabaseControl"
 			quidu      	"5A05A5F30004")))
-	    (object Class "CoursDb"
+	    (object Class "CourseDB"
 		quid       	"5A0599450078"
 		superclasses 	(list inheritance_relationship_list
 		    (object Inheritance_Relationship
@@ -3121,9 +3121,9 @@
 		quid       	"5A05994F03E7")
 	    (object Class "StudentFrame"
 		quid       	"5A0599620277")
-	    (object Class "TeacherFrame"
+	    (object Class "ProfessorFrame"
 		quid       	"5A05996B00F9")
-	    (object Class "Teacher"
+	    (object Class "Professor"
 		quid       	"5A0599880299"
 		superclasses 	(list inheritance_relationship_list
 		    (object Inheritance_Relationship
@@ -3218,7 +3218,7 @@
 			quid       	"5A05A40700C2")
 		    (object ClassAttribute "_studentFrame"
 			quid       	"5A05A413039B")
-		    (object ClassAttribute "_teacherFrame"
+		    (object ClassAttribute "_professorFrame"
 			quid       	"5A05A41B0316")))
 	    (object Class "MainFrame"
 		quid       	"5A05A4280190")
@@ -3229,7 +3229,7 @@
 	    (object Class "NewInterface"
 		quid       	"5A05A4D503D1"
 		stereotype 	"Interface")
-	    (object Class "TeacherDb"
+	    (object Class "ProfessorDB"
 		quid       	"5A05A5B5030E"
 		superclasses 	(list inheritance_relationship_list
 		    (object Inheritance_Relationship
@@ -3279,7 +3279,7 @@
 			is_navigable 	TRUE)
 		    (object Role "$UNNAMED$55"
 			quid       	"5A05999E0248"
-			supplier   	"Logical View::Teacher"
+			supplier   	"Logical View::Professor"
 			quidu      	"5A0599880299")))
 	    (object Association "$UNNAMED$56"
 		quid       	"5A0599EB000B"
@@ -3291,7 +3291,7 @@
 			is_navigable 	TRUE)
 		    (object Role "$UNNAMED$58"
 			quid       	"5A0599EC0377"
-			supplier   	"Logical View::Teacher"
+			supplier   	"Logical View::Professor"
 			quidu      	"5A0599880299")))
 	    (object Association "Select"
 		quid       	"5A05A1CD016A"
@@ -3313,7 +3313,7 @@
 		roles      	(list role_list
 		    (object Role "$UNNAMED$60"
 			quid       	"5A05A216013B"
-			supplier   	"Logical View::StudentDb"
+			supplier   	"Logical View::StudentDB"
 			quidu      	"5A0599190169"
 			is_navigable 	TRUE)
 		    (object Role "$UNNAMED$61"
@@ -3416,7 +3416,7 @@
 		roles      	(list role_list
 		    (object Role "$UNNAMED$80"
 			quid       	"5A05A52B02BD"
-			supplier   	"Logical View::TeacherFrame"
+			supplier   	"Logical View::ProfessorFrame"
 			quidu      	"5A05996B00F9"
 			client_cardinality 	(value cardinality "1")
 			is_navigable 	TRUE)
@@ -3437,7 +3437,7 @@
 			is_navigable 	TRUE)
 		    (object Role "$UNNAMED$84"
 			quid       	"5A05A77E0262"
-			supplier   	"Logical View::CoursDb"
+			supplier   	"Logical View::CourseDB"
 			quidu      	"5A0599450078"
 			is_navigable 	TRUE)))
 	    (object Association "$UNNAMED$85"
@@ -3450,7 +3450,7 @@
 			is_navigable 	TRUE)
 		    (object Role "$UNNAMED$87"
 			quid       	"5A05A7C101FA"
-			supplier   	"Logical View::CoursDb"
+			supplier   	"Logical View::CourseDB"
 			quidu      	"5A0599450078"
 			is_navigable 	TRUE)))
 	    (object Association "$UNNAMED$88"
@@ -3463,7 +3463,7 @@
 			is_navigable 	TRUE)
 		    (object Role "$UNNAMED$90"
 			quid       	"5A05A7CA0046"
-			supplier   	"Logical View::StudentDb"
+			supplier   	"Logical View::StudentDB"
 			quidu      	"5A0599190169"
 			is_navigable 	TRUE)))
 	    (object Association "$UNNAMED$91"
@@ -3471,12 +3471,12 @@
 		roles      	(list role_list
 		    (object Role "$UNNAMED$92"
 			quid       	"5A05A7D103C4"
-			supplier   	"Logical View::Teacher"
+			supplier   	"Logical View::Professor"
 			quidu      	"5A0599880299"
 			is_navigable 	TRUE)
 		    (object Role "$UNNAMED$93"
 			quid       	"5A05A7D103C7"
-			supplier   	"Logical View::TeacherDb"
+			supplier   	"Logical View::ProfessorDB"
 			quidu      	"5A05A5B5030E"
 			is_navigable 	TRUE)))
 	    (object Association "$UNNAMED$94"
@@ -3489,7 +3489,7 @@
 			is_navigable 	TRUE)
 		    (object Role "$UNNAMED$96"
 			quid       	"5A05A8370299"
-			supplier   	"Logical View::TeacherDb"
+			supplier   	"Logical View::ProfessorDB"
 			quidu      	"5A05A5B5030E"
 			is_navigable 	TRUE))))
 	logical_presentations 	(list unit_reference_list
@@ -3508,7 +3508,7 @@
 		zoom       	100
 		max_height 	28350
 		max_width  	21600
-		origin_x   	0
+		origin_x   	1126
 		origin_y   	225
 		items      	(list diagram_item_list
 		    (object ClassView "Class" "Logical View::MainFrame" @126
@@ -3571,7 +3571,7 @@
 			height     	126
 			annotation 	8
 			autoResize 	TRUE)
-		    (object ClassView "Class" "Logical View::TeacherFrame" @128
+		    (object ClassView "Class" "Logical View::ProfessorFrame" @128
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -3587,17 +3587,17 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@128
-			    location   	(872, 1136)
+			    location   	(849, 1136)
 			    fill_color 	13434879
 			    nlines     	1
-			    max_width  	286
+			    max_width  	332
 			    justify    	0
-			    label      	"TeacherFrame")
+			    label      	"ProfessorFrame")
 			icon_style 	"Icon"
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5A05996B00F9"
-			width      	304
+			width      	350
 			height     	126
 			annotation 	8
 			autoResize 	TRUE)
@@ -3617,10 +3617,10 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@129
-			    location   	(345, 303)
+			    location   	(331, 303)
 			    fill_color 	13434879
 			    nlines     	1
-			    max_width  	690
+			    max_width  	718
 			    justify    	0
 			    label      	"courseEnrollSystem")
 			icon_style 	"Icon"
@@ -3629,7 +3629,7 @@
 			quidu      	"5A05A2E40391"
 			compartment 	(object Compartment
 			    Parent_View 	@129
-			    location   	(345, 364)
+			    location   	(331, 364)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -3643,9 +3643,9 @@
 			    fill_color 	13434879
 			    anchor     	2
 			    nlines     	8
-			    max_width  	718
+			    max_width  	716
 			    justify    	1)
-			width      	708
+			width      	736
 			height     	486
 			annotation 	8
 			autoResize 	TRUE)
@@ -3962,10 +3962,10 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@145
-			    location   	(2162, 352)
+			    location   	(2153, 352)
 			    fill_color 	13434879
 			    nlines     	1
-			    max_width  	450
+			    max_width  	468
 			    justify    	0
 			    label      	"Person")
 			icon_style 	"Icon"
@@ -3974,7 +3974,7 @@
 			quidu      	"5A0598D101E1"
 			compartment 	(object Compartment
 			    Parent_View 	@145
-			    location   	(2162, 413)
+			    location   	(2153, 413)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -3988,9 +3988,9 @@
 			    fill_color 	13434879
 			    anchor     	2
 			    nlines     	6
-			    max_width  	471
+			    max_width  	466
 			    justify    	1)
-			width      	468
+			width      	486
 			height     	386
 			annotation 	8
 			autoResize 	TRUE)
@@ -4043,7 +4043,7 @@
 			annotation 	8
 			autoResize 	TRUE)
 		    (object AssociationViewNew "Property" @147
-			location   	(1905, 533)
+			location   	(1901, 533)
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -4055,7 +4055,7 @@
 			    default_color 	TRUE)
 			label      	(object SegLabel @148
 			    Parent_View 	@147
-			    location   	(1905, 474)
+			    location   	(1901, 474)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -4080,7 +4080,7 @@
 			roleview_list 	(list RoleViews
 			    (object RoleView "$UNNAMED$65" @149
 				Parent_View 	@147
-				location   	(749, -14)
+				location   	(745, -14)
 				font       	(object Font
 				    size       	10
 				    face       	"Arial"
@@ -4092,7 +4092,7 @@
 				    default_color 	TRUE)
 				label      	(object SegLabel @150
 				    Parent_View 	@149
-				    location   	(2100, 490)
+				    location   	(2092, 490)
 				    font       	(object Font
 					size       	10
 					face       	"Arial"
@@ -4118,12 +4118,12 @@
 				client     	@147
 				supplier   	@145
 				vertices   	(list Points
-				    (1905, 533)
-				    (2152, 533))
+				    (1901, 533)
+				    (2143, 533))
 				line_style 	0
 				label      	(object SegLabel @151
 				    Parent_View 	@149
-				    location   	(2126, 587)
+				    location   	(2119, 587)
 				    font       	(object Font
 					size       	10
 					face       	"Arial"
@@ -4144,7 +4144,7 @@
 				    orientation 	1))
 			    (object RoleView "$UNNAMED$66" @152
 				Parent_View 	@147
-				location   	(749, -14)
+				location   	(745, -14)
 				font       	(object Font
 				    size       	10
 				    face       	"Arial"
@@ -4156,7 +4156,7 @@
 				    default_color 	TRUE)
 				label      	(object SegLabel @153
 				    Parent_View 	@152
-				    location   	(1708, 492)
+				    location   	(1707, 492)
 				    font       	(object Font
 					size       	10
 					face       	"Arial"
@@ -4182,12 +4182,12 @@
 				client     	@147
 				supplier   	@146
 				vertices   	(list Points
-				    (1905, 533)
+				    (1901, 533)
 				    (1659, 533))
 				line_style 	0
 				label      	(object SegLabel @154
 				    Parent_View 	@152
-				    location   	(1685, 587)
+				    location   	(1683, 587)
 				    font       	(object Font
 					size       	10
 					face       	"Arial"
@@ -4206,7 +4206,7 @@
 				    pctDist    	0.900000
 				    height     	54
 				    orientation 	0))))
-		    (object ClassView "Class" "Logical View::CoursDb" @155
+		    (object ClassView "Class" "Logical View::CourseDB" @155
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -4222,17 +4222,17 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@155
-			    location   	(1342, 1543)
+			    location   	(1331, 1543)
 			    fill_color 	13434879
 			    nlines     	1
-			    max_width  	190
+			    max_width  	212
 			    justify    	0
-			    label      	"CoursDb")
+			    label      	"CourseDB")
 			icon_style 	"Icon"
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5A0599450078"
-			width      	208
+			width      	230
 			height     	128
 			annotation 	8
 			autoResize 	TRUE)
@@ -4324,7 +4324,7 @@
 			    (2386, 861)
 			    (2386, 726))
 			line_style 	0)
-		    (object ClassView "Class" "Logical View::StudentDb" @161
+		    (object ClassView "Class" "Logical View::StudentDB" @161
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -4340,17 +4340,17 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@161
-			    location   	(2270, 1546)
+			    location   	(2268, 1546)
 			    fill_color 	13434879
 			    nlines     	1
-			    max_width  	222
+			    max_width  	226
 			    justify    	0
-			    label      	"StudentDb")
+			    label      	"StudentDB")
 			icon_style 	"Icon"
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5A0599190169"
-			width      	240
+			width      	244
 			height     	128
 			annotation 	8
 			autoResize 	TRUE)
@@ -4384,7 +4384,7 @@
 				    (2381, 1465)
 				    (2381, 1533))
 				line_style 	0)))
-		    (object ClassView "Class" "Logical View::Teacher" @165
+		    (object ClassView "Class" "Logical View::Professor" @165
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -4400,19 +4400,19 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@165
-			    location   	(2885, 871)
+			    location   	(2929, 915)
 			    fill_color 	13434879
 			    nlines     	1
-			    max_width  	445
+			    max_width  	356
 			    justify    	0
-			    label      	"Teacher")
+			    label      	"Professor")
 			icon_style 	"Icon"
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5A0599880299"
 			compartment 	(object Compartment
 			    Parent_View 	@165
-			    location   	(2885, 932)
+			    location   	(2929, 976)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -4428,8 +4428,8 @@
 			    nlines     	4
 			    max_width  	362
 			    justify    	1)
-			width      	463
-			height     	375
+			width      	374
+			height     	286
 			annotation 	8
 			autoResize 	TRUE)
 		    (object InheritView "" @166
@@ -4439,11 +4439,11 @@
 			client     	@165
 			supplier   	@145
 			vertices   	(list Points
-			    (3106, 858)
+			    (3106, 902)
 			    (3106, 534)
-			    (2621, 533))
+			    (2630, 533))
 			line_style 	0)
-		    (object ClassView "Class" "Logical View::TeacherDb" @167
+		    (object ClassView "Class" "Logical View::ProfessorDB" @167
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -4459,48 +4459,48 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@167
-			    location   	(2994, 1542)
+			    location   	(2972, 1542)
 			    fill_color 	13434879
 			    nlines     	1
-			    max_width  	220
+			    max_width  	264
 			    justify    	0
-			    label      	"TeacherDb")
+			    label      	"ProfessorDB")
 			icon_style 	"Icon"
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5A05A5B5030E"
-			width      	238
+			width      	282
 			height     	126
 			annotation 	8
 			autoResize 	TRUE)
 		    (object AssociationViewNew "$UNNAMED$91" @168
-			location   	(3104, 1381)
+			location   	(3104, 1359)
 			stereotype 	TRUE
 			line_color 	3342489
 			quidu      	"5A05A7D101D4"
 			roleview_list 	(list RoleViews
 			    (object RoleView "$UNNAMED$92" @169
 				Parent_View 	@168
-				location   	(170, -215)
+				location   	(170, -237)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5A05A7D103C4"
 				client     	@168
 				supplier   	@165
 				vertices   	(list Points
-				    (3104, 1381)
-				    (3105, 1233))
+				    (3104, 1359)
+				    (3105, 1189))
 				line_style 	0)
 			    (object RoleView "$UNNAMED$93" @170
 				Parent_View 	@168
-				location   	(170, -215)
+				location   	(170, -237)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5A05A7D103C7"
 				client     	@168
 				supplier   	@167
 				vertices   	(list Points
-				    (3104, 1381)
+				    (3104, 1359)
 				    (3104, 1529))
 				line_style 	0)))
 		    (object ClassView "Class" "Logical View::DatabaseControl" @171
@@ -4529,24 +4529,6 @@
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5A05A5F30004"
-			compartment 	(object Compartment
-			    Parent_View 	@171
-			    location   	(2210, 2024)
-			    font       	(object Font
-				size       	10
-				face       	"Arial"
-				bold       	FALSE
-				italics    	FALSE
-				underline  	FALSE
-				strike     	FALSE
-				color      	0
-				default_color 	TRUE)
-			    icon_style 	"Icon"
-			    fill_color 	13434879
-			    anchor     	2
-			    nlines     	7
-			    max_width  	253
-			    justify    	1)
 			width      	360
 			height     	436
 			annotation 	8
